@@ -1,0 +1,14 @@
+/*
+
+!.gitignore
+
+!Assets/
+Assets/*
+!Assets/Bladder System/
+
+!Packages/
+Packages/*
+!Packages/manifest.json
+!Packages/packages-lock.json
+!Packages/vpm-manifest.json
+

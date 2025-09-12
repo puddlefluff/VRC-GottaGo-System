@@ -1,0 +1,146 @@
+= VRC Bladder System
+:icons: font
+
+== To Be Decided
+
+* release animation max length
+* audio queues
+
+
+== Timing
+
+TODO
+
+fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
+
+== Development (Draft)
+
+=== Parameters
+
+==== `bladder.fill.volume`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟩 true
+| Expression Param | 🟩 true
+|===
+
+Bladder fill volume represented as a percentage of 600ml.
+
+The player's selected bladder capacity will determine the maximum value that
+this parameter can reach.  For example, given a max capacity of 5%, this
+parameter will never go above `0.3`.
+
+[IMPORTANT]
+This value MUST not be directly modified by any means outside of the bladder
+system's animation controller.
+
+
+==== `bladder.emptying`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| User Modifiable  | 🟩 true
+| Synchronized     | 🟩 true
+| Expression Param | 🟩 true
+|===
+
+Flag indicating whether the player's 'bladder' is currently emptying.
+
+A value of `true` indicates the bladder is emptying, while `false` indicates the
+bladder is filling.
+
+This parameter may be manually toggled to trigger a manual/intentional emptying
+of the bladder.
+
+
+==== `bladder.capacity`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟩 true
+| Synchronized     | 🟥 false
+| Expression Param | 🟩 true
+|===
+
+The player's chosen bladder capacity.
+
+A value of `0` disables the bladder system entirely.
+
+Values greater than `0` set the bladder capacity to a percentage of a max
+capacity of 600ml.
+
+This value also directly controls the time, as the bladder fill rate is 1ml per
+second.
+
+
+==== `sys.bladder.state`
+
+[cols=">1h,1m"]
+|===
+| Type             | int
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+Internal system state enum.
+
+[WARNING]
+This value should not be exposed to the user, nor should it be visible in the
+VRC expression parameters.
+
+.Enum Values
+* 0 = Disabled
+* 1 = Filling
+* 2 = Emptying Involuntarily
+* 3 = Emptying Voluntarily
+
+
+==== `sys.bladder.fill.percent`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+Internal system tracker for the current bladder fill percentage when taking the
+selected max capacity into account.
+
+[WARNING]
+This value should not be exposed to the user, nor should it be visible in the
+VRC expression parameters.
+
+### Layers
+
+#### `sys.bladder.ux`
+
+User direct user interaction layer.
+
+* Enables and disables the feature based on whether the user has selected a
+  bladder capacity
+* Handles notifications based on bladder fill %
+
+#### `sys.bladder.fill.clock`
+
+Bladder fill level timing.  Fills the bladder volume by 0.4% every 2.4 seconds
+until it reaches the selected capacity, or a maximum time of 600s (10 minutes).
+
+The 0.4% and 2.4s values are based on 250 ticks spread over 600s.
+
+0.4% => 0.004 => 1/250
+2.4s => 600/250
+
+#### `sys.bladder.fill.triggers`
+
+Handles the voluntary or involuntary bladder release events.
+
+On release trigger, the fill volume will be reduced over time to 0 before the
+counters reset and start again.
