@@ -97,6 +97,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: -4876812509200887528}
+  - {fileID: 8897079517110460818}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -105,7 +106,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: dc753fd33ddb285288abc4edff84eddf, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -470,6 +471,14 @@ BlendTree:
   m_Name: Notification Tree
   m_Childs:
   - serializedVersion: 2
+    m_Motion: {fileID: 0}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4c602c015ec85ad80852805de3ccc065, type: 2}
     m_Threshold: 0.5
     m_Position: {x: 0, y: 0}
@@ -519,7 +528,7 @@ BlendTree:
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.percent
   m_BlendParameterY: mod.ears.x
-  m_MinThreshold: 0.5
+  m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
@@ -1134,6 +1143,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours:
   - {fileID: -1409522425850596650}
+  - {fileID: 8522565480316314113}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1539,16 +1549,16 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3836614016241912223}
-    m_Position: {x: -340, y: -250, z: 0}
+    m_Position: {x: -150, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8584208640087721958}
-    m_Position: {x: -100, y: -490, z: 0}
+    m_Position: {x: 90, y: -540, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 467103950710376453}
-    m_Position: {x: -100, y: -310, z: 0}
+    m_Position: {x: 90, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1804282798585226723}
-    m_Position: {x: -100, y: -400, z: 0}
+    m_Position: {x: 90, y: -450, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 3039362170260103448}
@@ -1557,9 +1567,9 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -320, y: -390, z: 0}
-  m_EntryPosition: {x: -320, y: -280, z: 0}
-  m_ExitPosition: {x: -320, y: -310, z: 0}
+  m_AnyStatePosition: {x: -130, y: -440, z: 0}
+  m_EntryPosition: {x: -130, y: -330, z: 0}
+  m_ExitPosition: {x: -130, y: -360, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -3836614016241912223}
 --- !u!206 &4954177275308103613
@@ -1984,6 +1994,33 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!114 &8522565480316314113
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 0
+    name: bladder.fill.volume
+    source: 
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 0
+  debugString: 
 --- !u!114 &8706664723379906947
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1999,6 +2036,33 @@ MonoBehaviour:
   parameters:
   - type: 0
     name: bladder.emptying
+    source: 
+    value: 0
+    valueMin: 0
+    valueMax: 0
+    chance: 0
+    convertRange: 0
+    sourceMin: 0
+    sourceMax: 0
+    destMin: 0
+    destMax: 0
+  localOnly: 0
+  debugString: 
+--- !u!114 &8897079517110460818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameters:
+  - type: 0
+    name: bladder.fill.volume
     source: 
     value: 0
     valueMin: 0

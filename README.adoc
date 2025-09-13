@@ -1,10 +1,19 @@
 = VRC Bladder System
 :icons: font
+:toc:
 
 == To Be Decided
 
 * release animation max length
 * audio queues
+
+== TODOs
+
+=== EZL
+
+. Figure out what the clock logic with the motion time was again, because I set
+it to the wrong param.  Fairly sure there was a blend tree here that got removed
+"temporarily" that didn't get re-added.
 
 
 == Timing
@@ -13,7 +22,7 @@ TODO
 
 fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
 
-== Development (Draft)
+== Development Notes (Draft)
 
 === Parameters
 
@@ -118,9 +127,9 @@ selected max capacity into account.
 This value should not be exposed to the user, nor should it be visible in the
 VRC expression parameters.
 
-### Layers
+=== Layers
 
-#### `sys.bladder.ux`
+==== `sys.bladder.ux`
 
 User direct user interaction layer.
 
@@ -128,7 +137,54 @@ User direct user interaction layer.
   bladder capacity
 * Handles notifications based on bladder fill %
 
-#### `sys.bladder.fill.clock`
+===== Activate Bladder System
+
+.Prerequisites
+1. The player has configured a non-zero `bladder.capacity` parameter value.
+2. The system state is currently disabled (`sys.bladder.state == 0`).
+
+.Actions
+* Sets the *local* parameter `sys.bladder.state` to `1`, indicating the system
+is now in the "filling" state.
+* Sets the *synced* parameter `bladder.fill.volume` to `0` to clear out any left
+over value from previously enabling/disabling the feature.
+* Plays the `sys.bladder.toast.enabled` animation to give user feedback that the
+bladder system is working and enabled.
+
+
+===== Deactivate Bladder System
+
+.Prerequisites
+1. The player has set the `bladder.capacity` setting back to zero.
+2. The system is currently enabled (`sys.bladder.state > 0`).
+
+.Actions
+* Sets the *local* parameter `sys.bladder.state` to `0`, indicating the system
+is now disabled.
+* Plays the `sys.bladder.toast.disabled` animation to give user feedback that
+the bladder system is now disabled.
+
+[NOTE]
+This action _DOES NOT_ change reset the `bladder.fill.volume` or
+`bladder.emptying` parameters, allowing any current animation to complete.
+
+
+===== Notification Triggers
+
+.Prerequisites
+1. The system is currently in the "filling" state (`sys.bladder.state == 1`).
+
+.Actions
+* Player notification animations fired at the following thresholds:
+** 50%
+** 75%
+** 83%
+** 90%
+** 95%
+** 100%
+
+
+==== `sys.bladder.fill.clock`
 
 Bladder fill level timing.  Fills the bladder volume by 0.4% every 2.4 seconds
 until it reaches the selected capacity, or a maximum time of 600s (10 minutes).
@@ -138,7 +194,24 @@ The 0.4% and 2.4s values are based on 250 ticks spread over 600s.
 0.4% => 0.004 => 1/250
 2.4s => 600/250
 
-#### `sys.bladder.fill.triggers`
+===== Init
+
+Default state exists only to loop back to <<Clock Tick>>
+
+===== Clock Tick
+
+.Prerequisites
+1. System is in the "filling" state (`sys.bladder.state == 1`)
+2. Bladder fill is less than 100% of the configured capacity.
+
+.Timing
+* Ticks every 2.4 seconds
+
+.Actions
+. Runs a single frame of the `sys.bladder.clock.percent` animation to update the
+fill % value.
+
+==== `sys.bladder.fill.triggers`
 
 Handles the voluntary or involuntary bladder release events.
 
