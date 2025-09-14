@@ -6,6 +6,8 @@
 !Assets/
 Assets/*
 !Assets/Bladder System/
+!Assets/BS.unity
+!Assets/BS (No VRCF).unity
 
 !Packages/
 Packages/*
