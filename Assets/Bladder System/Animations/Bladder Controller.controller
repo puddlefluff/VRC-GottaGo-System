@@ -171,7 +171,7 @@ AnimatorStateTransition:
     m_ConditionEvent: bladder.emptying
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: sys.bladder.fill.countdown
+    m_ConditionEvent: sys.bladder.countdown
     m_EventTreshold: 0.01
   - m_ConditionMode: 6
     m_ConditionEvent: sys.bladder.state
@@ -335,32 +335,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-6824799631661930581
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -5669656579652646567}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!206 &-6799069292224763139
 BlendTree:
   m_ObjectHideFlags: 1
@@ -411,6 +385,37 @@ MonoBehaviour:
     destMax: 0
   localOnly: 1
   debugString: 
+--- !u!206 &-6614513803377921945
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lock Fill Percent
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 66f5a3e1ed5488c748a30e5b567e1b84, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  m_BlendParameter: sys.bladder.fill.volume.internal
+  m_BlendParameterY: Blend
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!206 &-6437796629699917912
 BlendTree:
   m_ObjectHideFlags: 1
@@ -518,37 +523,6 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!206 &-5669656579652646567
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 66f5a3e1ed5488c748a30e5b567e1b84, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
-    m_Mirror: 0
-  m_BlendParameter: sys.bladder.fill.volume.internal
-  m_BlendParameterY: bladder.capacity
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 0
 --- !u!206 &-5628386288729376780
 BlendTree:
   m_ObjectHideFlags: 1
@@ -637,7 +611,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bladder.fill.countdown
+    name: sys.bladder.countdown
     source: 
     value: 1
     valueMin: 0
@@ -741,7 +715,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: mod.ears.x
     m_Mirror: 0
-  m_BlendParameter: sys.bladder.fill.countdown
+  m_BlendParameter: sys.bladder.countdown
   m_BlendParameterY: mod.ears.x
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -806,6 +780,32 @@ MonoBehaviour:
     destMax: 0
   localOnly: 1
   debugString: 
+--- !u!1102 &-4014086313774302426
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Persist State
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -3016460544208278059}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-3836614016241912223
 AnimatorState:
   serializedVersion: 6
@@ -913,6 +913,37 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 0
+--- !u!206 &-3016460544208278059
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Volatile Parameters
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: -6614513803377921945}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sys.bladder.const.1
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 5381715043656054012}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sys.bladder.const.1
+    m_Mirror: 0
+  m_BlendParameter: bladder.capacity
+  m_BlendParameterY: bladder.capacity
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 4
 --- !u!206 &-2958800698124496173
 BlendTree:
   m_ObjectHideFlags: 1
@@ -951,24 +982,21 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys_persistence
+  m_Name: sys_0_lock
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 7520363370484610480}
-    m_Position: {x: -230, y: 170, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -6824799631661930581}
-    m_Position: {x: 0, y: 200, z: 0}
+    m_State: {fileID: -4014086313774302426}
+    m_Position: {x: -100, y: -440, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 20, y: 40, z: 0}
-  m_EntryPosition: {x: 20, y: 100, z: 0}
-  m_ExitPosition: {x: 20, y: 70, z: 0}
+  m_AnyStatePosition: {x: -80, y: -590, z: 0}
+  m_EntryPosition: {x: -80, y: -530, z: 0}
+  m_ExitPosition: {x: -80, y: -560, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 7520363370484610480}
+  m_DefaultState: {fileID: -4014086313774302426}
 --- !u!114 &-2806345311119099259
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1214,6 +1242,37 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!206 &-385234016269803816
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendTree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: e14f042def85fcb56ab07f5edb7b799f, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  m_BlendParameter: sys.bladder.countdown
+  m_BlendParameterY: Blend
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!206 &-340317485511945479
 BlendTree:
   m_ObjectHideFlags: 1
@@ -1366,13 +1425,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bladder.fill.countdown
+  - m_Name: sys.bladder.const.1
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bladder.const.1
+  - m_Name: sys.bladder.countdown
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
@@ -1380,19 +1439,7 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: sys.bladder.ux
-    m_StateMachine: {fileID: 4948471754871968557}
-    m_Mask: {fileID: 0}
-    m_Motions: []
-    m_Behaviours: []
-    m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 1
-    m_IKPass: 0
-    m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 9100000}
-  - serializedVersion: 5
-    m_Name: sys.bladder.emptying
+    m_Name: animate.bladder.empty
     m_StateMachine: {fileID: 6005005516622548067}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -1404,8 +1451,20 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: sys.persistence
+    m_Name: sys.0.lock
     m_StateMachine: {fileID: -2872112962256757397}
+    m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_DefaultWeight: 1
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+  - serializedVersion: 5
+    m_Name: sys.1.ux
+    m_StateMachine: {fileID: 4948471754871968557}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -1898,7 +1957,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Countdown
+  m_Name: Countdown (WD On)
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1941,37 +2000,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 4
---- !u!206 &3161018975661363742
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Persist Countdown
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e14f042def85fcb56ab07f5edb7b799f, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
-    m_Threshold: 1
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
-    m_Mirror: 0
-  m_BlendParameter: sys.bladder.fill.countdown
-  m_BlendParameterY: bladder.capacity
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 0
 --- !u!1101 &3187786509553385328
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2404,7 +2432,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys_bladder_ux
+  m_Name: sys_1_ux
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3836614016241912223}
@@ -2477,10 +2505,7 @@ AnimatorStateMachine:
     m_Position: {x: 200, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2912887911515894115}
-    m_Position: {x: 200, y: 0, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 7553977741803974182}
-    m_Position: {x: -110, y: -100, z: 0}
+    m_Position: {x: 200, y: -100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -2488,7 +2513,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 220, y: -330, z: 0}
   m_EntryPosition: {x: 220, y: -300, z: 0}
-  m_ExitPosition: {x: 220, y: 100, z: 0}
+  m_ExitPosition: {x: 220, y: 0, z: 0}
   m_ParentStateMachinePosition: {x: 200, y: -370, z: 0}
   m_DefaultState: {fileID: 1271029052499486473}
 --- !u!1101 &5098429121099504017
@@ -2519,23 +2544,23 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
+  m_Name: Countdown Math
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -6286566954308281076}
+    m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bladder.const.1
+    m_DirectBlendParameter: bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -2958800698124496173}
+    m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bladder.const.1
+    m_DirectBlendParameter: sys.bladder.fill.volume.internal
     m_Mirror: 0
   m_BlendParameter: bladder.capacity
   m_BlendParameterY: sys.bladder.fill.volume.internal
@@ -2544,6 +2569,37 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 4
+--- !u!206 &5381715043656054012
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Lock System Countdown
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: e14f042def85fcb56ab07f5edb7b799f, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: bladder.capacity
+    m_Mirror: 0
+  m_BlendParameter: sys.bladder.countdown
+  m_BlendParameterY: bladder.capacity
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!206 &5406468034401006383
 BlendTree:
   m_ObjectHideFlags: 1
@@ -2644,7 +2700,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys_bladder_emptying
+  m_Name: animate_bladder_empty
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -1916979101885121094}
@@ -2800,7 +2856,7 @@ AnimatorStateTransition:
     m_ConditionEvent: bladder.emptying
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bladder.fill.countdown
+    m_ConditionEvent: sys.bladder.countdown
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2871,58 +2927,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!1102 &7520363370484610480
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Persist Countdown
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 3161018975661363742}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &7553977741803974182
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sync Fill Percent
-  m_Speed: 0
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 1
-  m_Motion: {fileID: 7400000, guid: 02e6837c88062006f847aed0a8bdbceb, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: sys.bladder.fill.volume.internal
 --- !u!1101 &7598385926750017529
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2982,6 +2986,21 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 4
+--- !u!206 &7885605161326654618
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendTree
+  m_Childs: []
+  m_BlendParameter: bladder.capacity
+  m_BlendParameterY: bladder.capacity
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!206 &8269598764150656936
 BlendTree:
   m_ObjectHideFlags: 1
@@ -3102,7 +3121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sys.bladder.fill.countdown
+    name: sys.bladder.countdown
     source: 
     value: 1
     valueMin: 0
