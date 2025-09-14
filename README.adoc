@@ -11,9 +11,8 @@
 
 === EZL
 
-. Figure out what the clock logic with the motion time was again, because I set
-it to the wrong param.  Fairly sure there was a blend tree here that got removed
-"temporarily" that didn't get re-added.
+. Reset the animator node timings to what they were before debugging.
+. Fix manual bladder release state reset
 
 
 == Timing
@@ -24,9 +23,58 @@ fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
 
 == Development Notes (Draft)
 
+
+=== Layers
+
+==== `sys.0.lock`
+
+Parameter persistence layer and constant state layer.
+
+*TODO*: Rename this, it is just constant state maintenance, not only param
+persistence.
+
+
+==== `sys.1.ux`
+
+System loop, updates parameter values based on system state.
+
+
+==== `animate.bladder.empty`
+
+Avatar animation layer.
+
+
 === Parameters
 
-==== `bladder.fill.volume`
+==== Synchronized Avatar Parameters
+
+* <<param-emptying>>
+* <<param-fill-percent>>
+
+
+[#param-emptying]
+===== `bladder.emptying`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| Interaction     a| Button (not Toggle)
+| User Modifiable  | 🟩 true
+| Synchronized     | 🟩 true
+| Expression Param | 🟩 true
+|===
+
+Flag indicating whether the player's bladder is currently emptying.
+
+A value of `true` indicates the bladder is emptying, while `false` indicates the
+bladder is filling.
+
+This parameter may be manually toggled to trigger a manual/intentional emptying
+of the bladder.
+
+
+[#param-fill-percent]
+===== `bladder.fill.percent`
 
 [cols=">1h,1m"]
 |===
@@ -47,30 +95,19 @@ This value MUST not be directly modified by any means outside of the bladder
 system's animation controller.
 
 
-==== `bladder.emptying`
+==== Unsynced Avatar Parameters
 
-[cols=">1h,1m"]
-|===
-| Type             | bool
-| User Modifiable  | 🟩 true
-| Synchronized     | 🟩 true
-| Expression Param | 🟩 true
-|===
-
-Flag indicating whether the player's 'bladder' is currently emptying.
-
-A value of `true` indicates the bladder is emptying, while `false` indicates the
-bladder is filling.
-
-This parameter may be manually toggled to trigger a manual/intentional emptying
-of the bladder.
+* <<param-capacity>>
+* <<param-radial>>
 
 
-==== `bladder.capacity`
+[#param-capacity]
+===== `bladder.capacity`
 
 [cols=">1h,1m"]
 |===
 | Type             | float
+| Interaction     a| Radial
 | User Modifiable  | 🟩 true
 | Synchronized     | 🟥 false
 | Expression Param | 🟩 true
@@ -87,7 +124,74 @@ This value also directly controls the time, as the bladder fill rate is 1ml per
 second.
 
 
-==== `sys.bladder.state`
+[#param-radial]
+===== `bladder.radial.open`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| Interaction     a| Indirect
+| User Modifiable  | 🟩 true
+| Synchronized     | 🟥 false
+| Expression Param | 🟩 true
+|===
+
+
+==== Internal System Parameters
+
+* <<param-const-1>>
+* <<param-countdown>>
+* <<param-fill-internal>>
+* <<param-state>>
+
+[#param-const-1]
+===== `sys.bladder.const.1`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+Constant value `1.0`, used in blend tree arithmetic.
+
+[#param-countdown]
+===== `sys.bladder.countdown`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+Bladder fill countdown, the percentage of the bladder capacity remaining to be
+filled.
+
+[#param-fill-internal]
+===== `sys.bladder.fill.volume.internal`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+Internal system tracker for the current bladder fill percentage when taking the
+selected max capacity into account.
+
+[WARNING]
+This value should not be exposed to the user, nor should it be visible in the
+VRC expression parameters.
+
+
+[#param-state]
+===== `sys.bladder.state`
 
 [cols=">1h,1m"]
 |===
@@ -109,111 +213,3 @@ VRC expression parameters.
 * 2 = Emptying Involuntarily
 * 3 = Emptying Voluntarily
 
-
-==== `sys.bladder.fill.percent`
-
-[cols=">1h,1m"]
-|===
-| Type             | float
-| User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
-| Expression Param | 🟥 false
-|===
-
-Internal system tracker for the current bladder fill percentage when taking the
-selected max capacity into account.
-
-[WARNING]
-This value should not be exposed to the user, nor should it be visible in the
-VRC expression parameters.
-
-=== Layers
-
-==== `sys.bladder.ux`
-
-User direct user interaction layer.
-
-* Enables and disables the feature based on whether the user has selected a
-  bladder capacity
-* Handles notifications based on bladder fill %
-
-===== Activate Bladder System
-
-.Prerequisites
-1. The player has configured a non-zero `bladder.capacity` parameter value.
-2. The system state is currently disabled (`sys.bladder.state == 0`).
-
-.Actions
-* Sets the *local* parameter `sys.bladder.state` to `1`, indicating the system
-is now in the "filling" state.
-* Sets the *synced* parameter `bladder.fill.volume` to `0` to clear out any left
-over value from previously enabling/disabling the feature.
-* Plays the `sys.bladder.toast.enabled` animation to give user feedback that the
-bladder system is working and enabled.
-
-
-===== Deactivate Bladder System
-
-.Prerequisites
-1. The player has set the `bladder.capacity` setting back to zero.
-2. The system is currently enabled (`sys.bladder.state > 0`).
-
-.Actions
-* Sets the *local* parameter `sys.bladder.state` to `0`, indicating the system
-is now disabled.
-* Plays the `sys.bladder.toast.disabled` animation to give user feedback that
-the bladder system is now disabled.
-
-[NOTE]
-This action _DOES NOT_ change reset the `bladder.fill.volume` or
-`bladder.emptying` parameters, allowing any current animation to complete.
-
-
-===== Notification Triggers
-
-.Prerequisites
-1. The system is currently in the "filling" state (`sys.bladder.state == 1`).
-
-.Actions
-* Player notification animations fired at the following thresholds:
-** 50%
-** 75%
-** 83%
-** 90%
-** 95%
-** 100%
-
-
-==== `sys.bladder.fill.clock`
-
-Bladder fill level timing.  Fills the bladder volume by 0.4% every 2.4 seconds
-until it reaches the selected capacity, or a maximum time of 600s (10 minutes).
-
-The 0.4% and 2.4s values are based on 250 ticks spread over 600s.
-
-0.4% => 0.004 => 1/250
-2.4s => 600/250
-
-===== Init
-
-Default state exists only to loop back to <<Clock Tick>>
-
-===== Clock Tick
-
-.Prerequisites
-1. System is in the "filling" state (`sys.bladder.state == 1`)
-2. Bladder fill is less than 100% of the configured capacity.
-
-.Timing
-* Ticks every 2.4 seconds
-
-.Actions
-. Runs a single frame of the `sys.bladder.clock.percent` animation to update the
-fill % value.
-
-==== `sys.bladder.fill.triggers`
-
-Handles the voluntary or involuntary bladder release events.
-
-On release trigger, the fill volume will be reduced over time to 0 before the
-counters reset and start again.
