@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: bladder.capacity
+  - name: opt.bladder.capacity
     valueType: 1
     saved: 0
     defaultValue: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: bladder.emptying
+  - name: opt.bladder.release
     valueType: 2
     saved: 0
     defaultValue: 0

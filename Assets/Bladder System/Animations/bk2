@@ -39,7 +39,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: sys.bladder.countdown
@@ -99,7 +99,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -107,10 +107,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.countdown
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -125,7 +125,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8055216851441126580}
@@ -184,7 +184,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -192,10 +192,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -256,7 +256,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 4
     m_ConditionEvent: sys.bladder.countdown
@@ -377,7 +377,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.countdown
@@ -576,7 +576,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
@@ -584,7 +584,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.volume.internal
   m_BlendParameterY: Blend
@@ -601,8 +601,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -616,8 +616,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -637,7 +637,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -645,10 +645,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -683,7 +683,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -691,10 +691,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -709,7 +709,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7076348875686043486}
@@ -749,7 +749,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: sys.bladder.const.1
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
   m_BlendParameterY: sys.bladder.fill.volume.internal
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -822,7 +822,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -830,7 +830,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.volume.internal
   m_BlendParameterY: Blend
@@ -983,7 +983,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: c6e824a781c2832228a00bf90b7fb24e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: bladder.emptying
+  m_MirrorParameter: opt.bladder.release
   m_CycleOffsetParameter: 
   m_TimeParameter: bladder.fill.percent
 --- !u!206 &-4531742639661235159
@@ -1000,7 +1000,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1008,7 +1008,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: c378f4f02fa76a10891daed4f1bcafde, type: 2}
@@ -1016,7 +1016,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1024,7 +1024,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: eed404bdfa7573c7ab5ff279625f32e0, type: 2}
@@ -1032,7 +1032,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1040,7 +1040,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 9fa6a52b6913f5d5cb7f63a42a514ec2, type: 2}
@@ -1048,7 +1048,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1056,7 +1056,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: f82261ad8b539cc809729e84f1e3d18a, type: 2}
@@ -1064,7 +1064,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1072,7 +1072,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4c602c015ec85ad80852805de3ccc065, type: 2}
@@ -1080,7 +1080,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1088,7 +1088,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1096,10 +1096,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.countdown
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -1196,7 +1196,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1448,8 +1448,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: sys.bladder.const.1
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -1469,7 +1469,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -1477,7 +1477,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.volume.internal
   m_BlendParameterY: Blend
@@ -1544,7 +1544,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1613924437657804073}
@@ -1574,7 +1574,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
@@ -1582,7 +1582,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: bladder.fill.percent
   m_BlendParameterY: Blend
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bladder.emptying
+    name: opt.bladder.release
     source: 
     value: 1
     valueMin: 0
@@ -1698,7 +1698,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: bladder.capacity
+    m_ConditionEvent: opt.bladder.capacity
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5052110783480570780}
@@ -1783,7 +1783,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -1791,10 +1791,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -1909,7 +1909,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -1917,7 +1917,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.countdown
   m_BlendParameterY: Blend
@@ -1942,8 +1942,8 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: sys.bladder.fill.percent
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -2063,7 +2063,7 @@ AnimatorController:
   m_Name: Bladder Controller
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: bladder.capacity
+  - m_Name: opt.bladder.capacity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2081,7 +2081,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: bladder.emptying
+  - m_Name: opt.bladder.release
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2209,7 +2209,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 7
     m_ConditionEvent: sys.bladder.state
@@ -2355,7 +2355,7 @@ AnimatorState:
   m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: bladder.emptying
+  m_MirrorParameter: opt.bladder.release
   m_CycleOffsetParameter: 
   m_TimeParameter: sys.bladder.fill.countdown
 --- !u!114 &1294673851156949644
@@ -2557,7 +2557,7 @@ AnimatorStateTransition:
     m_ConditionEvent: bladder.radial.open
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: bladder.capacity
+    m_ConditionEvent: opt.bladder.capacity
     m_EventTreshold: 0.01
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.state
@@ -2590,7 +2590,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -2598,7 +2598,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.volume.internal
   m_BlendParameterY: Blend
@@ -2713,9 +2713,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -2731,7 +2731,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: sys.bladder.state
@@ -2816,7 +2816,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.state
@@ -2884,7 +2884,7 @@ AnimatorStateTransition:
     m_ConditionEvent: bladder.radial.open
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: bladder.capacity
+    m_ConditionEvent: opt.bladder.capacity
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.state
@@ -3134,7 +3134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bladder.emptying
+    name: opt.bladder.release
     source: 
     value: 0
     valueMin: 0
@@ -3276,7 +3276,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -3286,7 +3286,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: sys.bladder.fill.volume.internal
     m_Mirror: 0
-  m_BlendParameter: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
   m_BlendParameterY: sys.bladder.fill.volume.internal
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -3307,7 +3307,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -3315,10 +3315,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.countdown
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -3338,7 +3338,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
@@ -3346,10 +3346,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bladder.capacity
+    m_DirectBlendParameter: opt.bladder.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.volume.internal
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -3398,7 +3398,7 @@ AnimatorStateTransition:
     m_ConditionEvent: bladder.radial.open
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: bladder.capacity
+    m_ConditionEvent: opt.bladder.capacity
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: sys.bladder.state
@@ -3580,7 +3580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bladder.emptying
+    name: opt.bladder.release
     source: 
     value: 1
     valueMin: 0
@@ -3602,7 +3602,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.state
@@ -3661,7 +3661,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: bladder.emptying
+    m_ConditionEvent: opt.bladder.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: sys.bladder.countdown
@@ -3853,8 +3853,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -3921,8 +3921,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: bladder.capacity
-  m_BlendParameterY: bladder.capacity
+  m_BlendParameter: opt.bladder.capacity
+  m_BlendParameterY: opt.bladder.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -4109,7 +4109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bladder.emptying
+    name: opt.bladder.release
     source: 
     value: 0
     valueMin: 0
