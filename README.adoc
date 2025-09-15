@@ -1,6 +1,8 @@
 = VRC Bladder System
 :icons: font
 :toc:
+:sectlinks:
+:sectanchors:
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
