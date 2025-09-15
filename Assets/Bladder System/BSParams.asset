@@ -29,6 +29,16 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 1
+  - name: extra.holding.self
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: extra.bladder.press
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
   - name: opt.bladder.capacity
     valueType: 1
     saved: 0
