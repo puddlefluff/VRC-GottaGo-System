@@ -1,6 +1,6 @@
 = VRC Bladder System
 :icons: font
-:toc:
+:toc: left
 :sectlinks:
 :sectanchors:
 ifdef::env-github[]
@@ -11,9 +11,14 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+ifdef::env-github[]
+See link:https://foxcapades.github.io/vrc-bladder-system/readme.html[rendered readme]
+endif::[]
+
 == To Be Decided
 
 * audio queues
+
 
 
 == Usage
