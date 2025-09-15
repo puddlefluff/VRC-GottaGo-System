@@ -9,6 +9,8 @@ Assets/*
 !Assets/BS.unity
 !Assets/BS (No VRCF).unity
 
+!Docs/
+
 !Packages/
 Packages/*
 !Packages/manifest.json

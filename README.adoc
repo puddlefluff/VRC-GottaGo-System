@@ -1,18 +1,11 @@
 = VRC Bladder System
 :icons: font
 :toc:
+:toclevels: 3
 
 == To Be Decided
 
-* release animation max length
 * audio queues
-
-== TODOs
-
-=== EZL
-
-. Reset the animator node timings to what they were before debugging.
-. Fix manual bladder release state reset
 
 
 == Timing
@@ -21,33 +14,76 @@ TODO
 
 fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
 
-== Development Notes (Draft)
 
+
+== Menu Options
+
+=== Bladder image:Docs/Images/bladder.png[]
+
+Bladder system submenu.
+
+
+==== Urinate image:Docs/Images/pee.png[]
+
+Manually empties the bladder contents at a rate of 13ml per second.
+
+
+==== Bladder Size image:Docs/Images/bladder-size.png[]
+
+Configures the bladder size as a percentage of 600ml.  This directly translates
+to the time it takes for the player's bladder to fill.
+
+The bladder fill rate is 1ml per second, which means setting the bladder size to
+100% will result in a default fill time of 10 minutes.  The minimum allowed fill
+time is 30 seconds.
+
+
+==== Reset Effects image:Docs/Images/no-pee.png[]
+
+Resets the parameter tracking the volume of urine that has been released since
+last effect reset.
+
+
+== Development Notes
 
 === Layers
 
-==== `sys.0.lock`
+==== Visible Animation Layers
 
-Parameter persistence layer and constant state layer.
+===== `animate.bladder.empty`
 
-*TODO*: Rename this, it is just constant state maintenance, not only param
-persistence.
+Avatar animation layer.  Intended to be customized or replaced for
+avatar-specific animations and event handling based on the output parameters.
+
+==== System Internal Layers
+
+===== `sys.0.outputs`
+
+Parameter persistence and constant state layer.
+
+[IMPORTANT]
+This layer *MUST* come before <<sys-engine>> for parameters to be updated
+correctly.
 
 
-==== `sys.1.ux`
+[#sys-engine]
+===== `sys.1.engine`
 
-System loop, updates parameter values based on system state.
-
-
-==== `animate.bladder.empty`
-
-Avatar animation layer.
+System event loop, updates parameters based on system state progression and
+user-facing option inputs.
 
 
 === Parameters
 
-==== Synchronized Avatar Parameters
+==== Output Parameters
 
+Output parameters are the animation driving parameters that must exist in the
+VRC avatar parameters, and may be synced as desired to enable specific features.
+
+These parameters are not read by the system, and updates to them from outside
+the system will be ignored and overwritten.
+
+* <<param-release-total>>
 * <<param-emptying>>
 * <<param-fill-percent>>
 
@@ -58,9 +94,8 @@ Avatar animation layer.
 [cols=">1h,1m"]
 |===
 | Type             | bool
-| Interaction     a| Button (not Toggle)
-| User Modifiable  | 🟩 true
-| Synchronized     | 🟩 true
+| User Modifiable  | 🟥 false
+| Synchronizable   | 🟩 true
 | Expression Param | 🟩 true
 |===
 
@@ -80,7 +115,7 @@ of the bladder.
 |===
 | Type             | float
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟩 true
+| Synchronizable   | 🟩 true
 | Expression Param | 🟩 true
 |===
 
@@ -95,21 +130,47 @@ This value MUST not be directly modified by any means outside of the bladder
 system's animation controller.
 
 
-==== Unsynced Avatar Parameters
+[#param-release-total]
+===== `bladder.release.total`
+
+[cols=">1h,1m"]
+|===
+| Type             | float
+| User Modifiable  | 🟥 false
+| Synchronizable   | 🟩 true
+| Expression Param | 🟩 true
+|===
+
+Tracks the total bladder release volume as a percentage of the maximum bladder
+capacity of 600ml.
+
+This value updates in steps of `0.0221` which is based on a urine flow rate of
+13ml per second.
+
+
+==== System Option Parameters
+
+Player-facing menu option parameters that enable, disable, or alter the bladder
+system's behavior.
+
+These options should not be synced, as they serve no purpose for non-local
+animators.
 
 * <<param-capacity>>
 * <<param-radial>>
+* <<param-release>>
+* <<param-total-reset>>
 
 
 [#param-capacity]
-===== `bladder.capacity`
+===== `opt.bladder.capacity`
 
 [cols=">1h,1m"]
 |===
 | Type             | float
 | Interaction     a| Radial
 | User Modifiable  | 🟩 true
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟩 true
 |===
 
@@ -125,24 +186,100 @@ second.
 
 
 [#param-radial]
-===== `bladder.radial.open`
+===== `opt.bladder.radial.open`
 
 [cols=">1h,1m"]
 |===
 | Type             | bool
 | Interaction     a| Indirect
 | User Modifiable  | 🟩 true
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟩 true
 |===
+
+Boolean flag indicating whether the player currently has the bladder capacity
+radial menu open.
+
+When this value is true, the system does not perform any updates to avoid
+unintended side effects on low bladder capacity values.
+
+[WARNING]
+There is no reason to directly modify this value unless you want to cause
+problems.
+
+
+[#param-release]
+===== `opt.bladder.release`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| Interaction     a| Button (*not* Toggle)
+| User Modifiable  | 🟩 true
+| Synchronizable   | 🟥 false
+| Expression Param | 🟩 true
+|===
+
+Boolean flag indicating whether the player has the manual urination button held
+down.
+
+When set to `true`, the bladder system will perform the following:
+
+* Stop increasing the bladder hold volume
+* Reduce the held volume by a value of `0.0221` per second, simulating a urine
+flow rate of 13ml/s.
+* Increase <<param.release.total>> by a value of `0.0221` per second.
+
+When the button is released, and this param returns to `false`, the system will
+return to its default state of increasing bladder hold volume.
+
+
+[#param-total-reset]
+===== `opt.bladder.total.reset`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| Interaction     a| Toggle
+| User Modifiable  | 🟩 true
+| Synchronizable   | 🟥 false
+| Expression Param | 🟩 true
+|===
+
+Boolean toggle which causes the system to reset the total bladder release volume
+parameter to zero.
+
+Once the parameter has been reset to zero, the toggle will be automaticall
+disabled again.
 
 
 ==== Internal System Parameters
 
+* <<param-islocal>>
 * <<param-const-1>>
 * <<param-countdown>>
 * <<param-fill-internal>>
 * <<param-state>>
+
+
+[#param-islocal]
+===== `IsLocal`
+
+[cols=">1h,1m"]
+|===
+| Type             | bool
+| User Modifiable  | 🟥 false
+| Synchronized     | 🟥 false
+| Expression Param | 🟥 false
+|===
+
+VRC built in parameter indicating whether the animation controller is local to
+the source player.
+
+This is used  by the system core to disable itself for other players.  The core
+system does not need to be executed for remote players for the system's effects
+to function.
+
 
 [#param-const-1]
 ===== `sys.bladder.const.1`
@@ -157,6 +294,7 @@ second.
 
 Constant value `1.0`, used in blend tree arithmetic.
 
+
 [#param-countdown]
 ===== `sys.bladder.countdown`
 
@@ -170,6 +308,7 @@ Constant value `1.0`, used in blend tree arithmetic.
 
 Bladder fill countdown, the percentage of the bladder capacity remaining to be
 filled.
+
 
 [#param-fill-internal]
 ===== `sys.bladder.fill.volume.internal`
