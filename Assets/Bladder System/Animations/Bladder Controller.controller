@@ -2153,6 +2153,24 @@ AnimatorController:
   m_Name: Bladder Controller
   serializedVersion: 5
   m_AnimatorParameters:
+  - m_Name: bladder.fill.percent
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: bladder.release.total
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: blader.emptying
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: opt.bladder.capacity
     m_Type: 1
     m_DefaultFloat: 0
@@ -2161,12 +2179,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: opt.bladder.radial.open
     m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: bladder.fill.percent
-    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
