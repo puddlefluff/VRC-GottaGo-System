@@ -1,34 +1,53 @@
 = VRC Bladder System
 :icons: font
 :toc:
-:toclevels: 3
 
 == To Be Decided
 
 * audio queues
 
 
+== Usage
+
+TODO: document this
+
+Attach prefab to avatar game object
+
+
 == Timing
 
-TODO
+TODO: document this
 
 fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
 
 
-
-== Menu Options
-
-=== Bladder image:Docs/Images/bladder.png[]
-
-Bladder system submenu.
+== System Components
 
 
-==== Urinate image:Docs/Images/pee.png[]
+=== Menu Options
 
-Manually empties the bladder contents at a rate of 13ml per second.
+==== Bladder image:Docs/Images/bladder.png[]
+
+*Type:* Menu
+
+Bladder system options.
 
 
-==== Bladder Size image:Docs/Images/bladder-size.png[]
+===== Urinate image:Docs/Images/pee.png[]
+
+*Type:* Button
+
+Manually empties the bladder contents at a rate of 13ml per second while the
+button is held.
+
+[NOTE]
+This option requires <<param-emptying>> and/or <<param-fill-percent>> to be
+marked as synced to function correctly.
+
+
+===== Bladder Size image:Docs/Images/bladder-size.png[]
+
+*Type:* Radial
 
 Configures the bladder size as a percentage of 600ml.  This directly translates
 to the time it takes for the player's bladder to fill.
@@ -38,10 +57,24 @@ The bladder fill rate is 1ml per second, which means setting the bladder size to
 time is 30 seconds.
 
 
-==== Reset Effects image:Docs/Images/no-pee.png[]
+===== Reset Effects image:Docs/Images/no-pee.png[]
+
+*Type:* Toggle
 
 Resets the parameter tracking the volume of urine that has been released since
 last effect reset.
+
+Once the effect parameter has been reset, this option will be disabled in the
+menu automatically.
+
+[NOTE]
+This option requires <<param-release-total>> to be marked as synced to function
+correctly.
+
+
+=== Expression Parameters
+
+See <<Output Parameters>> and <<Option Parameters>>.
 
 
 == Development Notes
@@ -148,7 +181,7 @@ This value updates in steps of `0.0221` which is based on a urine flow rate of
 13ml per second.
 
 
-==== System Option Parameters
+==== Option Parameters
 
 Player-facing menu option parameters that enable, disable, or alter the bladder
 system's behavior.
