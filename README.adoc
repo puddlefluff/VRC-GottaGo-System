@@ -309,7 +309,7 @@ disabled again.
 |===
 | Type             | bool
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟥 false
 |===
 
@@ -328,7 +328,7 @@ to function.
 |===
 | Type             | float
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟥 false
 |===
 
@@ -342,7 +342,7 @@ Constant value `1.0`, used in blend tree arithmetic.
 |===
 | Type             | float
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟥 false
 |===
 
@@ -357,7 +357,7 @@ filled.
 |===
 | Type             | float
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟥 false
 |===
 
@@ -376,7 +376,7 @@ VRC expression parameters.
 |===
 | Type             | int
 | User Modifiable  | 🟥 false
-| Synchronized     | 🟥 false
+| Synchronizable   | 🟥 false
 | Expression Param | 🟥 false
 |===
 
