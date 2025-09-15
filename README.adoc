@@ -40,14 +40,14 @@ fill rate is 1ml per second, meaning a maximum of 600s (10 min) to fill.
 
 === Menu Options
 
-==== Bladder image:Docs/Images/bladder.png[]
+==== Bladder image:docs/Images/bladder.png[]
 
 *Type:* Menu
 
 Bladder system options.
 
 
-===== Urinate image:Docs/Images/pee.png[]
+===== Urinate image:docs/Images/pee.png[]
 
 *Type:* Button
 
@@ -59,7 +59,7 @@ This option requires <<param-emptying>> and/or <<param-fill-percent>> to be
 marked as synced to function correctly.
 
 
-===== Bladder Size image:Docs/Images/bladder-size.png[]
+===== Bladder Size image:docs/Images/bladder-size.png[]
 
 *Type:* Radial
 
@@ -71,7 +71,7 @@ The bladder fill rate is 1ml per second, which means setting the bladder size to
 time is 30 seconds.
 
 
-===== Reset Effects image:Docs/Images/no-pee.png[]
+===== Reset Effects image:docs/Images/no-pee.png[]
 
 *Type:* Toggle
 

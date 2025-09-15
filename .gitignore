@@ -4,6 +4,7 @@
 !.github/
 !README.adoc
 !LICENSE
+!makefile
 
 !Assets/
 Assets/*
