@@ -25,10 +25,10 @@ MonoBehaviour:
     defaultValue: 0
     networkSynced: 1
   - name: bladder.release.total
-    valueType: 2
+    valueType: 1
     saved: 0
     defaultValue: 0
-    networkSynced: 0
+    networkSynced: 1
   - name: opt.bladder.capacity
     valueType: 1
     saved: 0
@@ -40,6 +40,11 @@ MonoBehaviour:
     defaultValue: 0
     networkSynced: 0
   - name: opt.bladder.release
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: opt.bladder.total.reset
     valueType: 2
     saved: 0
     defaultValue: 0

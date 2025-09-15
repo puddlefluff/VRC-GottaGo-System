@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parameters: {fileID: 11400000, guid: f049b337589d88930a7950e6d932e724, type: 2}
   controls:
+  - name: Reset Effects
+    icon: {fileID: 2800000, guid: e8bc03210a02d1015bfd78e477b05a6b, type: 3}
+    type: 102
+    parameter:
+      name: opt.bladder.total.reset
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: opt.bladder.capacity
+    labels: []
   - name: Bladder Size
     icon: {fileID: 2800000, guid: 00c420b90e46bd991985baa759d3ee80, type: 3}
     type: 203
