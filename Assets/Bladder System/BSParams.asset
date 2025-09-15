@@ -19,7 +19,7 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: bladder.radial.open
+  - name: opt.bladder.radial.open
     valueType: 2
     saved: 0
     defaultValue: 0
