@@ -1,22 +1,16 @@
 /*
 
-!.gitignore
-!.github/
-!README.adoc
-!LICENSE
-!makefile
+!/.gitignore
+!/.github/
+!/readme.adoc
+!/license
+!/makefile
 
-!Assets/
-Assets/*
-!Assets/Bladder System/
-!Assets/BS.unity
-!Assets/BS (No VRCF).unity
+!/Assets
+!/docs
 
-!docs/
-
-!Packages/
-Packages/*
-!Packages/manifest.json
-!Packages/packages-lock.json
-!Packages/vpm-manifest.json
-
+!/Packages/
+/Packages/*
+!/Packages/manifest.json
+!/Packages/packages-lock.json
+!/Packages/vpm-manifest.json
