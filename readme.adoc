@@ -1,4 +1,4 @@
-= GottaGo
+= GottaGo Bathroom Needs System
 :icons: font
 :toc: left
 :sectlinks:
