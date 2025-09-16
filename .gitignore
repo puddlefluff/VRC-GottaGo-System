@@ -11,6 +11,8 @@
 
 !/Packages/
 /Packages/*
+/Packages/.gitignore
+Packages/com.vrchat.core.vpm-resolver/*
 !/Packages/manifest.json
 !/Packages/packages-lock.json
 !/Packages/vpm-manifest.json
