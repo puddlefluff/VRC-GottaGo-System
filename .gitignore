@@ -1,18 +1,22 @@
-/*
+*.csproj
+*.sln
+*.unitypackage
+*.wlt
 
-!/.gitignore
-!/.github/
-!/readme.adoc
-!/license
-!/makefile
+.idea
+.vscode
+.envrc
 
-!/Assets
-!/docs
+/package.json
 
-!/Packages/
+/Library
 /Packages/*
-/Packages/.gitignore
-Packages/com.vrchat.core.vpm-resolver/*
 !/Packages/manifest.json
 !/Packages/packages-lock.json
 !/Packages/vpm-manifest.json
+/Packages/com.vrchat.core.vpm-resolver
+/Packages/com.vrchat.core.vpm-resolver/*
+/ProjectSettings
+/obj
+/Logs
+/UserSettings
