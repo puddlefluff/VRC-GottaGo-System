@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4578380693622774827}
   - component: {fileID: 4134791472533371811}
   m_Layer: 0
-  m_Name: BladderSystem-NoContacts
+  m_Name: GottaGoBladder-NoContacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
