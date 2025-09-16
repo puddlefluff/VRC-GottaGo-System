@@ -1,4 +1,4 @@
-= VRC Bladder System
+= GottaGo
 :icons: font
 :toc: left
 :sectlinks:
@@ -12,8 +12,9 @@ ifdef::env-github[]
 endif::[]
 
 ifdef::env-github[]
-See link:https://foxcapades.github.io/vrc-bladder-system/readme.html[rendered readme]
+See link:https://puddlefluff.github.io/VRC-GottaGo-System/readme.html[rendered readme]
 endif::[]
+
 
 == To Be Decided
 

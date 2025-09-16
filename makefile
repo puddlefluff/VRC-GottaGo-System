@@ -6,7 +6,7 @@ default:
 
 .PHONY: docs
 docs:
-	@asciidoctor -o docs/readme.html README.adoc
+	@asciidoctor -o docs/readme.html readme.adoc
 
 .PHONY: package
 package:
