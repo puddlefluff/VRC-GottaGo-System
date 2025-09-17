@@ -14,7 +14,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: b48a4e36bf357fedd88f69ff4c26f3f5, type: 2}
@@ -22,9 +22,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
-  m_BlendParameter: sys.bowels.countdown
+  m_BlendParameter: gg.bowels.sys.countdown
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -40,13 +40,13 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.system.enabled
+    m_ConditionEvent: gg.bowels.opt.system.enabled
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release.reset
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: -6823830255726716040}
   m_DstState: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bowels.release.total
+    name: gg.bowels.release.total
     source: 
     value: 0
     valueMin: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sys.bowels.state
+    name: gg.bowels.sys.state
     source: 
     value: 1
     valueMin: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.emptying
+    name: gg.bowels.emptying
     source: 
     value: 0
     valueMin: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sys.bowels.state
+    name: gg.bowels.sys.state
     source: 
     value: 2
     valueMin: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.emptying
+    name: gg.bowels.emptying
     source: 
     value: 1
     valueMin: 0
@@ -320,7 +320,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1777901541175943786}
@@ -437,7 +437,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bowels.emptying
+    m_ConditionEvent: gg.bowels.emptying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -600,7 +600,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: sys.bowels.state
+    m_ConditionEvent: gg.bowels.sys.state
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3853367039761551215}
@@ -675,7 +675,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.const.1
+    m_ConditionEvent: gg.bowels.sys.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 9131360374221328242}
   m_DstState: {fileID: 0}
@@ -700,7 +700,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: sys.bowels.countdown
+    m_ConditionEvent: gg.bowels.sys.countdown
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -730,7 +730,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: opt.bowels.max.time
+    m_DirectBlendParameter: gg.bowels.opt.max.time
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: d9032cce890d86441ab2f79793b2b0d0, type: 2}
@@ -738,7 +738,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bowels.pressure.internal
+    m_DirectBlendParameter: gg.bowels.sys.pressure.internal
     m_Mirror: 0
   m_BlendParameter: 
   m_BlendParameterY: 
@@ -784,7 +784,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7849790171901668871}
@@ -837,7 +837,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release.reset
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -884,7 +884,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1777901541175943786}
@@ -923,7 +923,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -416331494839041405}
@@ -948,7 +948,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: sys.bowels.countdown
+    m_ConditionEvent: gg.bowels.sys.countdown
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4253921841659816934}
@@ -973,7 +973,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: sys.bowels.state
+    m_ConditionEvent: gg.bowels.sys.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7567267528692650657}
@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sys.bowels.state
+    name: gg.bowels.sys.state
     source: 
     value: 3
     valueMin: 0
@@ -1015,7 +1015,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.emptying
+    name: gg.bowels.emptying
     source: 
     value: 1
     valueMin: 0
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: bowels.release.total
+    name: gg.bowels.release.total
     source: 
     value: 0
     valueMin: 0
@@ -1054,7 +1054,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.pressure
+    name: gg.bowels.pressure
     source: 
     value: 0
     valueMin: 0
@@ -1066,7 +1066,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.emptying
+    name: gg.bowels.emptying
     source: 
     value: 0
     valueMin: 0
@@ -1078,7 +1078,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: opt.bowels.max.time
+    name: gg.bowels.opt.max.time
     source: 
     value: 0
     valueMin: 0
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: opt.bowels.release.reset
+    name: gg.bowels.opt.release.reset
     source: 
     value: 0
     valueMin: 0
@@ -1102,7 +1102,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bowels.countdown
+    name: gg.bowels.sys.countdown
     source: 
     value: 1
     valueMin: 0
@@ -1114,7 +1114,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bowels.pressure.internal
+    name: gg.bowels.sys.pressure.internal
     source: 
     value: 0
     valueMin: 0
@@ -1126,7 +1126,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bowels.state
+    name: gg.bowels.sys.state
     source: 
     value: 0
     valueMin: 0
@@ -1163,10 +1163,10 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 0}
   m_Tag: 
-  m_SpeedParameter: bowels.release.total
-  m_MirrorParameter: bowels.emptying
+  m_SpeedParameter: gg.bowels.release.total
+  m_MirrorParameter: gg.bowels.emptying
   m_CycleOffsetParameter: 
-  m_TimeParameter: bowels.release.total
+  m_TimeParameter: gg.bowels.release.total
 --- !u!114 &-2118319542664311884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1181,7 +1181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 1
-    name: sys.bowels.pressure.internal
+    name: gg.bowels.sys.pressure.internal
     source: 
     value: -0.05
     valueMin: 0
@@ -1193,7 +1193,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 1
-    name: bowels.release.total
+    name: gg.bowels.release.total
     source: 
     value: 0.05
     valueMin: 0
@@ -1215,7 +1215,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.release.reset
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -1268,7 +1268,7 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.system.enabled
+    m_ConditionEvent: gg.bowels.opt.system.enabled
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1301,9 +1301,9 @@ AnimatorState:
   m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: bowels.emptying
+  m_MirrorParameter: gg.bowels.emptying
   m_CycleOffsetParameter: 
-  m_TimeParameter: bowels.release.total
+  m_TimeParameter: gg.bowels.release.total
 --- !u!1107 &-1446090216352858980
 AnimatorStateMachine:
   serializedVersion: 6
@@ -1382,7 +1382,7 @@ AnimatorTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.system.enabled
+    m_ConditionEvent: gg.bowels.opt.system.enabled
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5198782775606832355}
@@ -1427,7 +1427,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -1452,7 +1452,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.const.1
+    m_ConditionEvent: gg.bowels.sys.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1505,7 +1505,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.const.1
+    m_ConditionEvent: gg.bowels.sys.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1530,10 +1530,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.release.reset
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: -1986311359344630639}
   m_DstState: {fileID: 0}
@@ -1558,7 +1558,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: sys.bowels.state
+    m_ConditionEvent: gg.bowels.sys.state
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5495153402165371787}
@@ -1583,49 +1583,49 @@ AnimatorController:
   m_Name: BowelsController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: bowels.release.total
+  - m_Name: gg.bowels.release.total
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: bowels.pressure
+  - m_Name: gg.bowels.pressure
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: bowels.emptying
+  - m_Name: gg.bowels.emptying
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: opt.bowels.max.time
+  - m_Name: gg.bowels.opt.max.time
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: opt.bowels.radial.open
+  - m_Name: gg.bowels.opt.radial.open
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: opt.bowels.release
+  - m_Name: gg.bowels.opt.release
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: opt.bowels.release.reset
+  - m_Name: gg.bowels.opt.release.reset
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: opt.bowels.system.enabled
+  - m_Name: gg.bowels.opt.system.enabled
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1637,25 +1637,25 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bowels.const.1
+  - m_Name: gg.bowels.sys.const.1
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bowels.countdown
+  - m_Name: gg.bowels.sys.countdown
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bowels.pressure.internal
+  - m_Name: gg.bowels.sys.pressure.internal
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: sys.bowels.state
+  - m_Name: gg.bowels.sys.state
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1776,7 +1776,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bowels.const.1
+    m_DirectBlendParameter: gg.bowels.sys.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: -9193250259041428774}
@@ -1784,7 +1784,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bowels.const.1
+    m_DirectBlendParameter: gg.bowels.sys.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 2026887751993328593}
@@ -1792,10 +1792,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.bowels.const.1
+    m_DirectBlendParameter: gg.bowels.sys.const.1
     m_Mirror: 0
-  m_BlendParameter: bowels.release.total
-  m_BlendParameterY: bowels.release.total
+  m_BlendParameter: gg.bowels.release.total
+  m_BlendParameterY: gg.bowels.release.total
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -1838,7 +1838,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6481705209628794249}
@@ -1916,7 +1916,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: opt.bowels.max.time
+    m_ConditionEvent: gg.bowels.opt.max.time
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -1946,7 +1946,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1954,7 +1954,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 964575d7b81958695b7120e0b911675c, type: 2}
@@ -1962,7 +1962,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1970,7 +1970,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 244ffc8fe316a0a4fac26abd6049520f, type: 2}
@@ -1978,7 +1978,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1986,7 +1986,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: b5bb8f3aafa510551beb6f09d0777e3f, type: 2}
@@ -1994,7 +1994,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -2002,7 +2002,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: f104fc74f45021d0585ba94276d0a933, type: 2}
@@ -2010,7 +2010,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -2018,7 +2018,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8b7de94dc9dc3e5d2b95e2450f7874f2, type: 2}
@@ -2026,7 +2026,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -2034,7 +2034,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -2042,9 +2042,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
-  m_BlendParameter: sys.bowels.countdown
+  m_BlendParameter: gg.bowels.sys.countdown
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -2060,7 +2060,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4588939574110030755}
@@ -2085,7 +2085,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: bowels.pressure
+    m_ConditionEvent: gg.bowels.pressure
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -2110,7 +2110,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: sys.bowels.state
+    m_ConditionEvent: gg.bowels.sys.state
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5324597825347076148}
@@ -2191,7 +2191,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bowels.emptying
+    m_ConditionEvent: gg.bowels.emptying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 5865028674914291928}
   m_DstState: {fileID: 0}
@@ -2260,7 +2260,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 56d1ffee6863e2d319b3821a0cda49ac, type: 2}
@@ -2268,9 +2268,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: bowels.release.total
+    m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
-  m_BlendParameter: bowels.pressure
+  m_BlendParameter: gg.bowels.pressure
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -2286,7 +2286,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: bowels.release.total
+    m_ConditionEvent: gg.bowels.release.total
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -780573036714095094}
@@ -2333,7 +2333,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: bowels.release.total
+    m_ConditionEvent: gg.bowels.release.total
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 1
-    name: sys.bowels.pressure.internal
+    name: gg.bowels.sys.pressure.internal
     source: 
     value: -0.05
     valueMin: 0
@@ -2402,7 +2402,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 1
-    name: bowels.release.total
+    name: gg.bowels.release.total
     source: 
     value: 0.05
     valueMin: 0
@@ -2485,7 +2485,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.system.enabled
+    m_ConditionEvent: gg.bowels.opt.system.enabled
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6746035083728625555}
@@ -2510,7 +2510,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 5865028674914291928}
   m_DstState: {fileID: 0}
@@ -2584,7 +2584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sys.bowels.countdown
+    name: gg.bowels.sys.countdown
     source: 
     value: 1
     valueMin: 0
@@ -2596,7 +2596,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bowels.state
+    name: gg.bowels.sys.state
     source: 
     value: 1
     valueMin: 0
@@ -2608,7 +2608,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: sys.bowels.pressure.internal
+    name: gg.bowels.sys.pressure.internal
     source: 
     value: 0
     valueMin: 0
@@ -2620,7 +2620,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: bowels.emptying
+    name: gg.bowels.emptying
     source: 
     value: 0
     valueMin: 0
@@ -2657,7 +2657,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 39e27ead3ba17f7298da665de1a49571, type: 2}
   m_Tag: 
-  m_SpeedParameter: bowels.release.total
+  m_SpeedParameter: gg.bowels.release.total
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -2697,7 +2697,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.state
+    m_ConditionEvent: gg.bowels.sys.state
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8137759437468989825}
@@ -2749,7 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 1
-    name: sys.bowels.pressure.internal
+    name: gg.bowels.sys.pressure.internal
     source: 
     value: 0.0017
     valueMin: 0
@@ -2796,7 +2796,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.const.1
+    m_ConditionEvent: gg.bowels.sys.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2843,7 +2843,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.system.enabled
+    m_ConditionEvent: gg.bowels.opt.system.enabled
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: -7752020220815886874}
   m_DstState: {fileID: 0}
@@ -2868,7 +2868,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: bowels.emptying
+    m_ConditionEvent: gg.bowels.emptying
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 9131360374221328242}
   m_DstState: {fileID: 0}
@@ -2927,7 +2927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: opt.bowels.release.reset
+    name: gg.bowels.opt.release.reset
     source: 
     value: 0
     valueMin: 0
@@ -2977,10 +2977,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: opt.bowels.release
+    m_ConditionEvent: gg.bowels.opt.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: sys.bowels.pressure.internal
+    m_ConditionEvent: gg.bowels.sys.pressure.internal
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1790758089057013436}
@@ -3030,7 +3030,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: opt.bowels.release.reset
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5924164640008222275}

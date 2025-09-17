@@ -14,37 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: bowels.emptying
+  - name: gg.bowels.emptying
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: bowels.pressure
+  - name: gg.bowels.pressure
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: bowels.release.total
+  - name: gg.bowels.release.total
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: opt.bowels.max.time
+  - name: gg.bowels.opt.max.time
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: opt.bowels.radial.open
+  - name: gg.bowels.opt.radial.open
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: opt.bowels.release
+  - name: gg.bowels.opt.release
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: opt.bowels.system.enabled
+  - name: gg.bowels.opt.system.enabled
     valueType: 2
     saved: 0
     defaultValue: 0

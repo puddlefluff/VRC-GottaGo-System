@@ -14,48 +14,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: bladder.emptying
+  - name: gg.bladder.emptying
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: bladder.fill.percent
+  - name: gg.bladder.fill.percent
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: bladder.release.total
+  - name: gg.bladder.release.total
     valueType: 1
     saved: 0
     defaultValue: 0
     networkSynced: 1
-  - name: extra.holding.self
+  - name: gg.bladder.contact.holding.self
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: extra.bladder.press
+  - name: gg.bladder.contact.press
     valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: opt.bladder.capacity
+  - name: gg.bladder.opt.enabled
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: gg.bladder.opt.radial.open
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: gg.bladder.opt.release
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: gg.bladder.opt.release.total.reset
+    valueType: 2
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0
+  - name: gg.bladder.opt.time.max
     valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: opt.bladder.radial.open
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: opt.bladder.release
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 0
-  - name: opt.bladder.total.reset
-    valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 0

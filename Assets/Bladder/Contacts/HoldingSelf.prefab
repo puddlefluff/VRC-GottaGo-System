@@ -56,5 +56,5 @@ MonoBehaviour:
   allowSelf: 1
   allowOthers: 0
   receiverType: 0
-  parameter: extra.holding.self
+  parameter: gg.bladder.contact.holding.self
   minVelocity: 0.05

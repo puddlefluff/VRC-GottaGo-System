@@ -42,7 +42,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: sys.bladder.fill.volume.internal
+    attribute: gg.bladder.sys.fill.percent.internal
     path: 
     classID: 95
     script: {fileID: 0}
@@ -72,7 +72,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: bladder.fill.percent
+    attribute: gg.bladder.pressure
     path: 
     classID: 95
     script: {fileID: 0}
@@ -150,7 +150,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: sys.bladder.fill.volume.internal
+    attribute: gg.bladder.sys.fill.percent.internal
     path: 
     classID: 95
     script: {fileID: 0}
@@ -180,7 +180,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: bladder.fill.percent
+    attribute: gg.bladder.pressure
     path: 
     classID: 95
     script: {fileID: 0}
