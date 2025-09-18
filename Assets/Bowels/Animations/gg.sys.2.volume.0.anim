@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys.gg.bowels.volume.0
+  m_Name: gg.sys.2.volume.0
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -57,7 +57,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 1975327192
+      attribute: 741312337
       script: {fileID: 0}
       typeID: 95
       customType: 0

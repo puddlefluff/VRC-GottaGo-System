@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bladder.percent.add.1
+  m_Name: gg.sys.2.volume.1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -42,7 +42,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: gg.bladder.sys.countdown
+    attribute: gg.bowels.volume
     path: 
     classID: 95
     script: {fileID: 0}
@@ -57,7 +57,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 3042436481
+      attribute: 1975327192
       script: {fileID: 0}
       typeID: 95
       customType: 0
@@ -111,7 +111,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: gg.bladder.sys.countdown
+    attribute: gg.bowels.volume
     path: 
     classID: 95
     script: {fileID: 0}

@@ -15,5 +15,3 @@ the included expression menus.
 TODO
 
 == Bowels System
-
-TODO
