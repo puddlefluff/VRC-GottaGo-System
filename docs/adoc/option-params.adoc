@@ -1,0 +1,19 @@
+= GottaGo System Configuration Parameters
+:icons: font
+
+The following parameters are present in the avatar expression parameters files,
+however they are not intended to be synchronzed.  These parameters are options
+modify the behavior of the system.
+
+The expression menus included with the system have entries to set all of these
+options, but they may be modified by other means instead of, or in addition to
+the included expression menus.
+
+
+== Bladder System
+
+TODO
+
+== Bowels System
+
+TODO

@@ -675,7 +675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.bowels.pressure
+    name: gg.bowels.volume
     source: 
     value: 0
     valueMin: 0
@@ -1318,7 +1318,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: gg.bowels.pressure
+  - m_Name: gg.bowels.volume
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -2113,7 +2113,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: gg.bowels.release.total
     m_Mirror: 0
-  m_BlendParameter: gg.bowels.pressure
+  m_BlendParameter: gg.bowels.volume
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
