@@ -14,18 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isEmpty: 0
   parameters:
-  - name: gg.bladder.emptying
-    valueType: 2
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
-  - name: gg.bladder.fill.percent
-    valueType: 1
-    saved: 0
-    defaultValue: 0
-    networkSynced: 1
   - name: gg.bladder.release.total
     valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: gg.bladder.release.relative
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: gg.bladder.volume
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: gg.bladder.pressure
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 1
+  - name: gg.bladder.emptying
+    valueType: 2
     saved: 0
     defaultValue: 0
     networkSynced: 1
