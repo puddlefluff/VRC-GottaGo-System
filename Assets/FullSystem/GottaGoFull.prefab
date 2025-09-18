@@ -91,8 +91,8 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: f049b337589d88930a7950e6d932e724|Assets/Bladder/Menu/BladderParams.asset
-            objRef: {fileID: 11400000, guid: f049b337589d88930a7950e6d932e724, type: 2}
+            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/Bladder/Menu/BladderParams.asset
+            objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
         - parameters:
             version: 1
             fileID: 0

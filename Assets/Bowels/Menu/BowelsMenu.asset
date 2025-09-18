@@ -15,7 +15,7 @@ MonoBehaviour:
   Parameters: {fileID: 11400000, guid: 91382d22c7c6e32558465214963cded1, type: 2}
   controls:
   - name: Enable System
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: 756d75d5c045666cf89cd176887a9eaa, type: 3}
     type: 102
     parameter:
       name: gg.bowels.opt.system.enabled
@@ -25,7 +25,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: Hold Time
-    icon: {fileID: 0}
+    icon: {fileID: 2800000, guid: f834fda6762cd7d7bbbfcb4729a71499, type: 3}
     type: 203
     parameter:
       name: gg.bowels.opt.radial.open
@@ -35,22 +35,22 @@ MonoBehaviour:
     subParameters:
     - name: gg.bowels.opt.max.time
     labels: []
-  - name: Partial Release
-    icon: {fileID: 0}
-    type: 101
+  - name: Reset Effects
+    icon: {fileID: 2800000, guid: 2ff0ea2119b62cd2d96a1482e960378d, type: 3}
+    type: 102
     parameter:
-      name: gg.bowels.opt.release
+      name: gg.bowels.opt.release.reset
     value: 1
     style: 0
     subMenu: {fileID: 0}
     subParameters:
     - name: gg.bowels.opt.max.time
     labels: []
-  - name: Reset Effects
-    icon: {fileID: 0}
-    type: 102
+  - name: Partial Release
+    icon: {fileID: 2800000, guid: df350cab7d9306488801231a685b531e, type: 3}
+    type: 101
     parameter:
-      name: opt.bowels.total.reset
+      name: gg.bowels.opt.release
     value: 1
     style: 0
     subMenu: {fileID: 0}

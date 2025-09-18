@@ -735,18 +735,6 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bowels.opt.max.time
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
     name: gg.bowels.sys.state
     source: 
     value: 0
@@ -845,8 +833,8 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: gg.bowels.release.total
+  - m_ConditionMode: 1
+    m_ConditionEvent: gg.bowels.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8102460585917749642}
@@ -1145,18 +1133,18 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5915901568693708483}
-    m_Position: {x: 300, y: 90, z: 0}
+    m_Position: {x: 1380, y: 1270, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 505327377109525988}
-    m_Position: {x: 300, y: 150, z: 0}
+    m_Position: {x: 1380, y: 1330, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 320, y: 10, z: 0}
-  m_EntryPosition: {x: 320, y: 40, z: 0}
-  m_ExitPosition: {x: 320, y: -20, z: 0}
+  m_AnyStatePosition: {x: 1400, y: 1190, z: 0}
+  m_EntryPosition: {x: 1400, y: 1220, z: 0}
+  m_ExitPosition: {x: 1400, y: 1160, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -5915901568693708483}
 --- !u!1101 &-1297529172377213097
@@ -1221,7 +1209,7 @@ AnimatorStateTransition:
     m_ConditionEvent: gg.bowels.opt.radial.open
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.bowels.release.total
+    m_ConditionEvent: gg.bowels.opt.max.time
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 3718796278826256280}
   m_DstState: {fileID: 0}
@@ -2310,29 +2298,29 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -5640035202700638316}
-    m_Position: {x: 650, y: 0, z: 0}
+    m_Position: {x: 1410, y: 1220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2491956908456448500}
-    m_Position: {x: 650, y: 60, z: 0}
+    m_Position: {x: 1410, y: 1280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5928157976199615794}
-    m_Position: {x: 870, y: 120, z: 0}
+    m_Position: {x: 1630, y: 1340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3396641737144468684}
-    m_Position: {x: 650, y: 180, z: 0}
+    m_Position: {x: 1410, y: 1400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8172017933456271736}
-    m_Position: {x: 430, y: 60, z: 0}
+    m_Position: {x: 1190, y: 1280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6738803838859945193}
-    m_Position: {x: 870, y: 60, z: 0}
+    m_Position: {x: 1630, y: 1280, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 3718796278826256280}
-    m_Position: {x: 430, y: 120, z: 0}
+    m_Position: {x: 1190, y: 1340, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 3140857031918405860}
-    m_Position: {x: 430, y: 180, z: 0}
+    m_Position: {x: 1190, y: 1400, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
@@ -2343,9 +2331,9 @@ AnimatorStateMachine:
     second:
     - {fileID: 5004378061946400680}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 670, y: -80, z: 0}
-  m_EntryPosition: {x: 670, y: -50, z: 0}
-  m_ExitPosition: {x: 670, y: 130, z: 0}
+  m_AnyStatePosition: {x: 1430, y: 1140, z: 0}
+  m_EntryPosition: {x: 1430, y: 1170, z: 0}
+  m_ExitPosition: {x: 1430, y: 1350, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -5640035202700638316}
 --- !u!1101 &4428331821100946473

@@ -49,7 +49,7 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
-  - name: opt.bowels.total.reset
+  - name: gg.bowels.opt.release.reset
     valueType: 2
     saved: 0
     defaultValue: 0
