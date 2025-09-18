@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[55]
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6a88b06903d19d2c6bc3474b7f13842e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -649,6 +654,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 837586806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &939352034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939352036}
+  - component: {fileID: 939352035}
+  m_Layer: 0
+  m_Name: Dummy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &939352035
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939352034}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &939352036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939352034}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.9374664, y: -0, z: -0, w: -0.34807593}
+  m_LocalPosition: {x: 0, y: 2.104, z: 1.302}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &940023112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1100,5 +1158,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1524933488}
   - {fileID: 1356764821}
+  - {fileID: 939352036}
   - {fileID: 837586806}
   - {fileID: 940023112}
