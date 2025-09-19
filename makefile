@@ -21,5 +21,8 @@ package:
 		| grep -v '\[Performance\]\|\[Subsystems\]\|\[MODES\]\|\[Licensing' \
 		| grep -v '^\s\|Thread:\|##utp\|Native\|Register'
 
+.PHONY: release
+release: docs package
+
 docs/%.html: docs/adoc/%.adoc
 	@asciidoctor -o $@ -a revnumber=$(GIT_TAG) $<
