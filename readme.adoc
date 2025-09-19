@@ -32,6 +32,7 @@ Attach prefab to avatar game object
 
 == Documentation
 
-[none]
+[square]
 * link:{doc-url}/sync-params.html[Synchronizable Animation Parameters]
 * link:{doc-url}/option-params.html[System Configuration Parameters]
+* link:{doc-url}/features.html[System Features & Functionality]
