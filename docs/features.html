@@ -438,6 +438,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <body class="article toc2 toc-left">
 <div id="header">
 <h1>GottaGo System Engine</h1>
+<div class="details">
+<span id="revnumber">version 0.0.2</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
@@ -466,15 +469,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_system_fundamentals">System Fundamentals</h2>
+<h2 id="_system_fundamentals"><a class="anchor" href="#_system_fundamentals"></a><a class="link" href="#_system_fundamentals">System Fundamentals</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The GottaGo system is built around a base system cycle time range of 30 seconds to 600 seconds (10 minutes).</p>
 </div>
 <div class="sect2">
-<h3 id="_system_modes">System Modes</h3>
+<h3 id="_system_modes"><a class="anchor" href="#_system_modes"></a><a class="link" href="#_system_modes">System Modes</a></h3>
 <div class="sect3">
-<h4 id="_filling">Filling</h4>
+<h4 id="_filling"><a class="anchor" href="#_filling"></a><a class="link" href="#_filling">Filling</a></h4>
 <div class="paragraph">
 <p>When in 'filling' mode, the system will gradually increase a pressure percentage value until the configured time/volume
 is reached, at which point the system will automatically switch to <a href="#_involuntary_release">Involuntary Release</a> mode.</p>
@@ -484,19 +487,19 @@ is reached, at which point the system will automatically switch to <a href="#_in
 </div>
 </div>
 <div class="sect3">
-<h4 id="_releasing">Releasing</h4>
+<h4 id="_releasing"><a class="anchor" href="#_releasing"></a><a class="link" href="#_releasing">Releasing</a></h4>
 <div class="paragraph">
 <p>When in 'releasing' mode, the system will stop increasing pressure, and instead decrease pressure at a rate that is
 significantly faster than the fill rate.</p>
 </div>
 <div class="sect4">
-<h5 id="_voluntary_release">Voluntary Release</h5>
+<h5 id="_voluntary_release"><a class="anchor" href="#_voluntary_release"></a><a class="link" href="#_voluntary_release">Voluntary Release</a></h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_involuntary_release">Involuntary Release</h5>
+<h5 id="_involuntary_release"><a class="anchor" href="#_involuntary_release"></a><a class="link" href="#_involuntary_release">Involuntary Release</a></h5>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -504,13 +507,13 @@ significantly faster than the fill rate.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_timing_control">Timing Control</h3>
+<h3 id="_timing_control"><a class="anchor" href="#_timing_control"></a><a class="link" href="#_timing_control">Timing Control</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_status_parameters">Status Parameters</h3>
+<h3 id="_status_parameters"><a class="anchor" href="#_status_parameters"></a><a class="link" href="#_status_parameters">Status Parameters</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -518,13 +521,13 @@ significantly faster than the fill rate.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bladder_system">Bladder System</h2>
+<h2 id="_bladder_system"><a class="anchor" href="#_bladder_system"></a><a class="link" href="#_bladder_system">Bladder System</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The bladder system is based on a maximum possible bladder capacity of 600ml, and a base fill rate of 1ml per second.</p>
 </div>
 <div class="sect2">
-<h3 id="_contacts">Contacts</h3>
+<h3 id="_contacts"><a class="anchor" href="#_contacts"></a><a class="link" href="#_contacts">Contacts</a></h3>
 <div class="paragraph">
 <p>The bladder system comes with 2 optional contacts, one for 'pressing on the bladder', and one for 'physically holding
 oneself'.  The bladder pressing contact may increase the system&#8217;s cycle speed, while the holding contact may reduce it.</p>
@@ -533,7 +536,7 @@ oneself'.  The bladder pressing contact may increase the system&#8217;s cycle sp
 <p>If both contacts are active, or neither contact is active, the system&#8217;s cycle speed will remain at ~1 cycle per second.</p>
 </div>
 <div class="sect3">
-<h4 id="_bladder_press_contact">Bladder Press Contact</h4>
+<h4 id="_bladder_press_contact"><a class="anchor" href="#_bladder_press_contact"></a><a class="link" href="#_bladder_press_contact">Bladder Press Contact</a></h4>
 <div class="paragraph">
 <p>The bladder pressing contact has no affect until the bladder pressure reaches at least 50%, at which point it increases
 the cycle speed by 50%, to a cycle rate of ~1.5 cycles per second.</p>
@@ -547,7 +550,7 @@ the cycle speed by 50%, to a cycle rate of ~1.5 cycles per second.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_physical_hold_contact">Physical Hold Contact</h4>
+<h4 id="_physical_hold_contact"><a class="anchor" href="#_physical_hold_contact"></a><a class="link" href="#_physical_hold_contact">Physical Hold Contact</a></h4>
 <div class="paragraph">
 <p>The physical holding contact has no affect until the bladder pressure reaches at least 75%, at which point it decreases
 the cycle speed by 50%, to a cycle speed of ~0.5 cycles per second.</p>
@@ -562,7 +565,7 @@ the cycle speed by 50%, to a cycle speed of ~0.5 cycles per second.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="blader-fill-mode">Fill Mode</h3>
+<h3 id="blader-fill-mode"><a class="anchor" href="#blader-fill-mode"></a><a class="link" href="#blader-fill-mode">Fill Mode</a></h3>
 <div class="paragraph">
 <p>When the system is filling, the <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a> parameter will be set
 to <code>false</code>, and the following parameters will be repeatedly updated every system cycle:</p>
@@ -582,7 +585,7 @@ to <code>false</code>, and the following parameters will be repeatedly updated e
 </div>
 </div>
 <div class="sect2">
-<h3 id="bladder-release-mode">Release Mode</h3>
+<h3 id="bladder-release-mode"><a class="anchor" href="#bladder-release-mode"></a><a class="link" href="#bladder-release-mode">Release Mode</a></h3>
 <div class="paragraph">
 <p>When the system is releasing, the <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a> parameter will be set
 to <code>true</code>, and the following parameters will be continuously updated:</p>
@@ -608,7 +611,7 @@ to <code>true</code>, and the following parameters will be continuously updated:
 </div>
 </div>
 <div class="sect2">
-<h3 id="_contacts_2">Contacts</h3>
+<h3 id="_contacts_2"><a class="anchor" href="#_contacts_2"></a><a class="link" href="#_contacts_2">Contacts</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -616,24 +619,24 @@ to <code>true</code>, and the following parameters will be continuously updated:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_bowels_system">Bowels System</h2>
+<h2 id="_bowels_system"><a class="anchor" href="#_bowels_system"></a><a class="link" href="#_bowels_system">Bowels System</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>TODO</p>
 </div>
 <div class="sect2">
-<h3 id="bowel-system-modes">System Modes</h3>
+<h3 id="bowel-system-modes"><a class="anchor" href="#bowel-system-modes"></a><a class="link" href="#bowel-system-modes">System Modes</a></h3>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 <div class="sect3">
-<h4 id="_fill_mode">Fill Mode</h4>
+<h4 id="_fill_mode"><a class="anchor" href="#_fill_mode"></a><a class="link" href="#_fill_mode">Fill Mode</a></h4>
 <div class="paragraph">
 <p>TODO</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_release_mode">Release Mode</h4>
+<h4 id="_release_mode"><a class="anchor" href="#_release_mode"></a><a class="link" href="#_release_mode">Release Mode</a></h4>
 <div class="paragraph">
 <p>TODO</p>
 </div>
@@ -644,7 +647,8 @@ to <code>true</code>, and the following parameters will be continuously updated:
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-09-19 11:47:53 -0400
+Version 0.0.2<br>
+Last updated 2025-09-19 14:45:34 -0400
 </div>
 </div>
 </body>

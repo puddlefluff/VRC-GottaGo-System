@@ -3,6 +3,8 @@
 :toc: left
 :doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
 :sync-url: /sync-params.html
+:sectlinks:
+:sectanchors:
 
 The following parameters are present in the avatar expression parameters files, however they are not intended to be
 synchronzed.  These parameters are options modify the behavior of the system.

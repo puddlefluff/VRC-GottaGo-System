@@ -1,12 +1,16 @@
 = GottaGo System Engine
 :toc: left
 :icons: font
+:url-repo: https://github.com/puddlefluff/VRC-GottaGo-System
 :doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
 :sync-url: /sync-params.html
+:sectlinks:
+:sectanchors:
 :decrease: pass:a,q[[.red]#⮇#]
 :increase: pass:a,q[[.green]#⮅#]
 :enabled: pass:a,q[[.green]#✔#]
 :disabled: pass:a,q[[.red]#✘#]
+
 
 
 == System Fundamentals

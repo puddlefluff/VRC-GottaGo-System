@@ -24,4 +24,4 @@ package:
 		| grep -v '^\s'
 
 docs/%.html: docs/adoc/%.adoc
-	@asciidoctor -o $@ $<
+	@asciidoctor -o $@ -a revnumber=$(GIT_TAG) $<

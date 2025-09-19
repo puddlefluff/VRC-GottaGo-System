@@ -1,6 +1,8 @@
 = GottaGo Synchronizable Parameters
 :icons: font
 :toc: left
+:sectlinks:
+:sectanchors:
 
 The following parameters are exposed by the GottaGo system for use in avatar-specific animations or extensions. 
 

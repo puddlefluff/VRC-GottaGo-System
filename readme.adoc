@@ -1,9 +1,6 @@
 = GottaGo Bathroom Needs System
 :doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
 :icons: font
-:toc: left
-:sectlinks:
-:sectanchors:
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
