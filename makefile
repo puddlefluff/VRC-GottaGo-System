@@ -19,10 +19,9 @@ package:
 		Assets/Bladder \
 		Assets/Bowels \
 		Assets/FullSystem \
-		Assets/Prefabs \
 		GottaGo.$(GIT_TAG).unitypackage \
 		| grep -v '\[Performance\]\|\[Subsystems\]\|\[MODES\]\|\[Licensing' \
 		| grep -v '^\s'
 
-$(HTML_FILES): $(ADOC_FILES)
+docs/%.html: docs/adoc/%.adoc
 	@asciidoctor -o $@ $<
