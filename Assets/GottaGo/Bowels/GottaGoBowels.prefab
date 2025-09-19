@@ -84,7 +84,12 @@ MonoBehaviour:
             id: 91382d22c7c6e32558465214963cded1|Assets/GottaGo/Bowels/BowelsParams.asset
             objRef: {fileID: 11400000, guid: 91382d22c7c6e32558465214963cded1, type: 2}
         smoothedPrms: []
-        globalParams: []
+        globalParams:
+        - gg.bowels.release.total
+        - gg.bowels.release.relative
+        - gg.bowels.volume
+        - gg.bowels.pressure
+        - gg.bowels.emptying
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 

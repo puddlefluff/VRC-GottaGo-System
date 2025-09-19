@@ -17,7 +17,7 @@ package:
 		-projectPath ${PWD} \
 		-batchmode -nographics -quit -exportPackage \
 		Assets/GottaGo \
-		GottaGo.$(GIT_TAG).unitypackage \
+		GottaGo-$(GIT_TAG).unitypackage \
 		| grep -v '\[Performance\]\|\[Subsystems\]\|\[MODES\]\|\[Licensing' \
 		| grep -v '^\s\|Thread:\|##utp\|Native\|Register'
 
