@@ -12,15 +12,14 @@ These parameters are *READ ONLY*, the system does not read from these parameters
 from outside GottaGo.
 
 [NOTE]
-The avatar expression parameters that are not included in this list are not intended to be synchronized or used outside
-of the GottaGo system, however they _may_ be modified by other means to change the system's behavior without use of the
-included expression menu options.
+While expression parameters not included in this list are not intended to be used outside the GottaGo system, they may
+be modified by other means to change the system's behavior without use of the included expression menu options.
 
 
 == Bladder System
 
 [#gg-bladder-volume]
-=== `gg.bladder.volume`
+=== `gg.bladder.volume
 
 Type: `float`
 
@@ -69,7 +68,11 @@ The current bowels fill volume as a percentage of the maximum possible amount (h
 
 Type: `float`
 
-The current bowel pressure as a percentage of chosen maximum.
+The current bowel pressure as a number that increases from `0.0` to `1.0` over the course of the chosen maximum hold
+time.
+
+[CAUTION]
+The rate of pressure increase is not linear, as in it does not directly represent the current hold time.  The value
 
 [#gg-bowels-release-total]
 === `gg.bowels.release.total`
