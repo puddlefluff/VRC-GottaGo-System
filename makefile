@@ -16,12 +16,10 @@ package:
 		&& Unity \
 		-projectPath ${PWD} \
 		-batchmode -nographics -quit -exportPackage \
-		Assets/Bladder \
-		Assets/Bowels \
-		Assets/FullSystem \
+		Assets/GottaGo \
 		GottaGo.$(GIT_TAG).unitypackage \
 		| grep -v '\[Performance\]\|\[Subsystems\]\|\[MODES\]\|\[Licensing' \
-		| grep -v '^\s'
+		| grep -v '^\s\|Thread:\|##utp\|Native\|Register'
 
 docs/%.html: docs/adoc/%.adoc
 	@asciidoctor -o $@ -a revnumber=$(GIT_TAG) $<

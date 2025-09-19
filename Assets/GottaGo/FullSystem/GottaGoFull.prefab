@@ -67,14 +67,14 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/Bladder/BladderController.controller
+            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/GottaGo/Bladder/BladderController.controller
             objRef: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
           type: 5
         - controller:
             version: 1
             fileID: 0
             guid: 
-            id: 074ccb9479881301587eae72cdac5d21|Assets/Bowels/BowelsController.controller
+            id: 074ccb9479881301587eae72cdac5d21|Assets/GottaGo/Bowels/BowelsController.controller
             objRef: {fileID: 9100000, guid: 074ccb9479881301587eae72cdac5d21, type: 2}
           type: 5
         menus:
@@ -82,7 +82,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 1c7c3030bb4279717b42435921fb3740|Assets/FullSystem/Menu/GottaGoMenu.asset
+            id: 1c7c3030bb4279717b42435921fb3740|Assets/GottaGo/FullSystem/GottaGoMenu.asset
             objRef: {fileID: 11400000, guid: 1c7c3030bb4279717b42435921fb3740, type: 2}
           prefix: GottaGo
         prms:
@@ -90,13 +90,13 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/Bladder/Menu/BladderParams.asset
+            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/BladderParams.asset
             objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
         - parameters:
             version: 1
             fileID: 0
             guid: 
-            id: 91382d22c7c6e32558465214963cded1|Assets/Bowels/Menu/BowelsParams.asset
+            id: 91382d22c7c6e32558465214963cded1|Assets/GottaGo/Bowels/BowelsParams.asset
             objRef: {fileID: 11400000, guid: 91382d22c7c6e32558465214963cded1, type: 2}
         smoothedPrms: []
         globalParams: []
@@ -163,7 +163,7 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 120682b4f3c3500438c566c5f2405edf|Assets/FullSystem/Menu/Icons/droplets.png
+          id: 120682b4f3c3500438c566c5f2405edf|Assets/GottaGo/FullSystem/Icons/droplets.png
           objRef: {fileID: 2800000, guid: 120682b4f3c3500438c566c5f2405edf, type: 3}
 --- !u!1001 &478182998573702822
 PrefabInstance:

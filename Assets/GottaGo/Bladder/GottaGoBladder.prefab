@@ -89,7 +89,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/Bladder/BladderController.controller
+            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/GottaGo/Bladder/BladderController.controller
             objRef: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
           type: 5
         menus:
@@ -97,16 +97,16 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: c34dbbcaa2d19c25a8ff3c771480f3a4|Assets/Bladder/Menu/BSMenu.asset
-            objRef: {fileID: 11400000, guid: c34dbbcaa2d19c25a8ff3c771480f3a4, type: 2}
+            id: 36e482997306b7cc1999424e37997073|Assets/GottaGo/Bladder/BladderMenu.asset
+            objRef: {fileID: 11400000, guid: 36e482997306b7cc1999424e37997073, type: 2}
           prefix: Gotta Go/Bladder
         prms:
         - parameters:
             version: 1
             fileID: 0
             guid: 
-            id: f049b337589d88930a7950e6d932e724|Assets/Bladder/Menu/BSParams.asset
-            objRef: {fileID: 11400000, guid: f049b337589d88930a7950e6d932e724, type: 2}
+            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/BladderParams.asset
+            objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
         smoothedPrms: []
         globalParams: []
         allNonsyncedAreGlobal: 0
@@ -172,8 +172,8 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 2471848b6f7a7138fb1f7ccd3b22f2f5|Assets/Bladder/Menu/Icons/bloon.png
-          objRef: {fileID: 2800000, guid: 2471848b6f7a7138fb1f7ccd3b22f2f5, type: 3}
+          id: 52fc5f97e578112bcbaefbee5e041112|Assets/GottaGo/Bladder/Icons/Bladder.png
+          objRef: {fileID: 2800000, guid: 52fc5f97e578112bcbaefbee5e041112, type: 3}
 --- !u!1001 &359211009321927447
 PrefabInstance:
   m_ObjectHideFlags: 0
