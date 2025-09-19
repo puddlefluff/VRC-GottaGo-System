@@ -435,20 +435,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
 <h1>GottaGo Synchronizable Parameters</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_bladder_system">Bladder System</a>
+<ul class="sectlevel2">
+<li><a href="#gg-bladder-volume"><code>gg.bladder.volume</code></a></li>
+<li><a href="#gg-bladder-pressure"><code>gg.bladder.pressure</code></a></li>
+<li><a href="#gg-bladder-release-total"><code>gg.bladder.release.total</code></a></li>
+<li><a href="#gg-bladder-release-relative"><code>gg.bladder.release.relative</code></a></li>
+<li><a href="#gg-bladder-emptying"><code>gg.bladder.emptying</code></a></li>
+</ul>
+</li>
+<li><a href="#_bowels_system">Bowels System</a>
+<ul class="sectlevel2">
+<li><a href="#gg-bowels-volume"><code>gg.bowels.volume</code></a></li>
+<li><a href="#gg-bowels-pressure"><code>gg.bowels.pressure</code></a></li>
+<li><a href="#gg-bowels-release-total"><code>gg.bowels.release.total</code></a></li>
+<li><a href="#gg-bowels-release-relative"><code>gg.bowels.release.relative</code></a></li>
+<li><a href="#gg-bowels-emptying"><code>gg.bowels.emptying</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following parameters are exposed by the GottaGo system for use in
-avatar-specific animations or extensions.</p>
+<p>The following parameters are exposed by the GottaGo system for use in avatar-specific animations or extensions.</p>
 </div>
 <div class="paragraph">
-<p>Any of the parameters listed that are not being used may safely be marked as
-non-synchronized.</p>
+<p>Any parameters not being used to drive for your project&#8217;s features may safely be marked as non-synchronized.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -457,8 +478,8 @@ non-synchronized.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-These parameters are <strong>READ ONLY</strong>, the system does not read from these
-parameters, and will overwrite values that are set from outside GottaGo.
+These parameters are <strong>READ ONLY</strong>, the system does not read from these parameters, and will overwrite values that are set
+from outside GottaGo.
 </td>
 </tr>
 </table>
@@ -470,10 +491,9 @@ parameters, and will overwrite values that are set from outside GottaGo.
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-The avatar expression parameters that are not included in this list are not
-intended to be synchronized or used outside of the GottaGo system, however they
-<em>may</em> be modified by other means to change the system&#8217;s behavior without use of
-the included expression menu options.
+The avatar expression parameters that are not included in this list are not intended to be synchronized or used outside
+of the GottaGo system, however they <em>may</em> be modified by other means to change the system&#8217;s behavior without use of the
+included expression menu options.
 </td>
 </tr>
 </table>
@@ -483,26 +503,17 @@ the included expression menu options.
 <div class="sect1">
 <h2 id="_bladder_system">Bladder System</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">gg.bladder.volume</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bladder-volume"><code>gg.bladder.volume</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
 <div class="paragraph">
-<p>The current bladder fill volume as a percentage of 600ml (hold volume radial set
-to 100%).</p>
+<p>The current bladder fill volume as a percentage of 600ml (hold volume radial at 100%).</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bladder.pressure</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bladder-pressure"><code>gg.bladder.pressure</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
@@ -510,26 +521,17 @@ to 100%).</p>
 <p>The current bladder pressure as a percentage of chosen maximum volume.</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bladder.release.total</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bladder-release-total"><code>gg.bladder.release.total</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
 <div class="paragraph">
-<p>The total volume released as a percentage of 600ml (hold volume radial set to
-100%).</p>
+<p>The total volume released as a percentage of 600ml (hold volume radial at 100%).</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bladder.release.relative</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bladder-release-relative"><code>gg.bladder.release.relative</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
@@ -537,12 +539,8 @@ to 100%).</p>
 <p>The total volume released as a percentage of the chosen maximum volume.</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bladder.emptying</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bladder-emptying"><code>gg.bladder.emptying</code></h3>
 <div class="paragraph">
 <p>Type: <code>bool</code></p>
 </div>
@@ -551,34 +549,21 @@ to 100%).</p>
 </div>
 </div>
 </div>
-</dd>
-</dl>
-</div>
-</div>
 </div>
 <div class="sect1">
 <h2 id="_bowels_system">Bowels System</h2>
 <div class="sectionbody">
-<div class="dlist">
-<dl>
-<dt class="hdlist1">gg.bowels.volume</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bowels-volume"><code>gg.bowels.volume</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
 <div class="paragraph">
-<p>The current bowels fill volume as a percentage of the maximum possible
-configurable amount (hold volume radial set to 100%).</p>
+<p>The current bowels fill volume as a percentage of the maximum possible amount (hold volume radial at 100%).</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bowels.pressure</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bowels-pressure"><code>gg.bowels.pressure</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
@@ -586,26 +571,17 @@ configurable amount (hold volume radial set to 100%).</p>
 <p>The current bowel pressure as a percentage of chosen maximum.</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bowels.release.total</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bowels-release-total"><code>gg.bowels.release.total</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
 <div class="paragraph">
-<p>The total volume released as a percentage of the maximum possible configurable
-amount (hold volume radial set to 100%).</p>
+<p>The total volume released as a percentage of the maximum possible amount (hold volume radial at 100%).</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bowels.release.relative</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bowels-release-relative"><code>gg.bowels.release.relative</code></h3>
 <div class="paragraph">
 <p>Type: <code>float</code></p>
 </div>
@@ -613,12 +589,8 @@ amount (hold volume radial set to 100%).</p>
 <p>The total volume released as a percentage of the chosen maximum volume.</p>
 </div>
 </div>
-</div>
-</dd>
-<dt class="hdlist1">gg.bowels.emptying</dt>
-<dd>
-<div class="openblock">
-<div class="content">
+<div class="sect2">
+<h3 id="gg-bowels-emptying"><code>gg.bowels.emptying</code></h3>
 <div class="paragraph">
 <p>Type: <code>bool</code></p>
 </div>
@@ -627,15 +599,11 @@ amount (hold volume radial set to 100%).</p>
 </div>
 </div>
 </div>
-</dd>
-</dl>
-</div>
-</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-09-18 19:48:57 -0400
+Last updated 2025-09-19 11:34:34 -0400
 </div>
 </div>
 </body>

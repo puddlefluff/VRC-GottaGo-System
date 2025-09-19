@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>GottaGo System Configuration Parameters</title>
+<title>GottaGo System Engine</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,164 +437,180 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>GottaGo System Configuration Parameters</h1>
+<h1>GottaGo System Engine</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_bladder_system">Bladder System</a>
+<li><a href="#_system_fundamentals">System Fundamentals</a>
 <ul class="sectlevel2">
-<li><a href="#_enable_system">Enable System</a></li>
-<li><a href="#_manual_release">Manual Release</a></li>
-<li><a href="#_reset_release_totals">Reset Release Totals</a></li>
-<li><a href="#_max_hold_time">Max Hold Time</a></li>
-<li><a href="#_hold_time_radial_open">Hold Time Radial Open</a></li>
+<li><a href="#_system_modes">System Modes</a></li>
+<li><a href="#_timing_control">Timing Control</a></li>
+<li><a href="#_status_parameters">Status Parameters</a></li>
 </ul>
 </li>
-<li><a href="#_bowels_system">Bowels System</a></li>
+<li><a href="#_bladder_system">Bladder System</a>
+<ul class="sectlevel2">
+<li><a href="#_contacts">Contacts</a></li>
+<li><a href="#blader-fill-mode">Fill Mode</a></li>
+<li><a href="#bladder-release-mode">Release Mode</a></li>
+<li><a href="#_contacts_2">Contacts</a></li>
+</ul>
+</li>
+<li><a href="#_bowels_system">Bowels System</a>
+<ul class="sectlevel2">
+<li><a href="#bowel-system-modes">System Modes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_system_fundamentals">System Fundamentals</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following parameters are present in the avatar expression parameters files, however they are not intended to be
-synchronzed.  These parameters are options modify the behavior of the system.</p>
+<p>The GottaGo system is built around a base system cycle time range of 30 seconds to 600 seconds (10 minutes).</p>
+</div>
+<div class="sect2">
+<h3 id="_system_modes">System Modes</h3>
+<div class="sect3">
+<h4 id="_filling">Filling</h4>
+<div class="paragraph">
+<p>When in 'filling' mode, the system will gradually increase a pressure percentage value until the configured time/volume
+is reached, at which point the system will automatically switch to <a href="#_involuntary_release">Involuntary Release</a> mode.</p>
 </div>
 <div class="paragraph">
-<p>The expression menus included with the system have entries to set all of these options, but they may be modified by
-other means instead of, or in addition to the included expression menus.</p>
+<p>During the filling mode, the <a href="#_voluntary_release">Voluntary Release</a> mode may be temporarily enabled.</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-By default, these parameters are not set to retain their names in the default VRCFury full controller.
-</td>
-</tr>
-</table>
+</div>
+<div class="sect3">
+<h4 id="_releasing">Releasing</h4>
+<div class="paragraph">
+<p>When in 'releasing' mode, the system will stop increasing pressure, and instead decrease pressure at a rate that is
+significantly faster than the fill rate.</p>
+</div>
+<div class="sect4">
+<h5 id="_voluntary_release">Voluntary Release</h5>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_involuntary_release">Involuntary Release</h5>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_timing_control">Timing Control</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_status_parameters">Status Parameters</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_bladder_system">Bladder System</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_enable_system">Enable System</h3>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.enabled</code></p>
-</li>
-<li>
-<p><strong>Type</strong>: <code>bool</code></p>
-</li>
-<li>
-<p><strong>Menu</strong>: Toggle</p>
-</li>
-</ul>
-</div>
 <div class="paragraph">
-<p>Controls whether the bladder system is enabled.  When disabled, all GG values will reset to their default state.</p>
-</div>
+<p>The bladder system is based on a maximum possible bladder capacity of 600ml, and a base fill rate of 1ml per second.</p>
 </div>
 <div class="sect2">
-<h3 id="_manual_release">Manual Release</h3>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.release</code></p>
-</li>
-<li>
-<p><strong>Type</strong>: <code>bool</code></p>
-</li>
-<li>
-<p><strong>Menu</strong>: Button</p>
-</li>
-</ul>
+<h3 id="_contacts">Contacts</h3>
+<div class="paragraph">
+<p>The bladder system comes with 2 optional contacts, one for 'pressing on the bladder', and one for 'physically holding
+oneself'.  The bladder pressing contact may increase the system&#8217;s cycle speed, while the holding contact may reduce it.</p>
 </div>
 <div class="paragraph">
-<p>When <code>true</code>, switches the system to 'release' mode, where the the bladder fill</p>
+<p>If both contacts are active, or neither contact is active, the system&#8217;s cycle speed will remain at ~1 cycle per second.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_reset_release_totals">Reset Release Totals</h3>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.release.total.reset</code></p>
-</li>
-<li>
-<p><strong>Type</strong>: <code>bool</code></p>
-</li>
-<li>
-<p><strong>Menu</strong>: Toggle</p>
-</li>
-</ul>
+<div class="sect3">
+<h4 id="_bladder_press_contact">Bladder Press Contact</h4>
+<div class="paragraph">
+<p>The bladder pressing contact has no affect until the bladder pressure reaches at least 50%, at which point it increases
+the cycle speed by 50%, to a cycle rate of ~1.5 cycles per second.</p>
 </div>
 <div class="paragraph">
-<p>When <code>true</code>, tells the system to reset the release amount values back to <code>0</code>.</p>
+<p>When used with the maximum bladder capacity setting, this may reduce the hold time from 10 minutes (600 seconds) down to
+7.5 minutes (450 seconds).</p>
 </div>
 <div class="paragraph">
-<p>Once the release totals have been reset, this value will be automatically set back to <code>false</code>.</p>
+<p>When used with the minimum bladder capacity setting, this may reduce the hold time from 30 seconds down to 22.5 seconds.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_physical_hold_contact">Physical Hold Contact</h4>
+<div class="paragraph">
+<p>The physical holding contact has no affect until the bladder pressure reaches at least 75%, at which point it decreases
+the cycle speed by 50%, to a cycle speed of ~0.5 cycles per second.</p>
+</div>
+<div class="paragraph">
+<p>When used with the maximum bladder capacity setting, this may extend the hold time from 10 minutes (600 seconds) up to
+13.75 minutes (825 seconds).</p>
+</div>
+<div class="paragraph">
+<p>When used with the minimum bladder capacity setting, this may extend the hold time from 30 seconds up to ~41.5 seconds.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_max_hold_time">Max Hold Time</h3>
+<h3 id="blader-fill-mode">Fill Mode</h3>
+<div class="paragraph">
+<p>When the system is filling, the <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a> parameter will be set
+to <code>false</code>, and the following parameters will be repeatedly updated every system cycle:</p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.time.max</code></p>
+<p><span class="red">✘</span> <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a></p>
 </li>
 <li>
-<p><strong>Type</strong>: <code>float</code></p>
+<p><span class="green">⮅</span> <a href="sync-params.html#gg-bladder-volume"><code>gg.bladder.volume</code></a></p>
 </li>
 <li>
-<p><strong>Menu</strong>: Radial</p>
+<p><span class="green">⮅</span> <a href="sync-params.html#gg-bladder-pressure"><code>gg.bladder.pressure</code></a></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Configures the maximum hold time from a minimum value of 30 seconds to a maximum value of 10 minutes.</p>
-</div>
-<div class="paragraph">
-<p>The actual hold time may deviate from the configuration value by use of the optional avatar contacts which modify the
-system speed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_hold_time_radial_open">Hold Time Radial Open</h3>
+<h3 id="bladder-release-mode">Release Mode</h3>
+<div class="paragraph">
+<p>When the system is releasing, the <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a> parameter will be set
+to <code>true</code>, and the following parameters will be continuously updated:</p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.radial.open</code></p>
+<p><span class="green">✔</span> <a href="sync-params.html#gg-bladder-emptying"><code>gg.bladder.emptying</code></a></p>
 </li>
 <li>
-<p><strong>Type</strong>: <code>bool</code></p>
+<p><span class="green">⮅</span> <a href="sync-params.html#gg-bladder-release-relative"><code>gg.bladder.release.relative</code></a></p>
 </li>
 <li>
-<p><strong>Menu</strong>: Indirect</p>
+<p><span class="green">⮅</span> <a href="sync-params.html#gg-bladder-release-total"><code>gg.bladder.release.total</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="sync-params.html#gg-bladder-volume"><code>gg.bladder.volume</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="sync-params.html#gg-bladder-pressure"><code>gg.bladder.pressure</code></a></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Indicates whether the player has the hold time option radial menu open.  When set to <code>true</code>, the bladder system idles,
-awaiting the player&#8217;s chosen hold time value.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This value should not be modified directly, it exists in the expression parameters by necessity.
-</td>
-</tr>
-</table>
+<div class="sect2">
+<h3 id="_contacts_2">Contacts</h3>
+<div class="paragraph">
+<p>TODO</p>
 </div>
 </div>
 </div>
@@ -602,13 +618,33 @@ This value should not be modified directly, it exists in the expression paramete
 <div class="sect1">
 <h2 id="_bowels_system">Bowels System</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect2">
+<h3 id="bowel-system-modes">System Modes</h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect3">
+<h4 id="_fill_mode">Fill Mode</h4>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_release_mode">Release Mode</h4>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-09-19 11:44:39 -0400
+Last updated 2025-09-19 11:47:53 -0400
 </div>
 </div>
 </body>
