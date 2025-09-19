@@ -1,107 +1,94 @@
 = GottaGo Synchronizable Parameters
 :icons: font
+:toc: left
 
-The following parameters are exposed by the GottaGo system for use in
-avatar-specific animations or extensions. 
+The following parameters are exposed by the GottaGo system for use in avatar-specific animations or extensions. 
 
-Any of the parameters listed that are not being used may safely be marked as
-non-synchronized.
+Any parameters not being used to drive for your project's features may safely be marked as non-synchronized.
+
 
 [WARNING]
-These parameters are *READ ONLY*, the system does not read from these
-parameters, and will overwrite values that are set from outside GottaGo.
+These parameters are *READ ONLY*, the system does not read from these parameters, and will overwrite values that are set
+from outside GottaGo.
 
 [IMPORTANT]
-The avatar expression parameters that are not included in this list are not
-intended to be synchronized or used outside of the GottaGo system, however they
-_may_ be modified by other means to change the system's behavior without use of
-the included expression menu options.
+The avatar expression parameters that are not included in this list are not intended to be synchronized or used outside
+of the GottaGo system, however they _may_ be modified by other means to change the system's behavior without use of the
+included expression menu options.
+
 
 == Bladder System
 
-gg.bladder.volume::
-+
---
+[#gg-bladder-volume]
+=== `gg.bladder.volume`
+
 Type: `float`
 
-The current bladder fill volume as a percentage of 600ml (hold volume radial set
-to 100%).
---
+The current bladder fill volume as a percentage of 600ml (hold volume radial set to 100%).
 
-gg.bladder.pressure::
-+
---
+[#gg-bladder-pressure]
+=== `gg.bladder.pressure`
+
 Type: `float`
 
 The current bladder pressure as a percentage of chosen maximum volume.
---
 
-gg.bladder.release.total::
-+
---
+[#gg-bladder-release-total]
+=== `gg.bladder.release.total`
+
 Type: `float`
 
-The total volume released as a percentage of 600ml (hold volume radial set to
-100%).
---
+The total volume released as a percentage of 600ml (hold volume radial set to 100%).
 
-gg.bladder.release.relative::
-+
---
+[#gg-bladder-release-relative]
+=== `gg.bladder.release.relative`
+
 Type: `float`
 
 The total volume released as a percentage of the chosen maximum volume.
---
 
-gg.bladder.emptying::
-+
---
+[#gg-bladder-emptying]
+=== `gg.bladder.emptying`
+
 Type: `bool`
 
 Flag indicating whether the bladder volume is currently being released.
---
 
 
 == Bowels System
 
-gg.bowels.volume::
-+
---
+[#gg-bowels-volume]
+=== `gg.bowels.volume`
+
 Type: `float`
 
-The current bowels fill volume as a percentage of the maximum possible
-configurable amount (hold volume radial set to 100%).
---
+The current bowels fill volume as a percentage of the maximum possible configurable amount (hold volume radial set to
+100%).
 
-gg.bowels.pressure::
-+
---
+[#gg-bowels-pressure]
+=== `gg.bowels.pressure`
+
 Type: `float`
 
 The current bowel pressure as a percentage of chosen maximum.
---
 
-gg.bowels.release.total::
-+
---
+[#gg-bowels-release-total]
+=== `gg.bowels.release.total`
+
 Type: `float`
 
-The total volume released as a percentage of the maximum possible configurable
-amount (hold volume radial set to 100%).
---
+The total volume released as a percentage of the maximum possible configurable amount (hold volume radial set to 100%).
 
-gg.bowels.release.relative::
-+
---
+[#gg-bowels-release-relative]
+=== `gg.bowels.release.relative`
+
 Type: `float`
 
 The total volume released as a percentage of the chosen maximum volume.
---
 
-gg.bowels.emptying::
-+
---
+[#gg-bowels-emptying]
+=== `gg.bowels.emptying`
+
 Type: `bool`
 
 Flag indicating whether the bladder volume is currently being released.
---

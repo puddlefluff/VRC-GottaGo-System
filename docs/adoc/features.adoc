@@ -1,0 +1,72 @@
+= GottaGo System Features
+:toc: left
+:icons: font
+:doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
+:sync-url: /sync-params.html
+:decrease: pass:a,q[[.red]#⮟#]
+:increase: pass:a,q[[.green]#⮝#]
+
+
+== Base Featureset
+
+=== System Modes
+
+==== Filling
+
+When in 'filling' mode, the system will gradually increase a pressure percentage value until the configured time/volume
+is reached, at which point the system will automatically switch to <<Involuntary Release>> mode.
+
+During the filling mode, the <<Voluntary Release>> mode may be temporarily enabled.
+
+
+==== Releasing
+
+When in 'releasing' mode, the system will stop increasing pressure, and instead decrease pressure at a rate that is
+significantly faster than the fill rate.
+
+
+===== Voluntary Release
+
+===== Involuntary Release
+
+=== Timing Control
+
+=== Status Parameters
+
+
+== Bladder System
+
+[#blader-fill-mode]
+=== Fill Mode
+
+When the system is filling, the xref:sync-params.adoc#gg-bladder-emptying[`gg.bladder.emptying`] parameter will be set
+to `false`, and the following parameters will be repeatedly updated every system cycle:
+
+[none]
+* {increase} xref:sync-params.adoc#gg-bladder-volume[`gg.bladder.volume`]
+* {increase} xref:sync-params.adoc#gg-bladder-pressure[`gg.bladder.pressure`]
+
+
+[#bladder-release-mode]
+=== Release Mode
+
+When the system is releasing, the xref:sync-params.adoc#gg-bladder-emptying[`gg.bladder.emptying`] parameter will be set
+to `true`, and the following parameters will be continuously updated:
+
+[none]
+* {increase} xref:sync-params.adoc#gg-bladder-release-relative[`gg.bladder.release.relative`]
+* {increase} xref:sync-params.adoc#gg-bladder-release-total[`gg.bladder.release.total`]
+* {decrease} xref:sync-params.adoc#gg-bladder-volume[`gg.bladder.volume`]
+* {decrease} xref:sync-params.adoc#gg-bladder-pressure[`gg.bladder.pressure`]
+
+=== Contacts
+
+
+== Bowels System
+
+[#bowel-system-modes]
+=== System Modes
+
+==== Fill Mode
+
+==== Release Mode

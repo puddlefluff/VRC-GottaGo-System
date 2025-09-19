@@ -1,17 +1,46 @@
 = GottaGo System Configuration Parameters
 :icons: font
+:toc: left
+:doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
+:sync-url: /sync-params.html
 
-The following parameters are present in the avatar expression parameters files,
-however they are not intended to be synchronzed.  These parameters are options
-modify the behavior of the system.
+The following parameters are present in the avatar expression parameters files, however they are not intended to be
+synchronzed.  These parameters are options modify the behavior of the system.
 
-The expression menus included with the system have entries to set all of these
-options, but they may be modified by other means instead of, or in addition to
-the included expression menus.
+The expression menus included with the system have entries to set all of these options, but they may be modified by
+other means instead of, or in addition to the included expression menus.
+
+
+[WARNING]
+By default, these parameters are not set to retain their names in the default VRCFury full controller.
 
 
 == Bladder System
 
-TODO
+
+=== `gg.bladder.opt.enabled`
+
+[none]
+* *Type*: `bool`
+* *Menu*: Toggle
+
+Controls whether the bladder system is enabled.  When disabled, all GG values will reset to their default state.
+
+
+=== `gg.bladder.opt.release`
+
+[none]
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, switches the system to 'release' mode, where the the bladder fill
+
+
+=== `gg.bladder.opt.release.total.reset`
+
+=== `gg.bladder.opt.time.max`
+
+
+=== `gg.bladder.opt.radial.open`
 
 == Bowels System

@@ -1,0 +1,39 @@
+= GottaGo Engine Details
+:toc: left
+:icons: font
+:doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
+:sync-url: /sync-params.html
+:decrease: pass:a,q[[.red]#⮟#]
+:increase: pass:a,q[[.green]#⮝#]
+
+TODO
+
+== Base Functionality
+
+=== Timing
+
+max fill time = 600s = 10m
+
+
+== Bladder System
+
+[#blader-fill-mode]
+=== Fill Mode
+
+
+
+[#bladder-release-mode]
+=== Release Mode
+
+=== Contacts
+
+
+
+== Bowels System
+
+[#bowel-system-modes]
+=== System Modes
+
+==== Fill Mode
+
+==== Release Mode
