@@ -65,7 +65,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 074ccb9479881301587eae72cdac5d21|Assets/Bowels/Animations/BowelsController.controller
+            id: 074ccb9479881301587eae72cdac5d21|Assets/Bowels/BowelsController.controller
             objRef: {fileID: 9100000, guid: 074ccb9479881301587eae72cdac5d21, type: 2}
           type: 5
         menus:
