@@ -11,7 +11,7 @@ Any parameters not being used to drive for your project's features may safely be
 These parameters are *READ ONLY*, the system does not read from these parameters, and will overwrite values that are set
 from outside GottaGo.
 
-[IMPORTANT]
+[NOTE]
 The avatar expression parameters that are not included in this list are not intended to be synchronized or used outside
 of the GottaGo system, however they _may_ be modified by other means to change the system's behavior without use of the
 included expression menu options.
