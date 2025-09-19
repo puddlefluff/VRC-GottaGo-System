@@ -1,13 +1,17 @@
-= GottaGo System Features
+= GottaGo System Engine
 :toc: left
 :icons: font
 :doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
 :sync-url: /sync-params.html
-:decrease: pass:a,q[[.red]#⮟#]
-:increase: pass:a,q[[.green]#⮝#]
+:decrease: pass:a,q[[.red]#⮇#]
+:increase: pass:a,q[[.green]#⮅#]
+:enabled: pass:a,q[[.green]#✔#]
+:disabled: pass:a,q[[.red]#✘#]
 
 
-== Base Featureset
+== System Fundamentals
+
+The GottaGo system is built around a base system cycle time range of 30 seconds to 600 seconds (10 minutes).
 
 === System Modes
 
@@ -27,14 +31,59 @@ significantly faster than the fill rate.
 
 ===== Voluntary Release
 
+TODO
+
 ===== Involuntary Release
+
+TODO
+
 
 === Timing Control
 
+TODO
+
+
 === Status Parameters
+
+TODO
 
 
 == Bladder System
+
+The bladder system is based on a maximum possible bladder capacity of 600ml, and a base fill rate of 1ml per second.
+
+
+=== Contacts
+
+The bladder system comes with 2 optional contacts, one for 'pressing on the bladder', and one for 'physically holding
+oneself'.  The bladder pressing contact may increase the system's cycle speed, while the holding contact may reduce it.
+
+If both contacts are active, or neither contact is active, the system's cycle speed will remain at ~1 cycle per second.
+
+==== Bladder Press Contact
+
+The bladder pressing contact has no affect until the bladder pressure reaches at least 50%, at which point it increases
+the cycle speed by 50%, to a cycle rate of ~1.5 cycles per second.
+
+When used with the maximum bladder capacity setting, this may reduce the hold time from 10 minutes (600 seconds) down to
+7.5 minutes (450 seconds).
+
+When used with the minimum bladder capacity setting, this may reduce the hold time from 30 seconds down to 22.5 seconds.
+
+// calc is timer * 0.75
+
+
+==== Physical Hold Contact
+
+The physical holding contact has no affect until the bladder pressure reaches at least 75%, at which point it decreases
+the cycle speed by 50%, to a cycle speed of ~0.5 cycles per second.
+
+When used with the maximum bladder capacity setting, this may extend the hold time from 10 minutes (600 seconds) up to
+13.75 minutes (825 seconds).
+
+When used with the minimum bladder capacity setting, this may extend the hold time from 30 seconds up to ~41.5 seconds.
+
+// calc is timer * 1.375
 
 [#blader-fill-mode]
 === Fill Mode
@@ -43,6 +92,7 @@ When the system is filling, the xref:sync-params.adoc#gg-bladder-emptying[`gg.bl
 to `false`, and the following parameters will be repeatedly updated every system cycle:
 
 [none]
+* {disabled} xref:sync-params.adoc#gg-bladder-emptying[`gg.bladder.emptying`]
 * {increase} xref:sync-params.adoc#gg-bladder-volume[`gg.bladder.volume`]
 * {increase} xref:sync-params.adoc#gg-bladder-pressure[`gg.bladder.pressure`]
 
@@ -54,6 +104,7 @@ When the system is releasing, the xref:sync-params.adoc#gg-bladder-emptying[`gg.
 to `true`, and the following parameters will be continuously updated:
 
 [none]
+* {enabled} xref:sync-params.adoc#gg-bladder-emptying[`gg.bladder.emptying`]
 * {increase} xref:sync-params.adoc#gg-bladder-release-relative[`gg.bladder.release.relative`]
 * {increase} xref:sync-params.adoc#gg-bladder-release-total[`gg.bladder.release.total`]
 * {decrease} xref:sync-params.adoc#gg-bladder-volume[`gg.bladder.volume`]
@@ -61,12 +112,25 @@ to `true`, and the following parameters will be continuously updated:
 
 === Contacts
 
+TODO
+
 
 == Bowels System
+
+TODO
+
 
 [#bowel-system-modes]
 === System Modes
 
+TODO
+
+
 ==== Fill Mode
 
+TODO
+
+
 ==== Release Mode
+
+TODO

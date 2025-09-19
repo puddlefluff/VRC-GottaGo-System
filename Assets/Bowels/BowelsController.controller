@@ -546,7 +546,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: gg.sys.2._pressure
-    m_EventTreshold: 0.02209
+    m_EventTreshold: 0.0249
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7830844380480833516}
   m_Solo: 0
@@ -1374,7 +1374,7 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 3
     m_ConditionEvent: gg.sys.2._pressure
-    m_EventTreshold: 0.02209
+    m_EventTreshold: 0.0249
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   - type: 1
     name: gg.bowels.release.total
     source: 
-    value: 0.0221
+    value: 0.025
     valueMin: 0
     valueMax: 0
     chance: 0
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   - type: 1
     name: gg.sys.2._pressure
     source: 
-    value: -0.0221
+    value: -0.025
     valueMin: 0
     valueMax: 0
     chance: 0
@@ -1768,7 +1768,7 @@ MonoBehaviour:
   - type: 1
     name: gg.bowels.volume
     source: 
-    value: -0.0221
+    value: -0.025
     valueMin: 0
     valueMax: 0
     chance: 0
@@ -2090,7 +2090,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: gg.sys.2._pressure
-    m_EventTreshold: 0.02209
+    m_EventTreshold: 0.0249
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0

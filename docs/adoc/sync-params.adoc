@@ -24,7 +24,7 @@ included expression menu options.
 
 Type: `float`
 
-The current bladder fill volume as a percentage of 600ml (hold volume radial set to 100%).
+The current bladder fill volume as a percentage of 600ml (hold volume radial at 100%).
 
 [#gg-bladder-pressure]
 === `gg.bladder.pressure`
@@ -38,7 +38,7 @@ The current bladder pressure as a percentage of chosen maximum volume.
 
 Type: `float`
 
-The total volume released as a percentage of 600ml (hold volume radial set to 100%).
+The total volume released as a percentage of 600ml (hold volume radial at 100%).
 
 [#gg-bladder-release-relative]
 === `gg.bladder.release.relative`
@@ -62,8 +62,7 @@ Flag indicating whether the bladder volume is currently being released.
 
 Type: `float`
 
-The current bowels fill volume as a percentage of the maximum possible configurable amount (hold volume radial set to
-100%).
+The current bowels fill volume as a percentage of the maximum possible amount (hold volume radial at 100%).
 
 [#gg-bowels-pressure]
 === `gg.bowels.pressure`
@@ -77,7 +76,7 @@ The current bowel pressure as a percentage of chosen maximum.
 
 Type: `float`
 
-The total volume released as a percentage of the maximum possible configurable amount (hold volume radial set to 100%).
+The total volume released as a percentage of the maximum possible amount (hold volume radial at 100%).
 
 [#gg-bowels-release-relative]
 === `gg.bowels.release.relative`
