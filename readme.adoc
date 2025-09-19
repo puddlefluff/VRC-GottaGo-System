@@ -12,10 +12,6 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-ifdef::env-github[]
-See link:https://puddlefluff.github.io/VRC-GottaGo-System/readme.html[rendered readme]
-endif::[]
-
 
 == To Be Decided
 
