@@ -46,6 +46,15 @@ Type: `float`
 
 The total volume released as a percentage of the chosen maximum volume.
 
+
+[CAUTION]
+--
+The rate of value increase is not linear, and has a curve as it approaches 100%.  This is due in part to the limited
+ways in which math can be done without the ability to write custom scripts.
+
+In future versions of the system, the increase will be updated to be a linear increase.
+--
+
 [#gg-bladder-emptying]
 === `gg.bladder.emptying`
 
@@ -71,8 +80,6 @@ Type: `float`
 The current bowel pressure as a number that increases from `0.0` to `1.0` over the course of the chosen maximum hold
 time.
 
-[CAUTION]
-The rate of pressure increase is not linear, as in it does not directly represent the current hold time.  The value
 
 [#gg-bowels-release-total]
 === `gg.bowels.release.total`
@@ -87,6 +94,15 @@ The total volume released as a percentage of the maximum possible amount (hold v
 Type: `float`
 
 The total volume released as a percentage of the chosen maximum volume.
+
+
+[CAUTION]
+--
+The rate of value increase is not linear, and has a curve as it approaches 100%.  This is due in part to the limited
+ways in which math can be done without the ability to write custom scripts.
+
+In future versions of the system, the increase will be updated to be a linear increase.
+--
 
 [#gg-bowels-emptying]
 === `gg.bowels.emptying`
