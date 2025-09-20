@@ -42,7 +42,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: gg.bowels.sys.countdown
+    attribute: gg.sys.2.countdown
     path: 
     classID: 95
     script: {fileID: 0}
@@ -111,7 +111,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: gg.bowels.sys.countdown
+    attribute: gg.sys.2.countdown
     path: 
     classID: 95
     script: {fileID: 0}
