@@ -98,16 +98,16 @@ MonoBehaviour:
             objRef: {fileID: 11400000, guid: 0db0d61257e46981d8b9e33af449858a, type: 2}
         smoothedPrms:
         - name: g1.release.total
-          smoothingDuration: 0.2
+          smoothingDuration: 0.3
           range: 0
         - name: g1.release.relative
-          smoothingDuration: 0.2
+          smoothingDuration: 0.3
           range: 0
         - name: g2.release.total
-          smoothingDuration: 0.2
+          smoothingDuration: 0.3
           range: 0
         - name: g2.release.relative
-          smoothingDuration: 0.2
+          smoothingDuration: 0.3
           range: 0
         globalParams:
         - g1.release.total
@@ -131,7 +131,7 @@ MonoBehaviour:
         - g2.opt.release
         - g2.opt.release.reset
         allNonsyncedAreGlobal: 0
-        ignoreSaved: 1
+        ignoreSaved: 0
         toggleParam: 
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0
