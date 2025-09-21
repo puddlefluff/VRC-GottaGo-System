@@ -1,5 +1,9 @@
 = Resource Credits
 
+== VR Resources
+
+* link:https://jinxxy.com/Xitaberry/madisonbase[Madison Base Avatar - Xitaberry]
+
 == Icons
 
 * link:https://www.flaticon.com/free-icon/intestine_966097[Intestine icon - srip]

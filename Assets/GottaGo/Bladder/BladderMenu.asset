@@ -18,7 +18,7 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 756d75d5c045666cf89cd176887a9eaa, type: 3}
     type: 102
     parameter:
-      name: gg.bladder.opt.enabled
+      name: g1.opt.enabled
     value: 1
     style: 0
     subMenu: {fileID: 0}
@@ -29,18 +29,18 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: f834fda6762cd7d7bbbfcb4729a71499, type: 3}
     type: 203
     parameter:
-      name: gg.bladder.opt.radial.open
+      name: g1.x.cap.radial.open
     value: 1
     style: 0
     subMenu: {fileID: 0}
     subParameters:
-    - name: gg.bladder.opt.time.max
+    - name: g1.opt.capacity
     labels: []
   - name: Reset Effects
     icon: {fileID: 2800000, guid: db6b335214b0a0e81a83e133f8e03195, type: 3}
     type: 102
     parameter:
-      name: gg.bladder.opt.release.total.reset
+      name: g1.opt.release.reset
     value: 1
     style: 0
     subMenu: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 06cca85d173a986eaabd27b2ad78956a, type: 3}
     type: 101
     parameter:
-      name: gg.bladder.opt.release
+      name: g1.opt.release
     value: 1
     style: 0
     subMenu: {fileID: 0}

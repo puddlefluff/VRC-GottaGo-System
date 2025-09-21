@@ -9,6 +9,7 @@
 
 /package.json
 
+/Assets/UI Toolkit
 /Library
 /Packages/*
 !/Packages/manifest.json

@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1101 &-9133924294270574814
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: g1.opt.enabled
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-9089402061874502487
 AnimatorState:
   serializedVersion: 6
@@ -40,7 +65,7 @@ AnimatorStateTransition:
   m_Name: Bladder Full
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7767051848825818793}
@@ -65,7 +90,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: gg.bladder.opt.release.total.reset
+    m_ConditionEvent: g1.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -95,7 +120,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -103,10 +128,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.countdown
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -121,7 +146,7 @@ AnimatorStateTransition:
   m_Name: Invalid State
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5555374463766086476}
@@ -151,7 +176,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -159,10 +184,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -182,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.speed.multiplier
+    name: sg1.rate.multiplier
     source: 
     value: 0.5
     valueMin: 0
@@ -332,7 +357,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -357,7 +382,7 @@ AnimatorStateTransition:
   m_Name: Bladder Not Yet Full
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.countdown
+    m_ConditionEvent: sg1.pressure.inverse
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -382,7 +407,7 @@ AnimatorStateTransition:
   m_Name: State == Involuntary Release
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1038605501226415394}
@@ -407,7 +432,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: gg.bladder.opt.time.max
+    m_ConditionEvent: g1.opt.capacity
     m_EventTreshold: 0.05
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7892310429953161197}
@@ -438,45 +463,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!114 &-6914728580328782302
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parameters:
-  - type: 1
-    name: gg.bladder.release.total
-    source: 
-    value: 0.025
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 1
-    name: gg.sys.1.volume.internal
-    source: 
-    value: -0.025
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  localOnly: 1
-  debugString: 
 --- !u!206 &-6799069292224763139
 BlendTree:
   m_ObjectHideFlags: 1
@@ -491,7 +477,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.gg.bladder.volume
+    m_DirectBlendParameter: sys.g1.volume
     m_Mirror: 0
   m_BlendParameter: sys.bladder.fill.steps
   m_BlendParameterY: Blend
@@ -500,35 +486,60 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 4
---- !u!206 &-6614513803377921945
+--- !u!1101 &-6694552120402541990
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: break for effect reset
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: g1.opt.release.reset
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!206 &-6494406008644063133
 BlendTree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bladder Total Volume
+  m_Name: Blend Release Step Value
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 66f5a3e1ed5488c748a30e5b567e1b84, type: 2}
-    m_Threshold: 0
+    m_Motion: {fileID: 7400000, guid: 8c9bd6003de3da38bb5ba3ba5debbfac, type: 2}
+    m_Threshold: 0.0017
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.release.total
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
-    m_Threshold: 1
+    m_Motion: {fileID: 7400000, guid: 2ccd1be245c5dacbe8659c422d479507, type: 2}
+    m_Threshold: 0.05
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.release.total
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.volume.internal
-  m_BlendParameterY: Blend
-  m_MinThreshold: 0
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
+  m_BlendParameter: sg1.volume
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0.0017
+  m_MaxThreshold: 0.05
+  m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
 --- !u!206 &-6437796629699917912
@@ -539,8 +550,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -555,7 +566,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -579,8 +590,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -600,7 +611,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -608,10 +619,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -632,29 +643,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!206 &-6070359501916174216
-BlendTree:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Denormalize Release Total
-  m_Childs:
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 676737375b7a30069bfcedcc5438e380, type: 2}
-    m_Threshold: 0
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.release.total
-    m_Mirror: 0
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.release.total
-  m_MinThreshold: 1
-  m_MaxThreshold: 1
-  m_UseAutomaticThresholds: 1
-  m_NormalizedBlendValues: 0
-  m_BlendType: 4
 --- !u!206 &-5986121402035512266
 BlendTree:
   m_ObjectHideFlags: 1
@@ -669,7 +657,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -677,10 +665,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -695,11 +683,11 @@ AnimatorStateTransition:
   m_Name: Player Triggered Manual Release
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.opt.release
+    m_ConditionEvent: g1.opt.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.volume.internal
-    m_EventTreshold: 0.025
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0.0017
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7076348875686043486}
   m_Solo: 0
@@ -733,7 +721,7 @@ AnimatorStateTransition:
   m_ExitTime: 0
   m_HasExitTime: 1
   m_HasFixedDuration: 1
-  m_InterruptionSource: 0
+  m_InterruptionSource: 1
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!206 &-5628386288729376780
@@ -750,7 +738,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 2567432112983887044}
@@ -758,10 +746,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.sys.1.volume.internal
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: sg1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -776,7 +764,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 5345392076992958552}
   m_DstState: {fileID: 0}
@@ -819,6 +807,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-5222845180240865511
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: filling
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: sg1.state
+    m_EventTreshold: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1466778278830598892}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-5175295523671307466
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -855,7 +868,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -863,9 +876,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.volume.internal
+  m_BlendParameter: sg1.volume
   m_BlendParameterY: Blend
   m_MinThreshold: -1
   m_MaxThreshold: 1
@@ -936,7 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.state
+    name: sg1.state
     source: 
     value: 1
     valueMin: 0
@@ -948,7 +961,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.emptying
+    name: g1.emptying
     source: 
     value: 0
     valueMin: 0
@@ -970,7 +983,7 @@ AnimatorStateTransition:
   m_Name: State == Voluntary Release
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1272616924864616124}
@@ -1014,48 +1027,23 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1101 &-4711985322372359884
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Involuntary Emptying
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
-    m_EventTreshold: 2
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 6070742754809907160}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &-4614295955210012139
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: 
+  m_Name: break for manual release
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.opt.release
+    m_ConditionEvent: g1.opt.release
     m_EventTreshold: 0
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.volume.internal
-    m_EventTreshold: 0.025
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0.0017
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -1084,7 +1072,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1092,7 +1080,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: c378f4f02fa76a10891daed4f1bcafde, type: 2}
@@ -1100,7 +1088,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1108,7 +1096,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: eed404bdfa7573c7ab5ff279625f32e0, type: 2}
@@ -1116,7 +1104,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1124,7 +1112,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 9fa6a52b6913f5d5cb7f63a42a514ec2, type: 2}
@@ -1132,7 +1120,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1140,7 +1128,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: f82261ad8b539cc809729e84f1e3d18a, type: 2}
@@ -1148,7 +1136,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1156,7 +1144,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 4c602c015ec85ad80852805de3ccc065, type: 2}
@@ -1164,7 +1152,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1172,7 +1160,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 0}
@@ -1180,10 +1168,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.countdown
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: sg1.pressure.inverse
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -1198,7 +1186,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5791979603076914640}
@@ -1228,7 +1216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.countdown
+    name: sg1.pressure.inverse
     source: 
     value: 1
     valueMin: 0
@@ -1240,7 +1228,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.sys.1.state
+    name: sg1.state
     source: 
     value: 1
     valueMin: 0
@@ -1252,7 +1240,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.sys.1.volume.internal
+    name: sg1.volume
     source: 
     value: 0
     valueMin: 0
@@ -1264,7 +1252,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.emptying
+    name: g1.emptying
     source: 
     value: 0
     valueMin: 0
@@ -1317,7 +1305,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1333,33 +1321,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &-4156564308081621755
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parameters:
-  - type: 1
-    name: gg.sys.1.volume.internal
-    source: 
-    value: 0.0017
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  localOnly: 1
-  debugString: 
 --- !u!1102 &-4014086313774302426
 AnimatorState:
   serializedVersion: 6
@@ -1367,10 +1328,11 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Persist State
+  m_Name: Local State
   m_Speed: 1
   m_CycleOffset: 0
-  m_Transitions: []
+  m_Transitions:
+  - {fileID: 7038313678618580116}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -1423,7 +1385,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6357113919187547899}
@@ -1501,7 +1463,7 @@ AnimatorStateTransition:
   m_Name: Effect Reset Requested
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.opt.release.total.reset
+    m_ConditionEvent: g1.opt.release.reset
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: -2554279392248947179}
   m_DstState: {fileID: 0}
@@ -1526,7 +1488,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -1556,7 +1518,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.volume
+    m_DirectBlendParameter: g1.volume
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: b714025409344f961bad433336c1b102, type: 2}
@@ -1564,10 +1526,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.volume
+    m_DirectBlendParameter: g1.volume
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.volume
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -1587,6 +1549,31 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 1
   serializedVersion: 1
+--- !u!1101 &-3035109022421661302
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voluntary release
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: sg1.state
+    m_EventTreshold: 3
+  m_DstStateMachine: {fileID: -259875167025782184}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &-3016460544208278059
 BlendTree:
   m_ObjectHideFlags: 1
@@ -1596,44 +1583,68 @@ BlendTree:
   m_Name: Bladder State Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -6614513803377921945}
+    m_Motion: {fileID: 7400000, guid: 42baae8d3740fbdec99d427de9d9955e, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: g1.release.total
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: d0b5c7cf08d85784aa036371fcd5aaea, type: 2}
+    m_Threshold: 0.125
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.release.step
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 676737375b7a30069bfcedcc5438e380, type: 2}
+    m_Threshold: 0.25
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.release.total
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: aa4d4d20ddac541e682ca908c84f6e23, type: 2}
+    m_Threshold: 0.375
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.opt.capacity
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
+    m_Threshold: 0.5
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.volume
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: b4d2531f5650c4b2eb4b025d1507276a, type: 2}
+    m_Threshold: 0.625
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.volume
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 5381715043656054012}
-    m_Threshold: 0.2
+    m_Threshold: 0.75
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: -6070359501916174216}
-    m_Threshold: 0.4
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7583334148770661158}
-    m_Threshold: 0.6
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7889241206733025135}
-    m_Threshold: 0.8
+    m_Threshold: 0.875
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 229908267574312594}
@@ -1641,15 +1652,40 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 4
+--- !u!1101 &-2962007103068558630
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 2912887911515894115}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &-2958800698124496173
 BlendTree:
   m_ObjectHideFlags: 1
@@ -1664,7 +1700,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -1672,9 +1708,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.volume.internal
+  m_BlendParameter: sg1.volume
   m_BlendParameterY: Blend
   m_MinThreshold: -1
   m_MaxThreshold: 1
@@ -1688,24 +1724,54 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys_0_outputs
+  m_Name: g1_0_outputs
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -4014086313774302426}
-    m_Position: {x: 60, y: -250, z: 0}
+    m_Position: {x: 290, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6813513436383900254}
-    m_Position: {x: 60, y: -300, z: 0}
+    m_Position: {x: 400, y: -90, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 8769038901662208146}
+    m_Position: {x: 510, y: -30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 80, y: -400, z: 0}
-  m_EntryPosition: {x: 80, y: -340, z: 0}
-  m_ExitPosition: {x: 80, y: -370, z: 0}
+  m_AnyStatePosition: {x: 420, y: -170, z: 0}
+  m_EntryPosition: {x: 420, y: -140, z: 0}
+  m_ExitPosition: {x: 420, y: 30, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6813513436383900254}
+--- !u!1102 &-2771126937340327616
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Set Step Value
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 8735111605493222149}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -6494406008644063133}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &-2749788013369526138
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1715,7 +1781,7 @@ AnimatorStateTransition:
   m_Name: System Enabled
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.opt.enabled
+    m_ConditionEvent: g1.opt.enabled
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1498461531703321827}
@@ -1740,7 +1806,7 @@ AnimatorStateTransition:
   m_Name: Player Done Releasing
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1613924437657804073}
@@ -1765,11 +1831,11 @@ AnimatorStateTransition:
   m_Name: Player Still Releasing
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.opt.release
+    m_ConditionEvent: g1.opt.release
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.volume.internal
-    m_EventTreshold: 0.025
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0.0017
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -1792,6 +1858,9 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: g1.opt.enabled
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsLocal
     m_EventTreshold: 0
@@ -1851,7 +1920,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
@@ -1859,15 +1928,40 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.volume
+  m_BlendParameter: g1.volume
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1101 &-2498107687904940496
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: sg1.const.1
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-2128946778907429105
 AnimatorState:
   serializedVersion: 6
@@ -1910,7 +2004,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.volume.internal
+    name: sg1.volume
     source: 
     value: 0
     valueMin: 0
@@ -1990,7 +2084,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: a6d24da8e1d8dd2619a100b8ffbcb14f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2024,6 +2118,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-1575359027116411885
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0.0017
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -2771126937340327616}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &-1571262837071592399
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2033,13 +2152,13 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.contact.press
+    m_ConditionEvent: g1.con.pushing
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: gg.bladder.contact.holding.self
+    m_ConditionEvent: g1.con.holding
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: gg.sys.1.countdown
+    m_ConditionEvent: sg1.pressure.inverse
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 329568807678601718}
@@ -2064,7 +2183,7 @@ AnimatorStateTransition:
   m_Name: Update State
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4013270986706495926}
@@ -2089,10 +2208,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: gg.bladder.opt.radial.open
+    m_ConditionEvent: g1.x.cap.radial.open
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.bladder.opt.time.max
+    m_ConditionEvent: g1.opt.capacity
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 6037657256871432962}
   m_DstState: {fileID: 0}
@@ -2103,6 +2222,31 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-1393847098332953567
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pressure is greater or equal to zero
+  m_Conditions:
+  - m_ConditionMode: 3
+    m_ConditionEvent: sg1.const.1
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 5345392076992958552}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -2122,7 +2266,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 683cb15058711f395aa9b9cd5b25d32b, type: 2}
@@ -2130,10 +2274,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: -1
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -2180,6 +2324,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -5718740681350135201}
   - {fileID: -4614295955210012139}
+  - {fileID: -226145997687181758}
+  - {fileID: -6694552120402541990}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -2191,10 +2337,41 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 39e27ead3ba17f7298da665de1a49571, type: 2}
   m_Tag: 
-  m_SpeedParameter: gg.sys.1.speed.multiplier
+  m_SpeedParameter: sg1.rate.multiplier
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!206 &-1048063099802798350
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: b4d2531f5650c4b2eb4b025d1507276a, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.volume
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: b4d2531f5650c4b2eb4b025d1507276a, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.const.fill.rate
+    m_Mirror: 0
+  m_BlendParameter: sg1.volume
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 4
 --- !u!206 &-690356007501515512
 BlendTree:
   m_ObjectHideFlags: 1
@@ -2240,7 +2417,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -2248,9 +2425,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.countdown
+  m_BlendParameter: sg1.pressure.inverse
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -2299,10 +2476,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: sys.gg.bladder.volume
+    m_DirectBlendParameter: sys.g1.volume
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -2322,7 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.bowels.release.total
+    name: g1.release.total
     source: 
     value: 0
     valueMin: 0
@@ -2334,7 +2511,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bowels.release.relative
+    name: g1.release.relative
     source: 
     value: 0
     valueMin: 0
@@ -2347,6 +2524,31 @@ MonoBehaviour:
     destMax: 0
   localOnly: 1
   debugString: 
+--- !u!1107 &-259875167025782184
+AnimatorStateMachine:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Calc Release Step
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 643722953375710390}
+    m_Position: {x: 30, y: 100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2771126937340327616}
+    m_Position: {x: -90, y: 160, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 50, z: 0}
+  m_ExitPosition: {x: 50, y: 220, z: 0}
+  m_ParentStateMachinePosition: {x: 30, y: 250, z: 0}
+  m_DefaultState: {fileID: 643722953375710390}
 --- !u!1101 &-233217542897088270
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2356,8 +2558,33 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.speed.multiplier
+    m_ConditionEvent: sg1.rate.multiplier
     m_EventTreshold: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-226145997687181758
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: break for disable
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: g1.opt.enabled
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -2381,10 +2608,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.bladder.release.total
+    m_ConditionEvent: g1.release.total
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4591131392843796379}
@@ -2470,8 +2697,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4218675058037972897}
-  m_StateMachineBehaviours:
-  - {fileID: 3409629205701285005}
+  m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -2480,7 +2706,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
+  m_Motion: {fileID: 7400000, guid: c3231a9364da5405aa8762603b6353a0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -2526,129 +2752,141 @@ AnimatorController:
   m_Name: BladderController
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: gg.bladder.release.total
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.release.relative
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.volume
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.pressure
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.emptying
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.contact.press
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.contact.holding.self
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.opt.enabled
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.opt.radial.open
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.opt.release
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.opt.release.total.reset
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.bladder.opt.time.max
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.state
-    m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.volume.internal
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.const.1
-    m_Type: 1
-    m_DefaultFloat: 1
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.countdown
-    m_Type: 1
-    m_DefaultFloat: 1
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.speed.multiplier
-    m_Type: 1
-    m_DefaultFloat: 1
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.release.denormalized
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: gg.sys.1.volume.max.denormalized
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: IsLocal
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: g1.release.total
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.release.relative
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.volume
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.pressure
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.emptying
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.con.pushing
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.con.holding
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.opt.enabled
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.opt.release
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.opt.release.reset
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.opt.capacity
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.x.cap.radial.open
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.const.1
+    m_Type: 1
+    m_DefaultFloat: 1
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.const.fill.rate
+    m_Type: 1
+    m_DefaultFloat: 0.0017
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.pressure.inverse
+    m_Type: 1
+    m_DefaultFloat: 1
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.rate.multiplier
+    m_Type: 1
+    m_DefaultFloat: 1
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.release.step
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.release.x100
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.state
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.volume
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: sg1.volume.max.x100
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
-    m_Name: sys.0.outputs
+    m_Name: g1.0.outputs
     m_StateMachine: {fileID: -2872112962256757397}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -2660,7 +2898,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: sys.1.engine
+    m_Name: g1.1.engine
     m_StateMachine: {fileID: 4948471754871968557}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -2671,6 +2909,31 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &54048535072339613
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pressure less than zero
+  m_Conditions:
+  - m_ConditionMode: 4
+    m_ConditionEvent: sg1.volume
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -344100745904948215}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &129430450485986856
 BlendTree:
   m_ObjectHideFlags: 1
@@ -2695,7 +2958,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2747,7 +3010,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.release.denormalized
+    m_DirectBlendParameter: sg1.release.x100
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 355330c4fbc5e683b98ca96230eaa27f, type: 2}
@@ -2755,10 +3018,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.volume.max.denormalized
+    m_DirectBlendParameter: sg1.volume.max.x100
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.volume
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -2816,7 +3079,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2841,7 +3104,7 @@ AnimatorStateTransition:
   m_Name: Bladder Not Yet Empty
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.volume.internal
+    m_ConditionEvent: sg1.volume
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2857,6 +3120,34 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &643722953375710390
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Init
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -1575359027116411885}
+  - {fileID: -2498107687904940496}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 0}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &842009558647016461
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2866,7 +3157,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4454453900049981593}
@@ -2891,7 +3182,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1038605501226415394}
@@ -2966,34 +3257,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!1102 &1271029052499486473
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Fill
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 3614631000241584800}
-  m_StateMachineBehaviours:
-  - {fileID: -4156564308081621755}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: gg.bladder.opt.release
-  m_CycleOffsetParameter: 
-  m_TimeParameter: sys.bladder.fill.countdown
 --- !u!114 &1294673851156949644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3008,7 +3271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.state
+    name: sg1.state
     source: 
     value: 2
     valueMin: 0
@@ -3020,7 +3283,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.emptying
+    name: g1.emptying
     source: 
     value: 1
     valueMin: 0
@@ -3064,6 +3327,33 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1102 &1466778278830598892
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fill Step
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -2962007103068558630}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -1048063099802798350}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!206 &1482064385461592191
 BlendTree:
   m_ObjectHideFlags: 1
@@ -3132,7 +3422,7 @@ AnimatorStateTransition:
   m_Name: No Fill Changes
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 5345392076992958552}
   m_DstState: {fileID: 0}
@@ -3162,7 +3452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.state
+    name: sg1.state
     source: 
     value: 3
     valueMin: 0
@@ -3174,7 +3464,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.emptying
+    name: g1.emptying
     source: 
     value: 1
     valueMin: 0
@@ -3196,7 +3486,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8819825243811291891}
@@ -3266,7 +3556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.state
+    name: sg1.state
     source: 
     value: 1
     valueMin: 0
@@ -3288,7 +3578,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5555374463766086476}
@@ -3346,7 +3636,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -3354,9 +3644,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.volume.internal
+  m_BlendParameter: sg1.volume
   m_BlendParameterY: Blend
   m_MinThreshold: -1
   m_MaxThreshold: 1
@@ -3408,15 +3698,29 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.release.total
+    m_DirectBlendParameter: g1.release.total
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.const.1
-  m_BlendParameterY: gg.bladder.release.total
+  m_BlendParameter: sg1.const.1
+  m_BlendParameterY: g1.release.total
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1109 &2814197179018533732
+AnimatorTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 6204447239657100265}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 1
 --- !u!1102 &2912887911515894115
 AnimatorState:
   serializedVersion: 6
@@ -3440,7 +3744,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 5323431777759364402}
   m_Tag: 
-  m_SpeedParameter: gg.sys.1.speed.multiplier
+  m_SpeedParameter: sg1.rate.multiplier
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -3458,9 +3762,9 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
   m_BlendParameterY: Blend
   m_MinThreshold: 0
   m_MaxThreshold: 1
@@ -3489,33 +3793,37 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!114 &3409629205701285005
-MonoBehaviour:
+--- !u!206 &3462281028308059383
+BlendTree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -706344726, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parameters:
-  - type: 0
-    name: gg.bladder.release.total
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  localOnly: 1
-  debugString: 
+  m_Name: Decrease Held Total
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: b4d2531f5650c4b2eb4b025d1507276a, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.volume
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: d795608326c2c9b34b0820f5bbf1a98a, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.release.step
+    m_Mirror: 0
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 4
 --- !u!1109 &3470441629394783174
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -3545,31 +3853,6 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!1101 &3614631000241584800
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.volume.internal
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 2912887911515894115}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &3656556023512228971
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3579,7 +3862,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -3595,6 +3878,37 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!206 &3732334334930311756
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Apply Step
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 6341248134093761391}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.const.1
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 3462281028308059383}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.const.1
+    m_Mirror: 0
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 4
 --- !u!206 &3869286783657887611
 BlendTree:
   m_ObjectHideFlags: 1
@@ -3603,8 +3917,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: dRelease / dMax
   m_Childs: []
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.release.total
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -3624,7 +3938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.bladder.volume
+    name: g1.emptying
     source: 
     value: 0
     valueMin: 0
@@ -3636,7 +3950,7 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.release.total
+    name: g1.opt.release.reset
     source: 
     value: 0
     valueMin: 0
@@ -3648,81 +3962,9 @@ MonoBehaviour:
     destMin: 0
     destMax: 0
   - type: 0
-    name: gg.bladder.emptying
+    name: sg1.state
     source: 
     value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.bladder.opt.radial.open
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.bladder.opt.release.total.reset
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.sys.1.state
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.sys.1.volume.internal
-    source: 
-    value: 0
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.sys.1.countdown
-    source: 
-    value: 1
-    valueMin: 0
-    valueMax: 0
-    chance: 0
-    convertRange: 0
-    sourceMin: 0
-    sourceMax: 0
-    destMin: 0
-    destMax: 0
-  - type: 0
-    name: gg.sys.1.speed.multiplier
-    source: 
-    value: 1
     valueMin: 0
     valueMax: 0
     chance: 0
@@ -3755,31 +3997,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &3991119193303526601
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: gg.sys.1.volume.internal
-    m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: -344100745904948215}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1102 &3993415763658483975
 AnimatorState:
   serializedVersion: 6
@@ -3791,9 +4008,9 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 4364056970549379656}
-  - {fileID: -4711985322372359884}
-  - {fileID: 4823500825540082448}
+  - {fileID: -5222845180240865511}
+  - {fileID: 5416493600160801026}
+  - {fileID: -3035109022421661302}
   - {fileID: 1694353004385300626}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
@@ -3824,7 +4041,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 3c2cfa9c5dc62821688ab02d58d9d3bb, type: 2}
@@ -3832,10 +4049,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.countdown
+    m_DirectBlendParameter: sg1.pressure.inverse
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.release.total
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -3864,7 +4081,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: gg.bladder.release.total
+    m_ConditionEvent: g1.release.total
     m_EventTreshold: 0.01
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4454453900049981593}
@@ -3993,31 +4210,6 @@ BlendTree:
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 0
---- !u!1101 &4364056970549379656
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Increase Bladder Fill
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
-    m_EventTreshold: 1
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1271029052499486473}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
 --- !u!1101 &4381157367838636271
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4027,13 +4219,13 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: gg.bladder.contact.press
+    m_ConditionEvent: g1.con.pushing
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: gg.bladder.contact.holding.self
+    m_ConditionEvent: g1.con.holding
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: gg.sys.1.countdown
+    m_ConditionEvent: sg1.pressure.inverse
     m_EventTreshold: 0.25
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2380267444898642631}
@@ -4119,7 +4311,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.volume
+    m_DirectBlendParameter: g1.volume
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: eb7cdd8c17863eeec8804bc11031a5b9, type: 2}
@@ -4127,10 +4319,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.volume
+    m_DirectBlendParameter: g1.volume
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.release.total
-  m_BlendParameterY: gg.bladder.volume
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -4145,7 +4337,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: gg.sys.1.speed.multiplier
+    m_ConditionEvent: sg1.rate.multiplier
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -4170,7 +4362,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1272616924864616124}
@@ -4181,31 +4373,6 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0
-  m_HasExitTime: 0
-  m_HasFixedDuration: 1
-  m_InterruptionSource: 0
-  m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
---- !u!1101 &4823500825540082448
-AnimatorStateTransition:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Voluntary Emptying
-  m_Conditions:
-  - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
-    m_EventTreshold: 3
-  m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 6070742754809907160}
-  m_Solo: 0
-  m_Mute: 0
-  m_IsExit: 0
-  serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -4233,52 +4400,52 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: sys_1_engine
+  m_Name: g1_1_engine
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -3836614016241912223}
-    m_Position: {x: 0, y: -520, z: 0}
+    m_Position: {x: 500, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1263909721612224206}
-    m_Position: {x: 0, y: -340, z: 0}
+    m_Position: {x: 500, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7267016733911303150}
-    m_Position: {x: 0, y: -580, z: 0}
+    m_Position: {x: 500, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4914863306484399484}
-    m_Position: {x: 220, y: -520, z: 0}
+    m_Position: {x: 720, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1498461531703321827}
-    m_Position: {x: -220, y: -520, z: 0}
+    m_Position: {x: 280, y: -130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1655706975514143478}
-    m_Position: {x: 220, y: -460, z: 0}
+    m_Position: {x: 720, y: -70, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 5010153288425887793}
-    m_Position: {x: -220, y: -340, z: 0}
+    m_Position: {x: 280, y: 50, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: -49875169044228350}
-    m_Position: {x: -220, y: -400, z: 0}
+    m_Position: {x: 280, y: -10, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 6037657256871432962}
-    m_Position: {x: -220, y: -460, z: 0}
+    m_Position: {x: 280, y: -70, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 6037657256871432962}
-    second:
-    - {fileID: 3470441629394783174}
-  - first: {fileID: -49875169044228350}
-    second:
-    - {fileID: 4208751717748535794}
   - first: {fileID: 5010153288425887793}
     second:
     - {fileID: 6176402078840297378}
+  - first: {fileID: -49875169044228350}
+    second:
+    - {fileID: 4208751717748535794}
+  - first: {fileID: 6037657256871432962}
+    second:
+    - {fileID: 3470441629394783174}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 20, y: -660, z: 0}
-  m_EntryPosition: {x: 20, y: -630, z: 0}
-  m_ExitPosition: {x: 20, y: -420, z: 0}
+  m_AnyStatePosition: {x: 520, y: -270, z: 0}
+  m_EntryPosition: {x: 520, y: -240, z: 0}
+  m_ExitPosition: {x: 520, y: -30, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 7267016733911303150}
 --- !u!206 &4954177275308103613
@@ -4313,10 +4480,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 0
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.bladder.release.relative
+    m_ConditionEvent: g1.release.relative
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4591131392843796379}
@@ -4342,35 +4509,41 @@ AnimatorStateMachine:
   m_Name: Param Updates
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1271029052499486473}
-    m_Position: {x: 150, y: -200, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 2912887911515894115}
-    m_Position: {x: 150, y: -110, z: 0}
+    m_Position: {x: 270, y: -140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3993415763658483975}
-    m_Position: {x: 400, y: -200, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 6070742754809907160}
-    m_Position: {x: 650, y: -200, z: 0}
+    m_Position: {x: 490, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -344100745904948215}
-    m_Position: {x: 650, y: -110, z: 0}
+    m_Position: {x: 710, y: -80, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 6204447239657100265}
+    m_Position: {x: 710, y: -140, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1466778278830598892}
+    m_Position: {x: 270, y: -200, z: 0}
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 5345392076992958552}
-    m_Position: {x: 400, y: -110, z: 0}
+    m_Position: {x: 490, y: -110, z: 0}
+  - serializedVersion: 1
+    m_StateMachine: {fileID: -259875167025782184}
+    m_Position: {x: 710, y: -200, z: 0}
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
+  - first: {fileID: -259875167025782184}
+    second:
+    - {fileID: 2814197179018533732}
   - first: {fileID: 5345392076992958552}
     second:
     - {fileID: -3047587383348745524}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 420, y: -300, z: 0}
-  m_EntryPosition: {x: 420, y: -270, z: 0}
-  m_ExitPosition: {x: 420, y: -20, z: 0}
-  m_ParentStateMachinePosition: {x: 400, y: -340, z: 0}
+  m_AnyStatePosition: {x: 510, y: -280, z: 0}
+  m_EntryPosition: {x: 510, y: -250, z: 0}
+  m_ExitPosition: {x: 510, y: -30, z: 0}
+  m_ParentStateMachinePosition: {x: 490, y: -320, z: 0}
   m_DefaultState: {fileID: 3993415763658483975}
 --- !u!1101 &5130999024469952536
 AnimatorStateTransition:
@@ -4381,7 +4554,7 @@ AnimatorStateTransition:
   m_Name: Update State
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -9089402061874502487}
@@ -4411,7 +4584,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: bc1481998140b9afc88ea2c6e1771030, type: 2}
@@ -4419,10 +4592,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.volume.internal
+    m_DirectBlendParameter: sg1.volume
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.sys.1.volume.internal
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: sg1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
@@ -4473,7 +4646,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: a3426d12f8544f65eb622cc66233c4f3, type: 2}
@@ -4481,10 +4654,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.countdown
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: sg1.pressure.inverse
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -4504,7 +4677,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 8bd03b1261e6f9be997a34729f55884e, type: 2}
@@ -4512,15 +4685,40 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.opt.capacity
     m_Mirror: 0
-  m_BlendParameter: gg.sys.1.volume.internal
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: sg1.volume
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1101 &5416493600160801026
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: involuntary release
+  m_Conditions:
+  - m_ConditionMode: 6
+    m_ConditionEvent: sg1.state
+    m_EventTreshold: 2
+  m_DstStateMachine: {fileID: -259875167025782184}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!206 &5531682602589462525
 BlendTree:
   m_ObjectHideFlags: 1
@@ -4552,6 +4750,34 @@ BlendTree:
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
   m_BlendType: 0
+--- !u!1101 &5733068492384012072
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: g1.opt.enabled
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsLocal
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 8769038901662208146}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &5791979603076914640
 AnimatorState:
   serializedVersion: 6
@@ -4595,7 +4821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.bladder.opt.time.max
+    name: g1.opt.capacity
     source: 
     value: 0.05
     valueMin: 0
@@ -4636,35 +4862,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 420, y: 300, z: 0}
   m_ParentStateMachinePosition: {x: 400, y: -20, z: 0}
   m_DefaultState: {fileID: 6357113919187547899}
---- !u!1102 &6070742754809907160
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Release
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions:
-  - {fileID: 3991119193303526601}
-  - {fileID: 8691088136337809320}
-  m_StateMachineBehaviours:
-  - {fileID: -6914728580328782302}
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 0}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!114 &6162639325057670337
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4679,7 +4876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.speed.multiplier
+    name: sg1.rate.multiplier
     source: 
     value: 1
     valueMin: 0
@@ -4706,6 +4903,34 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
+--- !u!1102 &6204447239657100265
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Apply Release Step
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: 54048535072339613}
+  - {fileID: -1393847098332953567}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 3732334334930311756}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &6275799380350587092
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4715,7 +4940,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 5345392076992958552}
   m_DstState: {fileID: 0}
@@ -4731,6 +4956,37 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!206 &6341248134093761391
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Increase Release Total
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 42baae8d3740fbdec99d427de9d9955e, type: 2}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.release.total
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 42baae8d3740fbdec99d427de9d9955e, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: sg1.release.step
+    m_Mirror: 0
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 4
 --- !u!1102 &6357113919187547899
 AnimatorState:
   serializedVersion: 6
@@ -4775,7 +5031,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 1482064385461592191}
@@ -4783,7 +5039,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 4261864812607281693}
@@ -4791,7 +5047,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 8294063106385380362}
@@ -4832,7 +5088,7 @@ AnimatorStateTransition:
   m_Name: Bladder Empty
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5052110783480570780}
@@ -4860,6 +5116,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2594861962521539315}
+  - {fileID: 5733068492384012072}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -4911,6 +5168,31 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &7038313678618580116
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: g1.opt.enabled
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 1
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &7076348875686043486
 AnimatorState:
   serializedVersion: 6
@@ -4953,7 +5235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.sys.1.speed.multiplier
+    name: sg1.rate.multiplier
     source: 
     value: 1.5
     valueMin: 0
@@ -5077,25 +5359,49 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!206 &7583334148770661158
+--- !u!206 &7762720880135068545
 BlendTree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Denormalize Max Fill
+  m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: aa4d4d20ddac541e682ca908c84f6e23, type: 2}
+    m_Motion: {fileID: 7400000, guid: 42baae8d3740fbdec99d427de9d9955e, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.bladder.opt.time.max
+    m_DirectBlendParameter: g1.release.total
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.release.total
-  m_MinThreshold: 1
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: eb7cdd8c17863eeec8804bc11031a5b9, type: 2}
+    m_Threshold: 0.33333334
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.release.relative
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: b4d2531f5650c4b2eb4b025d1507276a, type: 2}
+    m_Threshold: 0.6666667
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.volume
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 195d00cdc9482ccb4bcca4f9b3b0b753, type: 2}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: g1.pressure
+    m_Mirror: 0
+  m_BlendParameter: g1.release.total
+  m_BlendParameterY: g1.release.total
+  m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
@@ -5152,7 +5458,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -5198,8 +5504,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -5219,7 +5525,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.const.1
+    m_DirectBlendParameter: sg1.const.1
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 3c2cfa9c5dc62821688ab02d58d9d3bb, type: 2}
@@ -5227,10 +5533,10 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: gg.sys.1.countdown
+    m_DirectBlendParameter: sg1.pressure.inverse
     m_Mirror: 0
-  m_BlendParameter: gg.bladder.volume
-  m_BlendParameterY: gg.bladder.volume
+  m_BlendParameter: g1.volume
+  m_BlendParameterY: g1.volume
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -5245,7 +5551,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1655706975514143478}
@@ -5270,7 +5576,7 @@ AnimatorStateTransition:
   m_Name: State == Filling
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5791979603076914640}
@@ -5294,8 +5600,8 @@ BlendTree:
   m_PrefabAsset: {fileID: 0}
   m_Name: BlendTree
   m_Childs: []
-  m_BlendParameter: gg.bladder.opt.time.max
-  m_BlendParameterY: gg.bladder.opt.time.max
+  m_BlendParameter: g1.opt.capacity
+  m_BlendParameterY: g1.opt.capacity
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
@@ -5349,7 +5655,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.bladder.release.total
+    m_ConditionEvent: g1.release.total
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -45762850102483679}
@@ -5379,7 +5685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: gg.bladder.opt.release.total.reset
+    name: g1.opt.release.reset
     source: 
     value: 0
     valueMin: 0
@@ -5401,7 +5707,7 @@ AnimatorStateTransition:
   m_Name: State == Disabled
   m_Conditions:
   - m_ConditionMode: 6
-    m_ConditionEvent: gg.sys.1.state
+    m_ConditionEvent: sg1.state
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5555374463766086476}
@@ -5417,7 +5723,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &8691088136337809320
+--- !u!1101 &8735111605493222149
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5426,22 +5732,49 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: gg.sys.1.const.1
+    m_ConditionEvent: sg1.const.1
     m_EventTreshold: 0
-  m_DstStateMachine: {fileID: 5345392076992958552}
+  m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
   m_Solo: 0
   m_Mute: 0
-  m_IsExit: 0
+  m_IsExit: 1
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0
+  m_ExitTime: 0.75
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &8769038901662208146
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Remote State
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -9133924294270574814}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7762720880135068545}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &8819825243811291891
 AnimatorState:
   serializedVersion: 6

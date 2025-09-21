@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: GG2Menu
+  m_EditorClassIdentifier: 
+  Parameters: {fileID: 11400000, guid: 0db0d61257e46981d8b9e33af449858a, type: 2}
+  controls:
+  - name: Enable System
+    icon: {fileID: 2800000, guid: 756d75d5c045666cf89cd176887a9eaa, type: 3}
+    type: 102
+    parameter:
+      name: g2.opt.enabled
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Hold Time
+    icon: {fileID: 2800000, guid: f834fda6762cd7d7bbbfcb4729a71499, type: 3}
+    type: 203
+    parameter:
+      name: g2.x.cap.radial.open
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: g2.opt.capacity
+    labels: []
+  - name: Reset Effects
+    icon: {fileID: 2800000, guid: 2ff0ea2119b62cd2d96a1482e960378d, type: 3}
+    type: 102
+    parameter:
+      name: g2.opt.release.reset
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: gg.bowels.opt.max.time
+    labels: []
+  - name: Partial Release
+    icon: {fileID: 2800000, guid: df350cab7d9306488801231a685b531e, type: 3}
+    type: 101
+    parameter:
+      name: g2.opt.release
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters:
+    - name: gg.bowels.opt.max.time
+    labels: []

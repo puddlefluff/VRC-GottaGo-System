@@ -1,0 +1,157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6786490790166604890
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3346776562128692693}
+  - component: {fileID: -7729087112626347279}
+  - component: {fileID: -2017153915978397044}
+  m_Layer: 0
+  m_Name: GGBowelSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3346776562128692693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786490790166604890}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-7729087112626347279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786490790166604890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1252.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3329081900459098112
+  references:
+    version: 2
+    RefIds:
+    - rid: 3329081900459098112
+      type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 4
+        controllers:
+        - controller:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 074ccb9479881301587eae72cdac5d21|Assets/GottaGo/Bowels/BowelsController.controller
+            objRef: {fileID: 9100000, guid: 074ccb9479881301587eae72cdac5d21, type: 2}
+          type: 5
+        menus:
+        - menu:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 70714d98f4c8868ad84bc6e2f223079f|Assets/GottaGo/Bowels/BowelsMenu.asset
+            objRef: {fileID: 11400000, guid: 70714d98f4c8868ad84bc6e2f223079f, type: 2}
+          prefix: GottaGo #2
+        prms:
+        - parameters:
+            version: 1
+            fileID: 0
+            guid: 
+            id: 91382d22c7c6e32558465214963cded1|Assets/GottaGo/Bowels/BowelsParams.asset
+            objRef: {fileID: 11400000, guid: 91382d22c7c6e32558465214963cded1, type: 2}
+        smoothedPrms: []
+        globalParams:
+        - gg.bowels.release.total
+        - gg.bowels.release.relative
+        - gg.bowels.volume
+        - gg.bowels.pressure
+        - gg.bowels.emptying
+        allNonsyncedAreGlobal: 0
+        ignoreSaved: 0
+        toggleParam: 
+        rootObjOverride: {fileID: 0}
+        rootBindingsApplyToAvatar: 0
+        rewriteBindings: []
+        allowMissingAssets: 0
+        injectSpsDepthParam: 
+        injectSpsVelocityParam: 
+        controller:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        menu:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        parameters:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 
+          objRef: {fileID: 0}
+        submenu: 
+        removePrefixes: []
+        addPrefix: 
+        useSecurityForToggle: 0
+--- !u!114 &-2017153915978397044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6786490790166604890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1252.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3329081900459098113
+  references:
+    version: 2
+    RefIds:
+    - rid: 3329081900459098113
+      type: {class: SetIcon, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 1
+        path: GottaGo #2
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 3aa7ab9e30d2b36eabe93799c270bf82|Assets/GottaGo/Bowels/Icons/Bowels.png
+          objRef: {fileID: 2800000, guid: 3aa7ab9e30d2b36eabe93799c270bf82, type: 3}
