@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7153748353253219691}
   - component: {fileID: 8089584319504554937}
   - component: {fileID: -4578380693622774827}
+  - component: {fileID: 1572829426987884016}
   - component: {fileID: 4134791472533371811}
   m_Layer: 0
   m_Name: GGBladderSystem
@@ -156,6 +157,40 @@ MonoBehaviour:
         removePrefixes: []
         addPrefix: 
         useSecurityForToggle: 0
+--- !u!114 &1572829426987884016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925508128791247257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 3
+  unityVersion: 2022.3.22f1
+  vrcfuryVersion: 1.1252.0
+  somethingIsBroken: 0
+  config:
+    features: []
+  content:
+    rid: 3329082010095845376
+  references:
+    version: 2
+    RefIds:
+    - rid: 3329082010095845376
+      type: {class: SetIcon, ns: VF.Model.Feature, asm: VRCFury}
+      data:
+        version: 1
+        path: Gotta Go
+        icon:
+          version: 1
+          fileID: 0
+          guid: 
+          id: 0793addcd91a05d8894c09850ff1b003|Assets/GottaGo/Icons/restroom.png
+          objRef: {fileID: 2800000, guid: 0793addcd91a05d8894c09850ff1b003, type: 3}
 --- !u!114 &4134791472533371811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +223,8 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 52fc5f97e578112bcbaefbee5e041112|Assets/GottaGo/Bladder/Icons/Bladder.png
-          objRef: {fileID: 2800000, guid: 52fc5f97e578112bcbaefbee5e041112, type: 3}
+          id: 986f55b7990833a18bd79ae4607ebf61|Assets/GottaGo/Icons/bladder.png
+          objRef: {fileID: 2800000, guid: 986f55b7990833a18bd79ae4607ebf61, type: 3}
 --- !u!1001 &359211009321927447
 PrefabInstance:
   m_ObjectHideFlags: 0

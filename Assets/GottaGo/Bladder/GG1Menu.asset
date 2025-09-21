@@ -15,7 +15,7 @@ MonoBehaviour:
   Parameters: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
   controls:
   - name: Enable
-    icon: {fileID: 2800000, guid: 756d75d5c045666cf89cd176887a9eaa, type: 3}
+    icon: {fileID: 2800000, guid: 397d524cd13a2d5de811b9d095be9a72, type: 3}
     type: 102
     parameter:
       name: g1.opt.enabled
@@ -25,7 +25,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: Hold Time
-    icon: {fileID: 2800000, guid: f834fda6762cd7d7bbbfcb4729a71499, type: 3}
+    icon: {fileID: 2800000, guid: 831b60c2c61a2542ab5183af25164a29, type: 3}
     type: 203
     parameter:
       name: g1.x.cap.radial.open
@@ -36,7 +36,7 @@ MonoBehaviour:
     - name: g1.opt.capacity
     labels: []
   - name: Reset Effects
-    icon: {fileID: 2800000, guid: db6b335214b0a0e81a83e133f8e03195, type: 3}
+    icon: {fileID: 2800000, guid: f4d823b84840ada30a553700dca0c61b, type: 3}
     type: 101
     parameter:
       name: g1.opt.release.reset
@@ -45,8 +45,8 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: Urinate
-    icon: {fileID: 2800000, guid: 06cca85d173a986eaabd27b2ad78956a, type: 3}
+  - name: Release
+    icon: {fileID: 2800000, guid: a51bb2eaf3e7f344d8bfd7edde8b69f0, type: 3}
     type: 101
     parameter:
       name: g1.opt.release

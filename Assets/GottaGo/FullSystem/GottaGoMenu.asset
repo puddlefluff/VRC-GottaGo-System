@@ -15,7 +15,7 @@ MonoBehaviour:
   Parameters: {fileID: 0}
   controls:
   - name: Bowels
-    icon: {fileID: 2800000, guid: 8b64bcbe29a7e835fa23790672108df8, type: 3}
+    icon: {fileID: 2800000, guid: eeabec2c66ddf744caa28314ad632388, type: 3}
     type: 103
     parameter:
       name: 
@@ -25,7 +25,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: Bladder
-    icon: {fileID: 2800000, guid: 52fc5f97e578112bcbaefbee5e041112, type: 3}
+    icon: {fileID: 2800000, guid: 986f55b7990833a18bd79ae4607ebf61, type: 3}
     type: 103
     parameter:
       name: 

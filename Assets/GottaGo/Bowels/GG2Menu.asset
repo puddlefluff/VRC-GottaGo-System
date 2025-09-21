@@ -15,7 +15,7 @@ MonoBehaviour:
   Parameters: {fileID: 11400000, guid: 0db0d61257e46981d8b9e33af449858a, type: 2}
   controls:
   - name: Enable System
-    icon: {fileID: 2800000, guid: 756d75d5c045666cf89cd176887a9eaa, type: 3}
+    icon: {fileID: 2800000, guid: 397d524cd13a2d5de811b9d095be9a72, type: 3}
     type: 102
     parameter:
       name: g2.opt.enabled
@@ -25,7 +25,7 @@ MonoBehaviour:
     subParameters: []
     labels: []
   - name: Hold Time
-    icon: {fileID: 2800000, guid: f834fda6762cd7d7bbbfcb4729a71499, type: 3}
+    icon: {fileID: 2800000, guid: 831b60c2c61a2542ab5183af25164a29, type: 3}
     type: 203
     parameter:
       name: g2.x.cap.radial.open
@@ -36,7 +36,7 @@ MonoBehaviour:
     - name: g2.opt.capacity
     labels: []
   - name: Reset Effects
-    icon: {fileID: 2800000, guid: 846b2b44f84a9d574a849697547ba1a3, type: 3}
+    icon: {fileID: 2800000, guid: f4d823b84840ada30a553700dca0c61b, type: 3}
     type: 101
     parameter:
       name: g2.opt.release.reset
@@ -45,8 +45,8 @@ MonoBehaviour:
     subMenu: {fileID: 0}
     subParameters: []
     labels: []
-  - name: Partial Release
-    icon: {fileID: 2800000, guid: 2e8679e384fddee10b69437c8c66aa88, type: 3}
+  - name: Release
+    icon: {fileID: 2800000, guid: a51bb2eaf3e7f344d8bfd7edde8b69f0, type: 3}
     type: 101
     parameter:
       name: g2.opt.release

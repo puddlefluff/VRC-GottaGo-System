@@ -67,7 +67,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/GottaGo/Bladder/BladderController.controller
+            id: 31eb27497fef7b2c4a41c0513c91b898|Assets/GottaGo/Bladder/GG1Controller.controller
             objRef: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
           type: 5
         - controller:
@@ -90,7 +90,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/BladderParams.asset
+            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/GG2Params.asset
             objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
         - parameters:
             version: 1
@@ -195,8 +195,8 @@ MonoBehaviour:
           version: 1
           fileID: 0
           guid: 
-          id: 120682b4f3c3500438c566c5f2405edf|Assets/GottaGo/FullSystem/Icons/droplets.png
-          objRef: {fileID: 2800000, guid: 120682b4f3c3500438c566c5f2405edf, type: 3}
+          id: 0793addcd91a05d8894c09850ff1b003|Assets/GottaGo/Icons/restroom.png
+          objRef: {fileID: 2800000, guid: 0793addcd91a05d8894c09850ff1b003, type: 3}
 --- !u!1001 &478182998573702822
 PrefabInstance:
   m_ObjectHideFlags: 0
