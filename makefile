@@ -25,4 +25,6 @@ package:
 release: docs package
 
 docs/%.html: docs/adoc/%.adoc
-	@asciidoctor -o $@ -a revnumber=$(GIT_TAG) $<
+	@asciidoctor -o $@ \
+		-a revnumber=$(shell echo $(GIT_TAG) | cut -c2- | cut -d'-' -f1) \
+		$<

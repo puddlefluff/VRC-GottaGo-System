@@ -3,12 +3,20 @@
 :toc: left
 :sectlinks:
 :sectanchors:
+:linkcss:
+:stylesheet: ../css/adoc.css
+:repo-url: https://github.com/puddlefluff/VRC-GottaGo-System
 :decrease: pass:a,q[[.red]#⮇#]
 :increase: pass:a,q[[.green]#⮅#]
 :enabled: pass:a,q[[.green]#✔#]
 :disabled: pass:a,q[[.red]#✘#]
 
+.Links
+* &#xf09b; https://github.com/puddlefluff/VRC-GottaGo-System
+
 == Features
+
+=== Timing Control
 
 The GottaGo system is built around a base system cycle time range of 30 seconds
 to 600 seconds (10 minutes).
@@ -44,16 +52,6 @@ returns to `0.0`.
 Involuntary release is activated automatically once a system reaches a pressure
 value of 100% (`1.0`).  Once active, the system will enter release mode and will
 remain in release mode until the relevant pressure value is reduced to `0.0`.
-
-
-=== Timing Control
-
-TODO
-
-
-=== Status Parameters
-
-TODO
 
 
 === Bladder System
