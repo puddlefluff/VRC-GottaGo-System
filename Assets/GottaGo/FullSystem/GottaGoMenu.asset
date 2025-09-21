@@ -15,13 +15,13 @@ MonoBehaviour:
   Parameters: {fileID: 0}
   controls:
   - name: Bowels
-    icon: {fileID: 2800000, guid: 3aa7ab9e30d2b36eabe93799c270bf82, type: 3}
+    icon: {fileID: 2800000, guid: 8b64bcbe29a7e835fa23790672108df8, type: 3}
     type: 103
     parameter:
       name: 
     value: 1
     style: 0
-    subMenu: {fileID: 11400000, guid: 70714d98f4c8868ad84bc6e2f223079f, type: 2}
+    subMenu: {fileID: 11400000, guid: 7915249b7ebdb925e92bc8bf81ad3375, type: 2}
     subParameters: []
     labels: []
   - name: Bladder

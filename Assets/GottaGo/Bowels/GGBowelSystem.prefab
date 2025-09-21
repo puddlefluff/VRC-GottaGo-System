@@ -65,31 +65,37 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 074ccb9479881301587eae72cdac5d21|Assets/GottaGo/Bowels/BowelsController.controller
-            objRef: {fileID: 9100000, guid: 074ccb9479881301587eae72cdac5d21, type: 2}
+            id: e68cf98596b4d7d09868c625ace4f5bb|Assets/GottaGo/Bowels/GG2Controller.controller
+            objRef: {fileID: 9100000, guid: e68cf98596b4d7d09868c625ace4f5bb, type: 2}
           type: 5
         menus:
         - menu:
             version: 1
             fileID: 0
             guid: 
-            id: 70714d98f4c8868ad84bc6e2f223079f|Assets/GottaGo/Bowels/BowelsMenu.asset
-            objRef: {fileID: 11400000, guid: 70714d98f4c8868ad84bc6e2f223079f, type: 2}
+            id: 7915249b7ebdb925e92bc8bf81ad3375|Assets/GottaGo/Bowels/GG2Menu.asset
+            objRef: {fileID: 11400000, guid: 7915249b7ebdb925e92bc8bf81ad3375, type: 2}
           prefix: GottaGo #2
         prms:
         - parameters:
             version: 1
             fileID: 0
             guid: 
-            id: 91382d22c7c6e32558465214963cded1|Assets/GottaGo/Bowels/BowelsParams.asset
-            objRef: {fileID: 11400000, guid: 91382d22c7c6e32558465214963cded1, type: 2}
-        smoothedPrms: []
+            id: 0db0d61257e46981d8b9e33af449858a|Assets/GottaGo/Bowels/GG2Params.asset
+            objRef: {fileID: 11400000, guid: 0db0d61257e46981d8b9e33af449858a, type: 2}
+        smoothedPrms:
+        - name: g2.release.total
+          smoothingDuration: 0.2
+          range: 0
+        - name: g2.release.relative
+          smoothingDuration: 0.2
+          range: 0
         globalParams:
-        - gg.bowels.release.total
-        - gg.bowels.release.relative
-        - gg.bowels.volume
-        - gg.bowels.pressure
-        - gg.bowels.emptying
+        - g2.release.total
+        - g2.release.relative
+        - g2.volume
+        - g2.pressure
+        - g2.emptying
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 

@@ -105,13 +105,19 @@ MonoBehaviour:
             guid: 
             id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/BladderParams.asset
             objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
-        smoothedPrms: []
+        smoothedPrms:
+        - name: g1.release.total
+          smoothingDuration: 0.2
+          range: 0
+        - name: g1.release.relative
+          smoothingDuration: 0.2
+          range: 0
         globalParams:
-        - gg.bladder.release.total
-        - gg.bladder.release.relative
-        - gg.bladder.volume
-        - gg.bladder.pressure
-        - gg.bladder.emptying
+        - g1.release.total
+        - g1.release.relative
+        - g1.volume
+        - g1.pressure
+        - g1.emptying
         allNonsyncedAreGlobal: 0
         ignoreSaved: 1
         toggleParam: 
