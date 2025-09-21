@@ -90,7 +90,7 @@ MonoBehaviour:
             version: 1
             fileID: 0
             guid: 
-            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/GG2Params.asset
+            id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/GG1Params.asset
             objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
         - parameters:
             version: 1
