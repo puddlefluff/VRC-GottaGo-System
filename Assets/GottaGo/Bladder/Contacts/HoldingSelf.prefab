@@ -46,15 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootTransform: {fileID: 0}
   shapeType: 0
-  radius: 0.04
+  radius: 0.5
   height: 2
-  position: {x: 0, y: -0.07, z: 0.065}
+  position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
-  localOnly: 1
+  localOnly: 0
   collisionTags:
   - Hand
   allowSelf: 1
-  allowOthers: 0
+  allowOthers: 1
   receiverType: 0
-  parameter: gg.bladder.contact.holding.self
+  parameter: g1.con.holding
   minVelocity: 0.05

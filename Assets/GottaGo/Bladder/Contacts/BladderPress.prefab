@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootTransform: {fileID: 0}
   shapeType: 0
-  radius: 0.04
+  radius: 0.5
   height: 2
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -56,5 +56,5 @@ MonoBehaviour:
   allowSelf: 1
   allowOthers: 1
   receiverType: 0
-  parameter: extra.bladder.press
+  parameter: g1.con.pushing
   minVelocity: 0.05
