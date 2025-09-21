@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>GottaGo System Configuration Parameters</title>
+<title>GottaGo System</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -437,36 +437,262 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>GottaGo System Configuration Parameters</h1>
+<h1>GottaGo System</h1>
 <div class="details">
-<span id="revnumber">version v0.0.4</span>
+<span id="revnumber">version v0.0.5-4-g221fddc</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_bladder_system">Bladder System</a>
+<li><a href="#_features">Features</a>
 <ul class="sectlevel2">
-<li><a href="#_enable_system">Enable System</a></li>
-<li><a href="#_manual_release">Manual Release</a></li>
-<li><a href="#_reset_release_totals">Reset Release Totals</a></li>
-<li><a href="#_max_hold_time">Max Hold Time</a></li>
-<li><a href="#_hold_time_radial_open">Hold Time Radial Open</a></li>
+<li><a href="#_base_system_modes">Base System Modes</a></li>
+<li><a href="#_timing_control">Timing Control</a></li>
+<li><a href="#_status_parameters">Status Parameters</a></li>
+<li><a href="#_bladder_system">Bladder System</a></li>
+<li><a href="#_bowels_system">Bowels System</a></li>
 </ul>
 </li>
-<li><a href="#_bowels_system">Bowels System</a></li>
+<li><a href="#_parameters">Parameters</a>
+<ul class="sectlevel2">
+<li><a href="#_synchronizable_parameters">Synchronizable Parameters</a></li>
+<li><a href="#_option_parameters">Option Parameters</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_features"><a class="anchor" href="#_features"></a><a class="link" href="#_features">Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following parameters are present in the avatar expression parameters files, however they are not intended to be
-synchronzed.  These parameters are options modify the behavior of the system.</p>
+<p>The GottaGo system is built around a base system cycle time range of 30 seconds
+to 600 seconds (10 minutes).</p>
+</div>
+<div class="sect2">
+<h3 id="_base_system_modes"><a class="anchor" href="#_base_system_modes"></a><a class="link" href="#_base_system_modes">Base System Modes</a></h3>
+<div class="sect3">
+<h4 id="_filling"><a class="anchor" href="#_filling"></a><a class="link" href="#_filling">Filling</a></h4>
+<div class="paragraph">
+<p>When in 'filling' mode, the system will gradually increase a pressure percentage
+value until the configured time/volume is reached, at which point the system
+will automatically switch to <a href="#_involuntary_release">Involuntary Release</a> mode.</p>
 </div>
 <div class="paragraph">
-<p>The expression menus included with the system have entries to set all of these options, but they may be modified by
-other means instead of, or in addition to the included expression menus.</p>
+<p>During the filling mode, the <a href="#_voluntary_release">Voluntary Release</a> mode may be temporarily
+enabled.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="base-release"><a class="anchor" href="#base-release"></a><a class="link" href="#base-release">Releasing</a></h4>
+<div class="paragraph">
+<p>When in 'releasing' mode, the system will stop increasing pressure, and instead
+decrease pressure at a rate that is significantly faster than the fill rate.</p>
+</div>
+<div class="sect4">
+<h5 id="_voluntary_release"><a class="anchor" href="#_voluntary_release"></a><a class="link" href="#_voluntary_release">Voluntary Release</a></h5>
+<div class="paragraph">
+<p>Voluntary release is activated by use of the <code><strong>.opt.release</code> boolean parameter.
+Once active, the system will enter release mode, where it will remain until
+either the parameter is set back to <code>false</code>, or the relevant <code></strong>.pressure</code> value
+returns to <code>0.0</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_involuntary_release"><a class="anchor" href="#_involuntary_release"></a><a class="link" href="#_involuntary_release">Involuntary Release</a></h5>
+<div class="paragraph">
+<p>Involuntary release is activated automatically once a system reaches a pressure
+value of 100% (<code>1.0</code>).  Once active, the system will enter release mode and will
+remain in release mode until the relevant pressure value is reduced to <code>0.0</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_timing_control"><a class="anchor" href="#_timing_control"></a><a class="link" href="#_timing_control">Timing Control</a></h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_status_parameters"><a class="anchor" href="#_status_parameters"></a><a class="link" href="#_status_parameters">Status Parameters</a></h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bladder_system"><a class="anchor" href="#_bladder_system"></a><a class="link" href="#_bladder_system">Bladder System</a></h3>
+<div class="paragraph">
+<p>The bladder system is based on a maximum possible bladder capacity of 600ml, and
+a base fill rate of 1ml per second.</p>
+</div>
+<div class="sect3">
+<h4 id="_contacts"><a class="anchor" href="#_contacts"></a><a class="link" href="#_contacts">Contacts</a></h4>
+<div class="paragraph">
+<p>The bladder system comes with 2 optional contacts, one for 'pressing on the
+bladder', and one for 'physically holding oneself'.  The bladder pressing
+contact may increase the system&#8217;s cycle speed, while the holding contact may
+reduce it.</p>
+</div>
+<div class="paragraph">
+<p>If both contacts are active, or neither contact is active, the system&#8217;s cycle
+speed will remain at ~1 cycle per second.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+The included contacts may be removed in future versions.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_bladder_press_contact"><a class="anchor" href="#_bladder_press_contact"></a><a class="link" href="#_bladder_press_contact">Bladder Press Contact</a></h5>
+<div class="paragraph">
+<p>The bladder pressing contact has no affect until the bladder pressure reaches at
+least 50%, at which point it increases the cycle speed by 50%, to a cycle rate
+of ~1.5 cycles per second.</p>
+</div>
+<div class="paragraph">
+<p>When used with the maximum bladder capacity setting, this may reduce the hold
+time from 10 minutes (600 seconds) down to 7.5 minutes (450 seconds).</p>
+</div>
+<div class="paragraph">
+<p>When used with the minimum bladder capacity setting, this may reduce the hold
+time from 30 seconds down to 22.5 seconds.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_physical_hold_contact"><a class="anchor" href="#_physical_hold_contact"></a><a class="link" href="#_physical_hold_contact">Physical Hold Contact</a></h5>
+<div class="paragraph">
+<p>The physical holding contact has no affect until the bladder pressure reaches at
+least 75%, at which point it decreases the cycle speed by 50%, to a cycle speed
+of ~0.5 cycles per second.</p>
+</div>
+<div class="paragraph">
+<p>When used with the maximum bladder capacity setting, this may extend the hold
+time from 10 minutes (600 seconds) up to 13.75 minutes (825 seconds).</p>
+</div>
+<div class="paragraph">
+<p>When used with the minimum bladder capacity setting, this may extend the hold
+time from 30 seconds up to ~41.5 seconds.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="blader-fill-mode"><a class="anchor" href="#blader-fill-mode"></a><a class="link" href="#blader-fill-mode">Fill Mode</a></h4>
+<div class="paragraph">
+<p>When the system is filling, the <a href="#bladder-emptying"><code>g1.emptying</code></a> parameter will be set to
+<code>false</code>, and the following parameters will be repeatedly updated every system
+cycle:</p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><span class="green">⮅</span> <a href="#bladder-volume"><code>g1.volume</code></a></p>
+</li>
+<li>
+<p><span class="green">⮅</span> <a href="#bladder-pressure"><code>g1.pressure</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bladder-release-mode"><a class="anchor" href="#bladder-release-mode"></a><a class="link" href="#bladder-release-mode">Release Mode</a></h4>
+<div class="paragraph">
+<p>When the system is releasing, the <a href="#bladder-emptying"><code>g1.emptying</code></a> parameter will be set to
+<code>true</code>, and the following parameters will be continuously updated:</p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><span class="green">⮅</span> <a href="#bladder-release-relative"><code>g1.release.relative</code></a></p>
+</li>
+<li>
+<p><span class="green">⮅</span> <a href="#bladder-release-total"><code>g1.release.total</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="#bladder-volume"><code>g1.volume</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="#bladder-pressure"><code>g1.pressure</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bowels_system"><a class="anchor" href="#_bowels_system"></a><a class="link" href="#_bowels_system">Bowels System</a></h3>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect3">
+<h4 id="bowel-system-modes"><a class="anchor" href="#bowel-system-modes"></a><a class="link" href="#bowel-system-modes">System Modes</a></h4>
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="sect4">
+<h5 id="_fill_mode"><a class="anchor" href="#_fill_mode"></a><a class="link" href="#_fill_mode">Fill Mode</a></h5>
+<div class="paragraph">
+<p>When the system is filling, the <a href="#bowels-emptying"><code>g2.emptying</code></a> parameter will be set to
+<code>false</code>, and the following parameters will be repeatedly updated every system
+cycle:</p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><span class="green">⮅</span> <a href="#bowels-volume"><code>g2.volume</code></a></p>
+</li>
+<li>
+<p><span class="green">⮅</span> <a href="#bowels-pressure"><code>g2.pressure</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowel-release-mode"><a class="anchor" href="#bowel-release-mode"></a><a class="link" href="#bowel-release-mode">Release Mode</a></h5>
+<div class="paragraph">
+<p>When the system is releasing, the <a href="#bowels-emptying"><code>g2.emptying</code></a> parameter will be set to
+<code>true</code>, and the following parameters will be continuously updated:</p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><span class="green">⮅</span> <a href="#bowels-release-relative"><code>g2.release.relative</code></a></p>
+</li>
+<li>
+<p><span class="green">⮅</span> <a href="#bowels-release-total"><code>g2.release.total</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="#bowels-volume"><code>g2.volume</code></a></p>
+</li>
+<li>
+<p><span class="red">⮇</span> <a href="#bowels-pressure"><code>g2.pressure</code></a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_parameters"><a class="anchor" href="#_parameters"></a><a class="link" href="#_parameters">Parameters</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_synchronizable_parameters"><a class="anchor" href="#_synchronizable_parameters"></a><a class="link" href="#_synchronizable_parameters">Synchronizable Parameters</a></h3>
+<div class="paragraph">
+<p>The following parameters are exposed by the GottaGo system for use in animations
+and extensions.</p>
+</div>
+<div class="paragraph">
+<p>Any parameters not being used by your project&#8217;s features may safely be marked as
+non-synchronized.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -475,82 +701,243 @@ other means instead of, or in addition to the included expression menus.</p>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-By default, these parameters are not set to retain their names in the default VRCFury full controller.
+<div class="paragraph">
+<p>These parameters are <strong>READ ONLY</strong>, the system does not read from these
+parameters, and will overwrite values that are set from outside GottaGo while
+the system is active.</p>
+</div>
+<div class="paragraph">
+<p>These parameters <em>may</em> be written to and utilized while the system is disabled,
+however, they will be reset once the system is activated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+While in pre-release development, the parameter names are likely to change!
+If using the system, have a method of bulk renaming parameters <em>outside</em> of
+Unity available.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_bladder_system_2"><a class="anchor" href="#_bladder_system_2"></a><a class="link" href="#_bladder_system_2">Bladder System</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Bladder system parameters are prefixed with the text <code>g1.</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="bladder-volume"><a class="anchor" href="#bladder-volume"></a><a class="link" href="#bladder-volume"><code>g1.volume</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The current bladder fill volume as a percentage of 600ml (hold volume radial at 100%).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bladder-pressure"><a class="anchor" href="#bladder-pressure"></a><a class="link" href="#bladder-pressure"><code>g1.pressure</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The current bladder pressure as a percentage of chosen maximum volume.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bladder-release-total"><a class="anchor" href="#bladder-release-total"></a><a class="link" href="#bladder-release-total"><code>g1.release.total</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The total volume released as a percentage of 600ml (hold volume radial at 100%).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bladder-release-relative"><a class="anchor" href="#bladder-release-relative"></a><a class="link" href="#bladder-release-relative"><code>g1.release.relative</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The total volume released as a percentage of the chosen maximum volume.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The rate of value increase is not linear, and has a curve as it approaches 100%.</p>
+</div>
+<div class="paragraph">
+<p>In future versions of the system, the increase will be updated to be a linear
+increase.</p>
+</div>
 </td>
 </tr>
 </table>
 </div>
 </div>
+<div class="sect4">
+<h5 id="bladder-emptying"><a class="anchor" href="#bladder-emptying"></a><a class="link" href="#bladder-emptying"><code>g1.emptying</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>bool</code></p>
 </div>
-<div class="sect1">
-<h2 id="_bladder_system"><a class="anchor" href="#_bladder_system"></a><a class="link" href="#_bladder_system">Bladder System</a></h2>
-<div class="sectionbody">
+<div class="paragraph">
+<p>Flag indicating whether the bladder volume is currently being released.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bowels_system_2"><a class="anchor" href="#_bowels_system_2"></a><a class="link" href="#_bowels_system_2">Bowels System</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Bowels system parameters are prefixed with the text <code>g2.</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="bowels-volume"><a class="anchor" href="#bowels-volume"></a><a class="link" href="#bowels-volume"><code>g2.volume</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The current bowels fill volume as a percentage of the maximum possible amount
+(hold volume radial at 100%).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowels-pressure"><a class="anchor" href="#bowels-pressure"></a><a class="link" href="#bowels-pressure"><code>g2.pressure</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The current bowel pressure as a number that increases from <code>0.0</code> to <code>1.0</code> over
+the course of the chosen maximum hold
+time.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowels-release-total"><a class="anchor" href="#bowels-release-total"></a><a class="link" href="#bowels-release-total"><code>g2.release.total</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The total volume released as a percentage of the maximum possible amount (hold
+volume radial at 100%).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowels-release-relative"><a class="anchor" href="#bowels-release-relative"></a><a class="link" href="#bowels-release-relative"><code>g2.release.relative</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>float</code></p>
+</div>
+<div class="paragraph">
+<p>The total volume released as a percentage of the chosen maximum volume.</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The rate of value increase is not linear, and has a curve as it approaches 100%.</p>
+</div>
+<div class="paragraph">
+<p>In future versions of the system, the increase will be updated to be a linear
+increase.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowels-emptying"><a class="anchor" href="#bowels-emptying"></a><a class="link" href="#bowels-emptying"><code>g2.emptying</code></a></h5>
+<div class="paragraph">
+<p>Type: <code>bool</code></p>
+</div>
+<div class="paragraph">
+<p>Flag indicating whether the bladder volume is currently being released.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="_enable_system"><a class="anchor" href="#_enable_system"></a><a class="link" href="#_enable_system">Enable System</a></h3>
+<h3 id="_option_parameters"><a class="anchor" href="#_option_parameters"></a><a class="link" href="#_option_parameters">Option Parameters</a></h3>
+<div class="paragraph">
+<p>The following parameters are present in the avatar expression parameters files,
+however they are not intended to be synchronzed.  These parameters are options
+modify the behavior of the system.  The expression menus included with the
+system have entries to set all of these options, but they may be modified by
+other means instead of, or in addition to the included expression menus.</p>
+</div>
+<div class="sect3">
+<h4 id="_bladder_system_3"><a class="anchor" href="#_bladder_system_3"></a><a class="link" href="#_bladder_system_3">Bladder System</a></h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Bladder system parameters are prefixed with the text <code>g1.</code>
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist none">
+<div class="title">Options</div>
 <ul class="none">
 <li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.enabled</code></p>
+<p><a href="#bladder-capacity">g1.opt.capacity</a></p>
 </li>
 <li>
-<p><strong>Type</strong>: <code>bool</code></p>
+<p><a href="#bladder-enabled">g1.opt.enabled</a></p>
 </li>
 <li>
-<p><strong>Menu</strong>: Toggle</p>
+<p><a href="#bladder-speed">g1.opt.rate.multiplier</a></p>
+</li>
+<li>
+<p><a href="#bladder-release">g1.opt.release</a></p>
+</li>
+<li>
+<p><a href="#bladder-release-reset">g1.opt.release.reset</a></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Controls whether the bladder system is enabled.  When disabled, all GG values will reset to their default state.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_manual_release"><a class="anchor" href="#_manual_release"></a><a class="link" href="#_manual_release">Manual Release</a></h3>
+<div class="sect4">
+<h5 id="bladder-capacity"><a class="anchor" href="#bladder-capacity"></a><a class="link" href="#bladder-capacity">Bladder Capacity / Max Hold Time</a></h5>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.release</code></p>
-</li>
-<li>
-<p><strong>Type</strong>: <code>bool</code></p>
-</li>
-<li>
-<p><strong>Menu</strong>: Button</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When <code>true</code>, switches the system to 'release' mode, where the the bladder fill</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_reset_release_totals"><a class="anchor" href="#_reset_release_totals"></a><a class="link" href="#_reset_release_totals">Reset Release Totals</a></h3>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.release.total.reset</code></p>
-</li>
-<li>
-<p><strong>Type</strong>: <code>bool</code></p>
-</li>
-<li>
-<p><strong>Menu</strong>: Toggle</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>When <code>true</code>, tells the system to reset the release amount values back to <code>0</code>.</p>
-</div>
-<div class="paragraph">
-<p>Once the release totals have been reset, this value will be automatically set back to <code>false</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_max_hold_time"><a class="anchor" href="#_max_hold_time"></a><a class="link" href="#_max_hold_time">Max Hold Time</a></h3>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.time.max</code></p>
+<p><strong>Name</strong>: <code>g1.opt.capacity</code></p>
 </li>
 <li>
 <p><strong>Type</strong>: <code>float</code></p>
@@ -561,58 +948,244 @@ By default, these parameters are not set to retain their names in the default VR
 </ul>
 </div>
 <div class="paragraph">
-<p>Configures the maximum hold time from a minimum value of 30 seconds to a maximum value of 10 minutes.</p>
+<p>Configures the maximum hold time from a minimum value of 30 seconds to a maximum
+value of 10 minutes.</p>
 </div>
 <div class="paragraph">
-<p>The actual hold time may deviate from the configuration value by use of the optional avatar contacts which modify the
-system speed.</p>
+<p>The actual hold time may deviate from the configuration value by use of the
+optional avatar contacts which modify the system speed.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_hold_time_radial_open"><a class="anchor" href="#_hold_time_radial_open"></a><a class="link" href="#_hold_time_radial_open">Hold Time Radial Open</a></h3>
+<div class="sect4">
+<h5 id="bladder-enabled"><a class="anchor" href="#bladder-enabled"></a><a class="link" href="#bladder-enabled">Enable System</a></h5>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p><strong>Name</strong>: <code>gg.bladder.opt.radial.open</code></p>
+<p><strong>Name</strong>: <code>g1.opt.enabled</code></p>
 </li>
 <li>
 <p><strong>Type</strong>: <code>bool</code></p>
 </li>
 <li>
-<p><strong>Menu</strong>: Indirect</p>
+<p><strong>Menu</strong>: Toggle</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Indicates whether the player has the hold time option radial menu open.  When set to <code>true</code>, the bladder system idles,
-awaiting the player&#8217;s chosen hold time value.</p>
+<p>Controls whether the bladder system is enabled.  When disabled, all GG values
+will reset to their default state.</p>
 </div>
-<div class="admonitionblock important">
+</div>
+<div class="sect4">
+<h5 id="bladder-speed"><a class="anchor" href="#bladder-speed"></a><a class="link" href="#bladder-speed">System Speed Multiplier</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g1.opt.rate.multiplier</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: Float</p>
+</li>
+<li>
+<p><strong>Menu</strong>: N/A</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Controls the speed multiplier for the bladder system.  With the default value of
+<code>1</code>, the system cycles ~1 time per second.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bladder-release"><a class="anchor" href="#bladder-release"></a><a class="link" href="#bladder-release">Manual Release</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g1.opt.release</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>bool</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Button</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, switches the system to 'release' mode.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#base-release">Releasing</a> and <a href="#bladder-release-mode">Bladder Release Mode</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bladder-release-reset"><a class="anchor" href="#bladder-release-reset"></a><a class="link" href="#bladder-release-reset">Reset Release Tracking</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g1.opt.release.reset</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>bool</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Button</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, tells the system to reset the release amount values back to <code>0</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bowels_system_3"><a class="anchor" href="#_bowels_system_3"></a><a class="link" href="#_bowels_system_3">Bowels System</a></h4>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This value should not be modified directly, it exists in the expression parameters by necessity.
+Bowels system parameters are prefixed with the text <code>g2.</code>
 </td>
 </tr>
 </table>
 </div>
+<div class="ulist none">
+<div class="title">Options</div>
+<ul class="none">
+<li>
+<p><a href="#bowel-capacity">g2.opt.capacity</a></p>
+</li>
+<li>
+<p><a href="#bowel-enabled">g2.opt.enabled</a></p>
+</li>
+<li>
+<p><a href="#bowel-speed">g2.opt.rate.multiplier</a></p>
+</li>
+<li>
+<p><a href="#bowel-release">g2.opt.release</a></p>
+</li>
+<li>
+<p><a href="#bowel-release-reset">g2.opt.release.reset</a></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="bowel-capacity"><a class="anchor" href="#bowel-capacity"></a><a class="link" href="#bowel-capacity">Max Hold Time</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g2.opt.capacity</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>float</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Radial</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Configures the maximum hold time from a minimum value of 30 seconds to a maximum
+value of 10 minutes.</p>
+</div>
+<div class="paragraph">
+<p>The actual hold time may deviate from the configuration value by use of the
+optional avatar contacts which modify the system speed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowel-enabled"><a class="anchor" href="#bowel-enabled"></a><a class="link" href="#bowel-enabled">Enable System</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g2.opt.enabled</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>bool</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Toggle</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Controls whether the bowel system is enabled.  When disabled, all GG values will
+reset to their default state.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowel-speed"><a class="anchor" href="#bowel-speed"></a><a class="link" href="#bowel-speed">System Speed Multiplier</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g2.opt.rate.multiplier</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: Float</p>
+</li>
+<li>
+<p><strong>Menu</strong>: N/A</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Controls the speed multiplier for the bowel system.  With the default value of
+<code>1</code>, the system cycles ~1 time per second.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowel-release"><a class="anchor" href="#bowel-release"></a><a class="link" href="#bowel-release">Manual Release</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g2.opt.release</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>bool</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Button</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, switches the system to 'release' mode.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#base-release">Releasing</a> and <a href="#bowel-release-mode">Bowels Release Mode</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="bowel-release-reset"><a class="anchor" href="#bowel-release-reset"></a><a class="link" href="#bowel-release-reset">Reset Release Tracking</a></h5>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p><strong>Name</strong>: <code>g2.opt.release.reset</code></p>
+</li>
+<li>
+<p><strong>Type</strong>: <code>bool</code></p>
+</li>
+<li>
+<p><strong>Menu</strong>: Button</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When <code>true</code>, tells the system to reset the release amount values back to <code>0</code>.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_bowels_system"><a class="anchor" href="#_bowels_system"></a><a class="link" href="#_bowels_system">Bowels System</a></h2>
-<div class="sectionbody">
-
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version v0.0.4<br>
-Last updated 2025-09-19 14:42:06 -0400
+Version v0.0.5-4-g221fddc<br>
+Last updated 2025-09-21 10:38:40 -0400
 </div>
 </div>
 </body>

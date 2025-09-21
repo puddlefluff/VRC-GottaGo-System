@@ -3,6 +3,166 @@
 :toc: left
 :sectlinks:
 :sectanchors:
+:decrease: pass:a,q[[.red]#⮇#]
+:increase: pass:a,q[[.green]#⮅#]
+:enabled: pass:a,q[[.green]#✔#]
+:disabled: pass:a,q[[.red]#✘#]
+
+== Features
+
+The GottaGo system is built around a base system cycle time range of 30 seconds
+to 600 seconds (10 minutes).
+
+=== Base System Modes
+
+==== Filling
+
+When in 'filling' mode, the system will gradually increase a pressure percentage
+value until the configured time/volume is reached, at which point the system
+will automatically switch to <<Involuntary Release>> mode.
+
+During the filling mode, the <<Voluntary Release>> mode may be temporarily
+enabled.
+
+
+[#base-release]
+==== Releasing
+
+When in 'releasing' mode, the system will stop increasing pressure, and instead
+decrease pressure at a rate that is significantly faster than the fill rate.
+
+
+===== Voluntary Release
+
+Voluntary release is activated by use of the `*.opt.release` boolean parameter.
+Once active, the system will enter release mode, where it will remain until
+either the parameter is set back to `false`, or the relevant `*.pressure` value
+returns to `0.0`.
+
+===== Involuntary Release
+
+Involuntary release is activated automatically once a system reaches a pressure
+value of 100% (`1.0`).  Once active, the system will enter release mode and will
+remain in release mode until the relevant pressure value is reduced to `0.0`.
+
+
+=== Timing Control
+
+TODO
+
+
+=== Status Parameters
+
+TODO
+
+
+=== Bladder System
+
+The bladder system is based on a maximum possible bladder capacity of 600ml, and
+a base fill rate of 1ml per second.
+
+==== Contacts
+
+The bladder system comes with 2 optional contacts, one for 'pressing on the
+bladder', and one for 'physically holding oneself'.  The bladder pressing
+contact may increase the system's cycle speed, while the holding contact may
+reduce it.
+
+If both contacts are active, or neither contact is active, the system's cycle
+speed will remain at ~1 cycle per second.
+
+[IMPORTANT]
+The included contacts may be removed in future versions.
+
+===== Bladder Press Contact
+
+The bladder pressing contact has no affect until the bladder pressure reaches at
+least 50%, at which point it increases the cycle speed by 50%, to a cycle rate
+of ~1.5 cycles per second.
+
+When used with the maximum bladder capacity setting, this may reduce the hold
+time from 10 minutes (600 seconds) down to 7.5 minutes (450 seconds).
+
+When used with the minimum bladder capacity setting, this may reduce the hold
+time from 30 seconds down to 22.5 seconds.
+
+// calc is timer * 0.75
+
+
+===== Physical Hold Contact
+
+The physical holding contact has no affect until the bladder pressure reaches at
+least 75%, at which point it decreases the cycle speed by 50%, to a cycle speed
+of ~0.5 cycles per second.
+
+When used with the maximum bladder capacity setting, this may extend the hold
+time from 10 minutes (600 seconds) up to 13.75 minutes (825 seconds).
+
+When used with the minimum bladder capacity setting, this may extend the hold
+time from 30 seconds up to ~41.5 seconds.
+
+// calc is timer * 1.375
+
+[#blader-fill-mode]
+==== Fill Mode
+
+When the system is filling, the <<bladder-emptying>> parameter will be set to
+`false`, and the following parameters will be repeatedly updated every system
+cycle:
+
+[none]
+* {increase} <<bladder-volume>>
+* {increase} <<bladder-pressure>>
+
+
+[#bladder-release-mode]
+==== Release Mode
+
+When the system is releasing, the <<bladder-emptying>> parameter will be set to
+`true`, and the following parameters will be continuously updated:
+
+[none]
+* {increase} <<bladder-release-relative>>
+* {increase} <<bladder-release-total>>
+* {decrease} <<bladder-volume>>
+* {decrease} <<bladder-pressure>>
+
+
+=== Bowels System
+
+TODO
+
+
+[#bowel-system-modes]
+==== System Modes
+
+TODO
+
+
+===== Fill Mode
+
+When the system is filling, the <<bowels-emptying>> parameter will be set to
+`false`, and the following parameters will be repeatedly updated every system
+cycle:
+
+[none]
+* {increase} <<bowels-volume>>
+* {increase} <<bowels-pressure>>
+
+
+[#bowel-release-mode]
+===== Release Mode
+
+
+When the system is releasing, the <<bowels-emptying>> parameter will be set to
+`true`, and the following parameters will be continuously updated:
+
+[none]
+* {increase} <<bowels-release-relative>>
+* {increase} <<bowels-release-total>>
+* {decrease} <<bowels-volume>>
+* {decrease} <<bowels-pressure>>
+
 
 == Parameters
 
@@ -66,10 +226,10 @@ The total volume released as a percentage of the chosen maximum volume.
 
 [CAUTION]
 --
-The rate of value increase is not linear, and has a curve as it approaches 100%.  This is due in part to the limited
-ways in which math can be done without the ability to write custom scripts.
+The rate of value increase is not linear, and has a curve as it approaches 100%.
 
-In future versions of the system, the increase will be updated to be a linear increase.
+In future versions of the system, the increase will be updated to be a linear
+increase.
 --
 
 [#bladder-emptying]
@@ -90,14 +250,16 @@ Bowels system parameters are prefixed with the text `g2.`
 
 Type: `float`
 
-The current bowels fill volume as a percentage of the maximum possible amount (hold volume radial at 100%).
+The current bowels fill volume as a percentage of the maximum possible amount
+(hold volume radial at 100%).
 
 [#bowels-pressure]
 ===== `g2.pressure`
 
 Type: `float`
 
-The current bowel pressure as a number that increases from `0.0` to `1.0` over the course of the chosen maximum hold
+The current bowel pressure as a number that increases from `0.0` to `1.0` over
+the course of the chosen maximum hold
 time.
 
 
@@ -106,7 +268,8 @@ time.
 
 Type: `float`
 
-The total volume released as a percentage of the maximum possible amount (hold volume radial at 100%).
+The total volume released as a percentage of the maximum possible amount (hold
+volume radial at 100%).
 
 [#bowels-release-relative]
 ===== `g2.release.relative`
@@ -118,10 +281,10 @@ The total volume released as a percentage of the chosen maximum volume.
 
 [CAUTION]
 --
-The rate of value increase is not linear, and has a curve as it approaches 100%.  This is due in part to the limited
-ways in which math can be done without the ability to write custom scripts.
+The rate of value increase is not linear, and has a curve as it approaches 100%.
 
-In future versions of the system, the increase will be updated to be a linear increase.
+In future versions of the system, the increase will be updated to be a linear
+increase.
 --
 
 [#bowels-emptying]
@@ -133,77 +296,164 @@ Flag indicating whether the bladder volume is currently being released.
 
 === Option Parameters
 
-
-The following parameters are present in the avatar expression parameters files, however they are not intended to be
-synchronzed.  These parameters are options modify the behavior of the system.
-
-The expression menus included with the system have entries to set all of these options, but they may be modified by
+The following parameters are present in the avatar expression parameters files,
+however they are not intended to be synchronzed.  These parameters are options 
+modify the behavior of the system.  The expression menus included with the
+system have entries to set all of these options, but they may be modified by
 other means instead of, or in addition to the included expression menus.
-
-
-[WARNING]
-By default, these parameters are not set to retain their names in the default VRCFury full controller.
 
 
 ==== Bladder System
 
-===== Enable System
+[TIP]
+Bladder system parameters are prefixed with the text `g1.`
+
+.Options
+[none]
+* <<bladder-capacity,g1.opt.capacity>>
+* <<bladder-enabled,g1.opt.enabled>>
+* <<bladder-speed,g1.opt.rate.multiplier>>
+* <<bladder-release,g1.opt.release>>
+* <<bladder-release-reset,g1.opt.release.reset>>
+
+
+[#bladder-capacity]
+===== Bladder Capacity / Max Hold Time
 
 [none]
-* *Name*: `gg.bladder.opt.enabled`
-* *Type*: `bool`
-* *Menu*: Toggle
-
-Controls whether the bladder system is enabled.  When disabled, all GG values will reset to their default state.
-
-
-===== Manual Release
-
-[none]
-* *Name*: `gg.bladder.opt.release`
-* *Type*: `bool`
-* *Menu*: Button
-
-When `true`, switches the system to 'release' mode, where the the bladder fill
-
-
-===== Reset Release Totals
-
-[none]
-* *Name*: `gg.bladder.opt.release.total.reset`
-* *Type*: `bool`
-* *Menu*: Toggle
-
-When `true`, tells the system to reset the release amount values back to `0`.
-
-Once the release totals have been reset, this value will be automatically set back to `false`.
-
-
-===== Max Hold Time
-
-[none]
-* *Name*: `gg.bladder.opt.time.max`
+* *Name*: `g1.opt.capacity`
 * *Type*: `float`
 * *Menu*: Radial
 
-Configures the maximum hold time from a minimum value of 30 seconds to a maximum value of 10 minutes.
+Configures the maximum hold time from a minimum value of 30 seconds to a maximum
+value of 10 minutes.
 
-The actual hold time may deviate from the configuration value by use of the optional avatar contacts which modify the
-system speed.
+The actual hold time may deviate from the configuration value by use of the
+optional avatar contacts which modify the system speed.
 
 
-===== Hold Time Radial Open
+[#bladder-enabled]
+===== Enable System
 
 [none]
-* *Name*: `gg.bladder.opt.radial.open`
+* *Name*: `g1.opt.enabled`
 * *Type*: `bool`
-* *Menu*: Indirect
+* *Menu*: Toggle
 
-Indicates whether the player has the hold time option radial menu open.  When set to `true`, the bladder system idles,
-awaiting the player's chosen hold time value.
+Controls whether the bladder system is enabled.  When disabled, all GG values
+will reset to their default state.
 
-[IMPORTANT]
-This value should not be modified directly, it exists in the expression parameters by necessity.
+
+[#bladder-speed]
+===== System Speed Multiplier
+
+[none]
+* *Name*: `g1.opt.rate.multiplier`
+* *Type*: Float
+* *Menu*: N/A
+
+Controls the speed multiplier for the bladder system.  With the default value of
+`1`, the system cycles ~1 time per second.
+
+
+[#bladder-release]
+===== Manual Release
+
+[none]
+* *Name*: `g1.opt.release`
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, switches the system to 'release' mode.
+
+See <<base-release>> and <<bladder-release-mode,Bladder Release Mode>>.
+
+
+[#bladder-release-reset]
+===== Reset Release Tracking
+
+[none]
+* *Name*: `g1.opt.release.reset`
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, tells the system to reset the release amount values back to `0`.
 
 
 ==== Bowels System
+
+[TIP]
+Bowels system parameters are prefixed with the text `g2.`
+
+.Options
+[none]
+* <<bowel-capacity,g2.opt.capacity>>
+* <<bowel-enabled,g2.opt.enabled>>
+* <<bowel-speed,g2.opt.rate.multiplier>>
+* <<bowel-release,g2.opt.release>>
+* <<bowel-release-reset,g2.opt.release.reset>>
+
+
+[#bowel-capacity]
+===== Max Hold Time
+
+[none]
+* *Name*: `g2.opt.capacity`
+* *Type*: `float`
+* *Menu*: Radial
+
+Configures the maximum hold time from a minimum value of 30 seconds to a maximum
+value of 10 minutes.
+
+The actual hold time may deviate from the configuration value by use of the
+optional avatar contacts which modify the system speed.
+
+
+[#bowel-enabled]
+===== Enable System
+
+[none]
+* *Name*: `g2.opt.enabled`
+* *Type*: `bool`
+* *Menu*: Toggle
+
+Controls whether the bowel system is enabled.  When disabled, all GG values will
+reset to their default state.
+
+
+[#bowel-speed]
+===== System Speed Multiplier
+
+[none]
+* *Name*: `g2.opt.rate.multiplier`
+* *Type*: Float
+* *Menu*: N/A
+
+Controls the speed multiplier for the bowel system.  With the default value of
+`1`, the system cycles ~1 time per second.
+
+
+[#bowel-release]
+===== Manual Release
+
+[none]
+* *Name*: `g2.opt.release`
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, switches the system to 'release' mode.
+
+See <<base-release>> and <<bowel-release-mode,Bowels Release Mode>>.
+
+
+
+[#bowel-release-reset]
+===== Reset Release Tracking
+
+[none]
+* *Name*: `g2.opt.release.reset`
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, tells the system to reset the release amount values back to `0`.
+
