@@ -12,7 +12,9 @@
 :disabled: pass:a,q[[.red]#✘#]
 
 .Links
-* &#xf09b; https://github.com/puddlefluff/VRC-GottaGo-System
+[none]
+* &#xf09b; https://github.com/puddlefluff/VRC-GottaGo-System[On GitHub]
+* &#xf83a; https://foxcapades.itch.io/vrc-gottago-system[On itch.io]
 
 == Features
 
