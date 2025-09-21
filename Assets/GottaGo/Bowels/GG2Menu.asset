@@ -36,24 +36,22 @@ MonoBehaviour:
     - name: g2.opt.capacity
     labels: []
   - name: Reset Effects
-    icon: {fileID: 2800000, guid: 2ff0ea2119b62cd2d96a1482e960378d, type: 3}
-    type: 102
+    icon: {fileID: 2800000, guid: 846b2b44f84a9d574a849697547ba1a3, type: 3}
+    type: 101
     parameter:
       name: g2.opt.release.reset
     value: 1
     style: 0
     subMenu: {fileID: 0}
-    subParameters:
-    - name: gg.bowels.opt.max.time
+    subParameters: []
     labels: []
   - name: Partial Release
-    icon: {fileID: 2800000, guid: df350cab7d9306488801231a685b531e, type: 3}
+    icon: {fileID: 2800000, guid: 2e8679e384fddee10b69437c8c66aa88, type: 3}
     type: 101
     parameter:
       name: g2.opt.release
     value: 1
     style: 0
     subMenu: {fileID: 0}
-    subParameters:
-    - name: gg.bowels.opt.max.time
+    subParameters: []
     labels: []
