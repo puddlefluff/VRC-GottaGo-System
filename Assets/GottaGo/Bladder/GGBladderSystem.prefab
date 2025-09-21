@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &963772055008827801
+--- !u!1 &7925508128791247257
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,62 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6372277606832509037}
-  - component: {fileID: -5502497888733617364}
-  - component: {fileID: -6256441017317456664}
+  - component: {fileID: 7153748353253219691}
+  - component: {fileID: 8089584319504554937}
+  - component: {fileID: -4578380693622774827}
+  - component: {fileID: 4134791472533371811}
   m_Layer: 0
-  m_Name: GottaGoFull
+  m_Name: GGBladderSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6372277606832509037
+--- !u!4 &7153748353253219691
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963772055008827801}
+  m_GameObject: {fileID: 7925508128791247257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4851778196437957713}
-  - {fileID: 8989836761616552689}
+  - {fileID: 1045260395359970889}
+  - {fileID: 9123347824899116864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5502497888733617364
+--- !u!95 &8089584319504554937
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925508128791247257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4578380693622774827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963772055008827801}
+  m_GameObject: {fileID: 7925508128791247257}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -54,11 +76,11 @@ MonoBehaviour:
   config:
     features: []
   content:
-    rid: 3329081900459098114
+    rid: 3329081833075245057
   references:
     version: 2
     RefIds:
-    - rid: 3329081900459098114
+    - rid: 3329081833075245057
       type: {class: FullController, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 4
@@ -70,21 +92,14 @@ MonoBehaviour:
             id: 31eb27497fef7b2c4a41c0513c91b898|Assets/GottaGo/Bladder/BladderController.controller
             objRef: {fileID: 9100000, guid: 31eb27497fef7b2c4a41c0513c91b898, type: 2}
           type: 5
-        - controller:
-            version: 1
-            fileID: 0
-            guid: 
-            id: e68cf98596b4d7d09868c625ace4f5bb|Assets/GottaGo/Bowels/GG2Controller.controller
-            objRef: {fileID: 9100000, guid: e68cf98596b4d7d09868c625ace4f5bb, type: 2}
-          type: 5
         menus:
         - menu:
             version: 1
             fileID: 0
             guid: 
-            id: 1c7c3030bb4279717b42435921fb3740|Assets/GottaGo/FullSystem/GottaGoMenu.asset
-            objRef: {fileID: 11400000, guid: 1c7c3030bb4279717b42435921fb3740, type: 2}
-          prefix: GottaGo
+            id: 36e482997306b7cc1999424e37997073|Assets/GottaGo/Bladder/BladderMenu.asset
+            objRef: {fileID: 11400000, guid: 36e482997306b7cc1999424e37997073, type: 2}
+          prefix: Gotta Go/Bladder
         prms:
         - parameters:
             version: 1
@@ -92,23 +107,11 @@ MonoBehaviour:
             guid: 
             id: 6a2978ce9dd2aebf4adc4cb3ee703003|Assets/GottaGo/Bladder/BladderParams.asset
             objRef: {fileID: 11400000, guid: 6a2978ce9dd2aebf4adc4cb3ee703003, type: 2}
-        - parameters:
-            version: 1
-            fileID: 0
-            guid: 
-            id: 0db0d61257e46981d8b9e33af449858a|Assets/GottaGo/Bowels/GG2Params.asset
-            objRef: {fileID: 11400000, guid: 0db0d61257e46981d8b9e33af449858a, type: 2}
         smoothedPrms:
         - name: g1.release.total
           smoothingDuration: 0.2
           range: 0
         - name: g1.release.relative
-          smoothingDuration: 0.2
-          range: 0
-        - name: g2.release.total
-          smoothingDuration: 0.2
-          range: 0
-        - name: g2.release.relative
           smoothingDuration: 0.2
           range: 0
         globalParams:
@@ -117,11 +120,11 @@ MonoBehaviour:
         - g1.volume
         - g1.pressure
         - g1.emptying
-        - g2.release.total
-        - g2.release.relative
-        - g2.volume
-        - g2.pressure
-        - g2.emptying
+        - g1.opt.capacity
+        - g1.opt.enabled
+        - g1.opt.rate.multiplier
+        - g1.opt.release
+        - g1.opt.release.reset
         allNonsyncedAreGlobal: 0
         ignoreSaved: 1
         toggleParam: 
@@ -153,13 +156,13 @@ MonoBehaviour:
         removePrefixes: []
         addPrefix: 
         useSecurityForToggle: 0
---- !u!114 &-6256441017317456664
+--- !u!114 &4134791472533371811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963772055008827801}
+  m_GameObject: {fileID: 7925508128791247257}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e94e501a2d4c95bff3d5601013d923, type: 3}
@@ -172,28 +175,28 @@ MonoBehaviour:
   config:
     features: []
   content:
-    rid: 3329081900459098115
+    rid: 3329081848379211778
   references:
     version: 2
     RefIds:
-    - rid: 3329081900459098115
+    - rid: 3329081848379211778
       type: {class: SetIcon, ns: VF.Model.Feature, asm: VRCFury}
       data:
         version: 1
-        path: GottaGo
+        path: Gotta Go/Bladder
         icon:
           version: 1
           fileID: 0
           guid: 
-          id: 120682b4f3c3500438c566c5f2405edf|Assets/GottaGo/FullSystem/Icons/droplets.png
-          objRef: {fileID: 2800000, guid: 120682b4f3c3500438c566c5f2405edf, type: 3}
---- !u!1001 &478182998573702822
+          id: 52fc5f97e578112bcbaefbee5e041112|Assets/GottaGo/Bladder/Icons/Bladder.png
+          objRef: {fileID: 2800000, guid: 52fc5f97e578112bcbaefbee5e041112, type: 3}
+--- !u!1001 &359211009321927447
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6372277606832509037}
+    m_TransformParent: {fileID: 7153748353253219691}
     m_Modifications:
     - target: {fileID: 3194620983587636529, guid: 5ea32b188691aaae6a7b27f5baece81a,
         type: 3}
@@ -255,19 +258,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ea32b188691aaae6a7b27f5baece81a, type: 3}
---- !u!4 &8989836761616552689 stripped
+--- !u!4 &9123347824899116864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8818197607655066711, guid: 5ea32b188691aaae6a7b27f5baece81a,
     type: 3}
-  m_PrefabInstance: {fileID: 478182998573702822}
+  m_PrefabInstance: {fileID: 359211009321927447}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3498297223163582035
+--- !u!1001 &9032262144984009803
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 6372277606832509037}
+    m_TransformParent: {fileID: 7153748353253219691}
     m_Modifications:
     - target: {fileID: 6573389213432426866, guid: e43e28aed9d22ea179e1cce687b1a9ef,
         type: 3}
@@ -329,9 +332,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43e28aed9d22ea179e1cce687b1a9ef, type: 3}
---- !u!4 &4851778196437957713 stripped
+--- !u!4 &1045260395359970889 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8347571831587072514, guid: e43e28aed9d22ea179e1cce687b1a9ef,
     type: 3}
-  m_PrefabInstance: {fileID: 3498297223163582035}
+  m_PrefabInstance: {fileID: 9032262144984009803}
   m_PrefabAsset: {fileID: 0}

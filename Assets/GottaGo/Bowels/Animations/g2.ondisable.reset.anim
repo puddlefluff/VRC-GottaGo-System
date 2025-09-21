@@ -162,7 +162,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: sg2.rate.multiplier
+    attribute: g2.opt.rate.multiplier
     path: 
     classID: 95
     script: {fileID: 0}
@@ -387,7 +387,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: sg2.rate.multiplier
+    attribute: g2.opt.rate.multiplier
     path: 
     classID: 95
     script: {fileID: 0}

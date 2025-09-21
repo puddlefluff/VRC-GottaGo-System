@@ -10,11 +10,14 @@ ifdef::env-github[]
 endif::[]
 
 
-== To Be Decided
+Parameter driver engine for building avatar animation systems around simulated
+bodily functions.
 
-* audio queues
 
-
+Note::
+This system does not provide any visible functionality for VRC avatars on its
+own.  It is intended to be used by avatar artists and modders as a foundation
+for building avatar/base specific animation systems.
 
 == Usage
 

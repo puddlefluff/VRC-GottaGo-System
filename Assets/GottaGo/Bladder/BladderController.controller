@@ -207,7 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sg1.rate.multiplier
+    name: g1.opt.rate.multiplier
     source: 
     value: 0.5
     valueMin: 0
@@ -2337,7 +2337,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 39e27ead3ba17f7298da665de1a49571, type: 2}
   m_Tag: 
-  m_SpeedParameter: sg1.rate.multiplier
+  m_SpeedParameter: g1.opt.rate.multiplier
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -2558,7 +2558,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: sg1.rate.multiplier
+    m_ConditionEvent: g1.opt.rate.multiplier
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -2800,9 +2800,21 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: g1.opt.capacity
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   - m_Name: g1.opt.enabled
     m_Type: 4
     m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: g1.opt.rate.multiplier
+    m_Type: 1
+    m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -2814,12 +2826,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: g1.opt.release.reset
     m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: g1.opt.capacity
-    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -2843,12 +2849,6 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: sg1.pressure.inverse
-    m_Type: 1
-    m_DefaultFloat: 1
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: sg1.rate.multiplier
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
@@ -3744,7 +3744,7 @@ AnimatorState:
   m_TimeParameterActive: 0
   m_Motion: {fileID: 5323431777759364402}
   m_Tag: 
-  m_SpeedParameter: sg1.rate.multiplier
+  m_SpeedParameter: g1.opt.rate.multiplier
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -4337,7 +4337,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: sg1.rate.multiplier
+    m_ConditionEvent: g1.opt.rate.multiplier
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 0}
@@ -4876,7 +4876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sg1.rate.multiplier
+    name: g1.opt.rate.multiplier
     source: 
     value: 1
     valueMin: 0
@@ -5235,7 +5235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
   - type: 0
-    name: sg1.rate.multiplier
+    name: g1.opt.rate.multiplier
     source: 
     value: 1.5
     valueMin: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -5502497888733617364}
   - component: {fileID: -6256441017317456664}
   m_Layer: 0
-  m_Name: GottaGoFull-NoContacts
+  m_Name: GGFulSysteml-NoContacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

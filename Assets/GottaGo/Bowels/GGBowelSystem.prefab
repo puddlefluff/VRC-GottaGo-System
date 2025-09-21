@@ -96,8 +96,13 @@ MonoBehaviour:
         - g2.volume
         - g2.pressure
         - g2.emptying
+        - g2.opt.capacity
+        - g2.opt.enabled
+        - g2.opt.rate.multiplier
+        - g2.opt.release
+        - g2.opt.release.reset
         allNonsyncedAreGlobal: 0
-        ignoreSaved: 0
+        ignoreSaved: 1
         toggleParam: 
         rootObjOverride: {fileID: 0}
         rootBindingsApplyToAvatar: 0

@@ -1,15 +1,18 @@
-= GottaGo Synchronizable Parameters
+= GottaGo System
 :icons: font
 :toc: left
 :sectlinks:
 :sectanchors:
 
+== Parameters
+
+=== Synchronizable Parameters
+
 The following parameters are exposed by the GottaGo system for use in animations
 and extensions. 
 
-Any parameters not being used to drive for your project's features may safely be
-marked as non-synchronized.
-
+Any parameters not being used by your project's features may safely be marked as
+non-synchronized.
 
 [WARNING]
 --
@@ -27,34 +30,34 @@ If using the system, have a method of bulk renaming parameters _outside_ of
 Unity available.
 
 
-== Bladder System
+==== Bladder System
 
 [TIP]
 Bladder system parameters are prefixed with the text `g1.`
 
 [#bladder-volume]
-=== `g1.volume`
+===== `g1.volume`
 
 Type: `float`
 
 The current bladder fill volume as a percentage of 600ml (hold volume radial at 100%).
 
 [#bladder-pressure]
-=== `g1.pressure`
+===== `g1.pressure`
 
 Type: `float`
 
 The current bladder pressure as a percentage of chosen maximum volume.
 
 [#bladder-release-total]
-=== `g1.release.total`
+===== `g1.release.total`
 
 Type: `float`
 
 The total volume released as a percentage of 600ml (hold volume radial at 100%).
 
 [#bladder-release-relative]
-=== `g1.release.relative`
+===== `g1.release.relative`
 
 Type: `float`
 
@@ -70,27 +73,27 @@ In future versions of the system, the increase will be updated to be a linear in
 --
 
 [#bladder-emptying]
-=== `g1.emptying`
+===== `g1.emptying`
 
 Type: `bool`
 
 Flag indicating whether the bladder volume is currently being released.
 
 
-== Bowels System
+==== Bowels System
 
 [TIP]
 Bowels system parameters are prefixed with the text `g2.`
 
 [#bowels-volume]
-=== `g2.volume`
+===== `g2.volume`
 
 Type: `float`
 
 The current bowels fill volume as a percentage of the maximum possible amount (hold volume radial at 100%).
 
 [#bowels-pressure]
-=== `g2.pressure`
+===== `g2.pressure`
 
 Type: `float`
 
@@ -99,14 +102,14 @@ time.
 
 
 [#bowels-release-total]
-=== `g2.release.total`
+===== `g2.release.total`
 
 Type: `float`
 
 The total volume released as a percentage of the maximum possible amount (hold volume radial at 100%).
 
 [#bowels-release-relative]
-=== `g2.release.relative`
+===== `g2.release.relative`
 
 Type: `float`
 
@@ -122,8 +125,85 @@ In future versions of the system, the increase will be updated to be a linear in
 --
 
 [#bowels-emptying]
-=== `g2.emptying`
+===== `g2.emptying`
 
 Type: `bool`
 
 Flag indicating whether the bladder volume is currently being released.
+
+=== Option Parameters
+
+
+The following parameters are present in the avatar expression parameters files, however they are not intended to be
+synchronzed.  These parameters are options modify the behavior of the system.
+
+The expression menus included with the system have entries to set all of these options, but they may be modified by
+other means instead of, or in addition to the included expression menus.
+
+
+[WARNING]
+By default, these parameters are not set to retain their names in the default VRCFury full controller.
+
+
+==== Bladder System
+
+===== Enable System
+
+[none]
+* *Name*: `gg.bladder.opt.enabled`
+* *Type*: `bool`
+* *Menu*: Toggle
+
+Controls whether the bladder system is enabled.  When disabled, all GG values will reset to their default state.
+
+
+===== Manual Release
+
+[none]
+* *Name*: `gg.bladder.opt.release`
+* *Type*: `bool`
+* *Menu*: Button
+
+When `true`, switches the system to 'release' mode, where the the bladder fill
+
+
+===== Reset Release Totals
+
+[none]
+* *Name*: `gg.bladder.opt.release.total.reset`
+* *Type*: `bool`
+* *Menu*: Toggle
+
+When `true`, tells the system to reset the release amount values back to `0`.
+
+Once the release totals have been reset, this value will be automatically set back to `false`.
+
+
+===== Max Hold Time
+
+[none]
+* *Name*: `gg.bladder.opt.time.max`
+* *Type*: `float`
+* *Menu*: Radial
+
+Configures the maximum hold time from a minimum value of 30 seconds to a maximum value of 10 minutes.
+
+The actual hold time may deviate from the configuration value by use of the optional avatar contacts which modify the
+system speed.
+
+
+===== Hold Time Radial Open
+
+[none]
+* *Name*: `gg.bladder.opt.radial.open`
+* *Type*: `bool`
+* *Menu*: Indirect
+
+Indicates whether the player has the hold time option radial menu open.  When set to `true`, the bladder system idles,
+awaiting the player's chosen hold time value.
+
+[IMPORTANT]
+This value should not be modified directly, it exists in the expression parameters by necessity.
+
+
+==== Bowels System

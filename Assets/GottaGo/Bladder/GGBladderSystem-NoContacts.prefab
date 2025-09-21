@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4578380693622774827}
   - component: {fileID: 4134791472533371811}
   m_Layer: 0
-  m_Name: GottaGoBladder-NoContacts
+  m_Name: GGBladderSystem-NoContacts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -118,6 +118,11 @@ MonoBehaviour:
         - g1.volume
         - g1.pressure
         - g1.emptying
+        - g1.opt.capacity
+        - g1.opt.enabled
+        - g1.opt.rate.multiplier
+        - g1.opt.release
+        - g1.opt.release.reset
         allNonsyncedAreGlobal: 0
         ignoreSaved: 1
         toggleParam: 
