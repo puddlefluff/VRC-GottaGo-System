@@ -14,6 +14,8 @@ Parameter driver engine for building avatar animation systems around simulated
 bodily functions.
 
 
+link:{doc-url}/system.html[Documentation]
+
 Note::
 This system does not provide any visible functionality for VRC avatars on its
 own.  It is intended to be used by avatar artists and modders as a foundation
@@ -24,11 +26,3 @@ for building avatar/base specific animation systems.
 TODO: document this
 
 Attach prefab to avatar game object
-
-
-== Documentation
-
-[square]
-* link:{doc-url}/sync-params.html[Synchronizable Animation Parameters]
-* link:{doc-url}/option-params.html[System Configuration Parameters]
-* link:{doc-url}/features.html[System Features & Functionality]

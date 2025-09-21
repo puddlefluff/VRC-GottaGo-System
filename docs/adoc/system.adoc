@@ -4,7 +4,7 @@
 :sectlinks:
 :sectanchors:
 :linkcss:
-:stylesheet: ../css/adoc.css
+:stylesheet: css/adoc.css
 :repo-url: https://github.com/puddlefluff/VRC-GottaGo-System
 :decrease: pass:a,q[[.red]#⮇#]
 :increase: pass:a,q[[.green]#⮅#]
