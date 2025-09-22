@@ -74,3 +74,8 @@ MonoBehaviour:
     saved: 0
     defaultValue: 0
     networkSynced: 0
+  - name: g1.volumed
+    valueType: 1
+    saved: 0
+    defaultValue: 0
+    networkSynced: 0

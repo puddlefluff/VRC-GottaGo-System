@@ -900,6 +900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GGFullSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 1215040230806803243, guid: 192ed4b6d47d5d3d585115be864f7c5f,
+        type: 3}
+      propertyPath: position.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6372277606832509037, guid: 192ed4b6d47d5d3d585115be864f7c5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -949,6 +954,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989836761616552689, guid: 192ed4b6d47d5d3d585115be864f7c5f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.707
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989836761616552689, guid: 192ed4b6d47d5d3d585115be864f7c5f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.033
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
