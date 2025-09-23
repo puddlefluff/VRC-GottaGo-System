@@ -1,4 +1,5 @@
 = GottaGo Bathroom Needs System
+:repo-url: https://github.com/puddlefluff/VRC-GottaGo-System
 :doc-url: https://puddlefluff.github.io/VRC-GottaGo-System
 :icons: font
 ifdef::env-github[]
@@ -21,8 +22,31 @@ This system does not provide any visible functionality for VRC avatars on its
 own.  It is intended to be used by avatar artists and modders as a foundation
 for building avatar/base specific animation systems.
 
-== Usage
 
-TODO: document this
+== How to Use
 
-Attach prefab to avatar game object
+=== Prerequisites
+
++1.+ https://vrcfury.com/[VRCFury]::
+VRCFury components are attached to the bladder and bowels subsystem prefabs to
+simplify the process adding the functionality to the parent avatar. +
++
+The system's core functionality does not use VRCFury, and may be attached to an
+avatar manually if desired to avoid the use of VRCFury.
+
+=== Attaching System
+
+The `.unitypackage` file available from the {repo-url}/releases/latest[latest release]
+contains 5 prefab options:
+
+. *GGBladder* - The bladder subsystem with {doc-url}/system.html#_contacts[contact receivers]
+  that alter the system speed.
+. *GGBladder-NoContacts* - The bladder subsystem without contact receivers.
+. *GGBowels* - The bowels subsystem.
+. *GGFull* - The bladder subsystem with contacts and the bowels subsystem.
+. *GGFull-NoContacts* - The bladder subsystem without contacts and the bowels
+  subsystem.
+
+Attach one of the above prefabs to the root of your avatar for the default setup
+using the default menus.
+

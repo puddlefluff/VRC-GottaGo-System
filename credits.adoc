@@ -7,10 +7,5 @@
 == Icons
 
 * link:https://www.flaticon.com/free-icon/intestine_966097[Intestine icon - srip]
-* link:https://www.flaticon.com/free-icon/countdown_2445393[Countdown icon - Pixelmeetup]
-* link:https://www.flaticon.com/free-icon/water_3119434[Water icon - Bartama Graphic]
-* link:https://www.flaticon.com/free-icon/poo_1004370[Poo icon - Made by Made]
-* link:https://www.flaticon.com/free-icon/resize_7175271[Resize icon - Ferdinand]
 * link:https://www.flaticon.com/free-icon/balloon_4610939[Water balloon icon - Smashicons]
-* link:https://www.flaticon.com/free-icon/rain-drop_17018710[Rain Drop icon - ekays.dsgn]
-* link:https://www.flaticon.com/free-icon/play-button_3874990[Play button icon - abdul allib]
+* link:https://fontawesome.com/[All other icons - FontAwesome]

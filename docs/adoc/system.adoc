@@ -16,20 +16,37 @@
 * &#xf09b; https://github.com/puddlefluff/VRC-GottaGo-System[On GitHub]
 * &#xf83a; https://foxcapades.itch.io/vrc-gottago-system[On itch.io]
 
+
 == Features
+
+The GottaGo bathroom needs system is an avatar customization building block
+providing independent, automatic bladder and/or bowel fill & release
+functionality.  When enabled each subsystem will 'fill', building pressure until
+reaching a breaking point, which triggers an involuntary release (a.k.a. an
+"accident").  To avoid this event, players may choose to manually relieve
+pressure from the subsystem.
+
 
 === Timing Control
 
-The GottaGo system is built around a base system cycle time range of 30 seconds
-to 600 seconds (10 minutes).
+The GottaGo system is built around a full-cycle time range of 30 seconds to 600
+seconds (10 minutes).  This time range is configurable via an input option (and
+included default radial menu).  Additionally, for the bladder system, the time
+range may be increased or decreased to some degree by use of physical
+<<Contacts>> which are to be placed in the appropriate locations on the target
+avatar.
+
 
 === Base System Modes
+
+The following system modes apply to both the bladder and bowels subsystems.
+
 
 ==== Filling
 
 When in 'filling' mode, the system will gradually increase a pressure percentage
-value until the configured time/volume is reached, at which point the system
-will automatically switch to <<Involuntary Release>> mode.
+value until the configured maximum time/volume is reached, at which point the
+system will automatically switch to <<Involuntary Release>> mode.
 
 During the filling mode, the <<Voluntary Release>> mode may be temporarily
 enabled.
@@ -39,7 +56,9 @@ enabled.
 ==== Releasing
 
 When in 'releasing' mode, the system will stop increasing pressure, and instead
-decrease pressure at a rate that is significantly faster than the fill rate.
+decrease pressure at a rate that is significantly faster than the fill rate
+while simultaneously increasing release tracking parameters by the amount
+released during release mode.
 
 
 ===== Voluntary Release
@@ -49,17 +68,24 @@ Once active, the system will enter release mode, where it will remain until
 either the parameter is set back to `false`, or the relevant `*.pressure` value
 returns to `0.0`.
 
+Keeping the release parameter set to `true` after the pressure value has reached
+zero will cause the system to cycle back and forth between fill and release
+mode, filling by some amount, then releasing that amount.
+
+
 ===== Involuntary Release
 
 Involuntary release is activated automatically once a system reaches a pressure
 value of 100% (`1.0`).  Once active, the system will enter release mode and will
-remain in release mode until the relevant pressure value is reduced to `0.0`.
+remain in release mode until the relevant pressure value is reduced to `0.0`, at
+which point the system will return to fill mode.
 
 
 === Bladder System
 
 The bladder system is based on a maximum possible bladder capacity of 600ml, and
 a base fill rate of 1ml per second.
+
 
 ==== Contacts
 
@@ -73,6 +99,7 @@ speed will remain at ~1 cycle per second.
 
 [IMPORTANT]
 The included contacts may be removed in future versions.
+
 
 ===== Bladder Press Contact
 
@@ -102,6 +129,7 @@ When used with the minimum bladder capacity setting, this may extend the hold
 time from 30 seconds up to ~41.5 seconds.
 
 // calc is timer * 1.375
+
 
 [#blader-fill-mode]
 ==== Fill Mode
