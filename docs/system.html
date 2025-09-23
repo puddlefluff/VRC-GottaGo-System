@@ -13,7 +13,7 @@
 <div id="header">
 <h1>GottaGo System</h1>
 <div class="details">
-<span id="revnumber">version 0.0.6</span>
+<span id="revnumber">version 0.0.7</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -54,21 +54,36 @@
 <div class="sect1">
 <h2 id="_features"><a class="anchor" href="#_features"></a><a class="link" href="#_features">Features</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The GottaGo bathroom needs system is an avatar customization building block
+providing independent, automatic bladder and/or bowel fill &amp; release
+functionality.  When enabled each subsystem will 'fill', building pressure until
+reaching a breaking point, which triggers an involuntary release (a.k.a. an
+"accident").  To avoid this event, players may choose to manually relieve
+pressure from the subsystem.</p>
+</div>
 <div class="sect2">
 <h3 id="_timing_control"><a class="anchor" href="#_timing_control"></a><a class="link" href="#_timing_control">Timing Control</a></h3>
 <div class="paragraph">
-<p>The GottaGo system is built around a base system cycle time range of 30 seconds
-to 600 seconds (10 minutes).</p>
+<p>The GottaGo system is built around a full-cycle time range of 30 seconds to 600
+seconds (10 minutes).  This time range is configurable via an input option (and
+included default radial menu).  Additionally, for the bladder system, the time
+range may be increased or decreased to some degree by use of physical
+<a href="#_contacts">Contacts</a> which are to be placed in the appropriate locations on the target
+avatar.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_base_system_modes"><a class="anchor" href="#_base_system_modes"></a><a class="link" href="#_base_system_modes">Base System Modes</a></h3>
+<div class="paragraph">
+<p>The following system modes apply to both the bladder and bowels subsystems.</p>
+</div>
 <div class="sect3">
 <h4 id="_filling"><a class="anchor" href="#_filling"></a><a class="link" href="#_filling">Filling</a></h4>
 <div class="paragraph">
 <p>When in 'filling' mode, the system will gradually increase a pressure percentage
-value until the configured time/volume is reached, at which point the system
-will automatically switch to <a href="#_involuntary_release">Involuntary Release</a> mode.</p>
+value until the configured maximum time/volume is reached, at which point the
+system will automatically switch to <a href="#_involuntary_release">Involuntary Release</a> mode.</p>
 </div>
 <div class="paragraph">
 <p>During the filling mode, the <a href="#_voluntary_release">Voluntary Release</a> mode may be temporarily
@@ -79,7 +94,9 @@ enabled.</p>
 <h4 id="base-release"><a class="anchor" href="#base-release"></a><a class="link" href="#base-release">Releasing</a></h4>
 <div class="paragraph">
 <p>When in 'releasing' mode, the system will stop increasing pressure, and instead
-decrease pressure at a rate that is significantly faster than the fill rate.</p>
+decrease pressure at a rate that is significantly faster than the fill rate
+while simultaneously increasing release tracking parameters by the amount
+released during release mode.</p>
 </div>
 <div class="sect4">
 <h5 id="_voluntary_release"><a class="anchor" href="#_voluntary_release"></a><a class="link" href="#_voluntary_release">Voluntary Release</a></h5>
@@ -89,13 +106,19 @@ Once active, the system will enter release mode, where it will remain until
 either the parameter is set back to <code>false</code>, or the relevant <code></strong>.pressure</code> value
 returns to <code>0.0</code>.</p>
 </div>
+<div class="paragraph">
+<p>Keeping the release parameter set to <code>true</code> after the pressure value has reached
+zero will cause the system to cycle back and forth between fill and release
+mode, filling by some amount, then releasing that amount.</p>
+</div>
 </div>
 <div class="sect4">
 <h5 id="_involuntary_release"><a class="anchor" href="#_involuntary_release"></a><a class="link" href="#_involuntary_release">Involuntary Release</a></h5>
 <div class="paragraph">
 <p>Involuntary release is activated automatically once a system reaches a pressure
 value of 100% (<code>1.0</code>).  Once active, the system will enter release mode and will
-remain in release mode until the relevant pressure value is reduced to <code>0.0</code>.</p>
+remain in release mode until the relevant pressure value is reduced to <code>0.0</code>, at
+which point the system will return to fill mode.</p>
 </div>
 </div>
 </div>
@@ -763,8 +786,8 @@ reset to their default state.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 0.0.6<br>
-Last updated 2025-09-21 12:54:13 -0400
+Version 0.0.7<br>
+Last updated 2025-09-22 21:49:53 -0400
 </div>
 </div>
 </body>
