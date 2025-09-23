@@ -14,13 +14,21 @@ endif::[]
 Parameter driver engine for building avatar animation systems around simulated
 bodily functions.
 
+GottaGo is primarily intended for use in creating kink-based VRChat avatar
+customizations.  Please make sure you are familiar with VRChat's rules and
+guidelines for acceptable content before building something from this system.
+
 
 link:{doc-url}/system.html[Documentation]
 
-Note::
-This system does not provide any visible functionality for VRC avatars on its
-own.  It is intended to be used by avatar artists and modders as a foundation
-for building avatar/base specific animation systems.
+[IMPORTANT]
+--
+This system *does not* provide any visible functionality for VRC avatars on its
+own.
+
+It is intended to be used by avatar artists and modders as a foundation for
+building avatar/base specific animation systems.
+--
 
 
 == How to Use
@@ -34,7 +42,7 @@ simplify the process adding the functionality to the parent avatar. +
 The system's core functionality does not use VRCFury, and may be attached to an
 avatar manually if desired to avoid the use of VRCFury.
 
-=== Attaching System
+=== Attach the System
 
 The `.unitypackage` file available from the {repo-url}/releases/latest[latest release]
 contains 5 prefab options:
@@ -50,3 +58,48 @@ contains 5 prefab options:
 Attach one of the above prefabs to the root of your avatar for the default setup
 using the default menus.
 
+=== Customize Your Avatar
+
+Once the system is attached, the parameters it drives may be used in your
+avatar's animator to trigger or step through your own animations and effects.
+
+==== Example Ideas
+
+Ideas for things that could be driven by or connected to GottaGo.
+
++1.+ Full Bodily Needs::
+
+Ditch the included menu, and run GottaGo through a hunger/thirst system to
+simulate bodily needs for a detailed survival system.
+
++2.+ Notifications::
+
+Trigger visual or audio cues based on current system 'pressure' to indicate how
+badly your avatar needs to go.
+
++3.+ Pee on Things::
+
+Tie some animation indicating urination to GottaGo's releasing indicator to pee
+on all the things (when your bladder is full enough to do so).
+
++4.+ Embarassing Situations::
+
+Humiliate yourself by not relieving that building pressure in time with a potty
+dance or worse 😈
+
+
+
+== Defaults
+
+Default/built-in components.
+
+=== Default Menus
+
+.Outer Menu
+image:docs/images/screenshots/menu0.png[]
+
+.Full Prefab Inner Menu
+image:docs/images/screenshots/menu1.png[]
+
+.Subsystem Settings
+image:docs/images/screenshots/menu2.png[]

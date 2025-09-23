@@ -194,6 +194,7 @@ When the system is releasing, the <<bowels-emptying>> parameter will be set to
 
 == Parameters
 
+[#sync-params]
 === Synchronizable Parameters
 
 The following parameters are exposed by the GottaGo system for use in animations
