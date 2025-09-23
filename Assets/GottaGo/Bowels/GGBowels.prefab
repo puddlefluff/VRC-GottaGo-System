@@ -333,16 +333,16 @@ MonoBehaviour:
           smoothingDuration: 0.3
           range: 0
         globalParams:
-        - g2.total
-        - g2.relative
+        - g2.release.total
+        - g2.release.relative
         - g2.volume
         - g2.pressure
-        - g2.empty
+        - g2.emptying
         - g2.opt.capacity
         - g2.opt.enabled
         - g2.opt.rate.multiplier
         - g2.opt.release
-        - g2.opt.reset
+        - g2.opt.release.reset
         allNonsyncedAreGlobal: 0
         ignoreSaved: 0
         toggleParam: 
