@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5392895499358898472
 Transform:
   m_ObjectHideFlags: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rootTransform: {fileID: 0}
   shapeType: 0
-  radius: 0.001
+  radius: 0.01
   height: 2
   position: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0, w: 1}
@@ -69,7 +69,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4081124563776162074
 Transform:
   m_ObjectHideFlags: 0
@@ -122,7 +122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4308517076546279407
 Transform:
   m_ObjectHideFlags: 0
@@ -168,7 +168,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3346776562128692693}
-  - component: {fileID: 747936872104828319}
   - component: {fileID: 7494328233781584661}
   - component: {fileID: -7729087112626347279}
   - component: {fileID: -2017153915978397044}
@@ -178,7 +177,7 @@ GameObject:
   - component: {fileID: 8160650420546059155}
   - component: {fileID: -4547443764265044553}
   m_Layer: 0
-  m_Name: GGBowelSystem
+  m_Name: GGBowels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,27 +202,6 @@ Transform:
   - {fileID: 5392895499358898472}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &747936872104828319
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786490790166604890}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e68cf98596b4d7d09868c625ace4f5bb, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7494328233781584661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +244,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 5185196878216533123}
-        mode: 1
+        mode: 0
     - rid: 3329082011398963255
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -276,7 +254,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 5196060267447348096}
-        mode: 1
+        mode: 0
     - rid: 3329082011398963256
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -286,7 +264,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 8284813233919546958}
-        mode: 1
+        mode: 0
     - rid: 3329082011398963257
       type: {class: ObjectToggleAction, ns: VF.Model.StateAction, asm: VRCFury}
       data:
@@ -296,7 +274,7 @@ MonoBehaviour:
         localOnly: 0
         remoteOnly: 0
         obj: {fileID: 3515837959590907471}
-        mode: 1
+        mode: 0
 --- !u!114 &-7729087112626347279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8148451062355816624
 Transform:
   m_ObjectHideFlags: 0
